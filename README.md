@@ -1,12 +1,36 @@
-# React + Vite
+# 🌿 Garden Store – Final Frontend Project
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## 📘 Description
 
-Currently, two official plugins are available:
+This is a final team project for a frontend development course.  
+We developed a responsive e-commerce web application for gardening products using **React**, **Redux Toolkit**, and **JavaScript**.  
+The goal was to practice teamwork, modern frontend development tools, and deliver a polished user-facing product.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## Expanding the ESLint configuration
+## 🛠 Tech Stack
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- **React**
+- **Redux Toolkit**
+- **JavaScript (ES6+)**
+- **HTML5 + CSS3**
+- **Vite**
+- **Git + GitHub**
+
+---
+
+## ✨ Features
+
+- Product catalog with filtering
+- Shopping cart functionality
+- Responsive layout
+- Basic routing and navigation
+- Component-based architecture
+
+---
+
+## 👥 Team
+
+- **[Name 1]** – Developer
+- **[Name 2]** – Developer
+- **[Name 3]** – Developer
