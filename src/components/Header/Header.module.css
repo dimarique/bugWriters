@@ -1,0 +1,14 @@
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  max-width: 360px;
+  background-color: hsla(60, 100%, 97%, 1);
+  padding: 20px;
+}
+
+.icons_wrapper {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
