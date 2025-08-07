@@ -4,31 +4,21 @@
   box-sizing: border-box;
 }
 
-.hero_wrapper {
-  background-image: url("./image/img.jpg");
+.hero_container {
+  background-image: url("./image/imgMobile.jpg");
   background-size: cover;
-  background-position: 65% ;
   width: 360px;
   height: 600px;
   padding: 8px;
-  position: relative;
- }
-.hero_overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
   display: flex;
   flex-direction: column;
-  margin: 50px 20px 322px;
+  padding: 50px 20px 251px;
   align-items: flex-start;
-  width: 320px;
-  height: 299px;
   gap: 24px;
-}
+ }
 .hero_title {
   font-family: 'Montserrat', sans-serif;
   font-weight: 700;
-  font-style: normal;
   font-size: 52px; 
   text-align: left;
   color: #fff;
@@ -38,11 +28,77 @@
   background-color: #92a134;
   border-radius: 6px;
   color: #fff;
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 600;
   font-family: 'Montserrat', sans-serif;
   padding: 12px 52px;
   text-decoration: none;
   cursor: pointer;
+  width: 199px;
+  height: 47px;
 }
+@media (min-width: 480px) {
+    .hero_container {
+    background-image: url("./image/img480.jpg");
+    width: 480px;
+    padding: 50px 33px 215px 20px;
+      }
+  .hero_title {
+    font-size: 60px;
+  }
+}
+
+@media (min-width: 768px) {
+  .hero_container {
+    background-image: url("./image/img768.jpg");
+    width: 768px;
+    padding: 60px 20px 326px;
+    gap:40px
+  }
+  .hero_title {
+    font-size: 68px;
+  }
+    .hero_link {
+    width: 218px;
+    height: 58px;
+    font-size: 20px;
+  }
+}
+
+@media (min-width: 1000px) {
+  .hero_container {
+    background-image: url("./image/img1000.jpg");
+    width: 1000px;
+    height: 476px;
+    padding: 60px 20px 120px;
+    gap:40px
+  }
+  .hero_title {
+    font-size: 90px;
+  }
+    .hero_link {
+    width: 218px;
+    height: 58px;
+    font-size: 20px;
+  }
+}
+
+@media (min-width: 1440px) {
+  .hero_container {
+    background-image: url("./image/imgLaptop.jpg");
+    width: 1200px;
+    height: 600px;
+    padding: 80px 40px 210px;
+    gap:40px
+  }
+  .hero_title {
+    font-size: 96px;
+  }
+  .hero_link {
+    width: 218px;
+    height: 58px;
+    font-size: 20px;
+  }
+}
+
 
