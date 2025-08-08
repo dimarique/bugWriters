@@ -1,17 +1,18 @@
-
+import { Route, Routes } from "react-router-dom";
 import "./App.css";
 import Header from "./components/Header/Header.jsx";
-import Hero from './components/HeroBlock/Hero.jsx';
-
+import Main from "./pages/Main/Main.jsx";
 
 function App() {
   return (
-<>
-    <div className="content_wrapper">
-      <Header />
-    <Hero />
-    </div>
-  </>
+    <>
+      <div className="content_wrapper">
+        <Header />
+        <Routes>
+          <Route path="/main" element={<Main />} />
+        </Routes>
+      </div>
+    </>
   );
 }
 
