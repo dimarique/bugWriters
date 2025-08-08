@@ -1,0 +1,74 @@
+.themeToggler {
+  display: inline-block;
+}
+
+input[type="checkbox"] {
+  display: none;
+}
+
+.theme_toggler {
+  position: relative;
+  display: block;
+  width: 52px;
+  height: 28px;
+  border-radius: 999px;
+  background-color: hsla(0, 0%, 55%, 1);
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.theme_toggler::after {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background-color: white;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease;
+}
+
+input[type="checkbox"]:checked + .theme_toggler::after {
+  transform: translateX(22px);
+  background-color: hsla(0, 0%, 55%, 1);
+}
+
+.theme_toggler .icon {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 16px;
+  pointer-events: none;
+  z-index: 1;
+  transition:
+    opacity 0.3s ease,
+    visibility 0.3s ease;
+}
+
+.sun {
+  left: 5px;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.moon {
+  right: 5px;
+  opacity: 1;
+  visibility: visible;
+}
+
+input[type="checkbox"]:checked + .theme_toggler .sun {
+  opacity: 1;
+  visibility: visible;
+}
+
+input[type="checkbox"]:checked + .theme_toggler .moon {
+  opacity: 0;
+  visibility: hidden;
+}
+
+input[type="checkbox"]:checked + .theme_toggler {
+  background-color: hsl(0, 0%, 100%);
+}
