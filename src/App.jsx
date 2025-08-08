@@ -1,21 +1,19 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
-import Hero from './components/HeroBlock/Hero.jsx'
-import Category from './components/Category/Category.jsx'
+import Category from "./components/Category/Category.jsx";
+
+import "./App.css";
+import Header from "./components/Header/Header.jsx";
+import Hero from "./components/HeroBlock/Hero.jsx";
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-   
     <>
-     
-      <Hero />
-      <Category />
+      <div className="content_wrapper">
+        <Header />
+        <Hero />
+        <Category />
+      </div>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
