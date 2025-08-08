@@ -8,14 +8,14 @@ const Footer = () => {
         <div className={styles.footer_container}>
             <h2>Contact</h2>
 
-            <div className={styles.footer_cards}>
+            <div className={styles.footer_content}>
                 <div className={styles.footer_card}>
                     <h3>Phone</h3>
                     <p>+49 999 999 99 99</p>
                 </div>
 
 
-                <div className={styles.footer_card}>
+                <div className={`${styles.footer_card} ${styles.footer_socials_flex}`}>
                     <h3>Socials</h3>
                     <div className={styles.footer_icons}>
                         <img src={instagram} alt="Instagram" />
