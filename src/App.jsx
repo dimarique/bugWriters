@@ -3,6 +3,7 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 import Hero from './components/HeroBlock/Hero.jsx'
+import Category from './components/Category/Category.jsx'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -12,6 +13,7 @@ function App() {
     <>
      
       <Hero />
+      <Category />
     </>
   )
 }
