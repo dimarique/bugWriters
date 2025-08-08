@@ -5,7 +5,7 @@ import NavMenu from "../NavMenu/NavMenu.jsx";
 import CartIcon from "../CartIcon/CartIcon.jsx";
 import FavoritesIcon from "../FavoritesIcon/FavoritesIcon.jsx";
 import ThemeToggler from "../ThemeToggler/ThemeToggler.jsx";
-const Header = () => {
+const Header = ({ setMenuIsOpen, menuIsOpen }) => {
   return (
     <div className={styles.header}>
       <div className={styles.icons_wrapper}>
@@ -17,7 +17,7 @@ const Header = () => {
       <div className={styles.icons_wrapper}>
         <FavoritesIcon />
         <CartIcon />
-        <NavMenu />
+        <NavMenu menuIsOpen={menuIsOpen} setMenuIsOpen={setMenuIsOpen} />
       </div>
     </div>
   );
