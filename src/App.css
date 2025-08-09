@@ -4,5 +4,34 @@ body {
 
 .content_wrapper {
   margin: 0 auto;
-  width: 360px;
+  width: 100%;
+  max-width: 360px;
+  padding: 0 20px;
 }
+
+
+@media(min-width: 480px) {
+  .content_wrapper {
+    max-width: 480px;
+  }
+}
+
+@media(min-width: 768px) {
+  .content_wrapper {
+    max-width: 768px;
+  }
+}
+
+@media(min-width: 1000px) {
+  .content_wrapper {
+    max-width: 1000px;
+  }
+}
+
+@media(min-width: 1440px) {
+  .content_wrapper {
+    padding: 0 40px;
+    max-width: 1440px;
+  }
+}
+

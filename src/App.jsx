@@ -14,6 +14,7 @@ function App() {
       <div className="content_wrapper">
         <Header />
         <Hero />
+        <Footer />
       </div>
     </>
   );
