@@ -1,11 +1,15 @@
+
+import Category from "./components/Category/Category.jsx";
 import Footer from "./components/footer/footer";
 import "./App.css";
 import Hero from "./components/HeroBlock/Hero.jsx";
 import Header from "./components/Header/Header.jsx";
+
 import Main from "./pages/Main/Main.jsx";
 import { useState } from "react";
 import MenuList from "./components/MenuList/MenuList.jsx";
 import { Route, Routes } from "react-router-dom";
+
 
 function App() {
   const [menuIsOpen, setMenuIsOpen] = useState(false);
@@ -21,6 +25,7 @@ function App() {
         <Routes>
           <Route path="/main" element={<Main />} />
         </Routes>
+
       </div>
     </>
   );
