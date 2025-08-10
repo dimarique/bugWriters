@@ -1,9 +1,9 @@
 import styles from "./MenuList.module.css";
 import close from "../../assets/x.svg";
-const MenuList = () => {
+const MenuList = ({ menuIsOpen, setMenuIsOpen }) => {
   return (
-    <div className={`${styles.menuList}`}>
-      <img src={close} alt="" />
+    <div className={`${styles.menuList} ${menuIsOpen ? styles.open : ""}`}>
+      <img onClick={() => setMenuIsOpen(false)} src={close} alt="" />
       <nav>
         <ul>
           <li>

@@ -1,3 +1,17 @@
+:root {
+  --text-black: #424436;
+  --text-white: #FFFFFF;
+  --text-grey: #8B8B8B;
+
+  --color-green: #92A134;
+  --color-sale: #F26D22;
+  --color-white: #FFFFF1;
+  --color-black: #424436;
+  --color-grey-divider: #DDDDDD;
+  --color-grey: #8B8B8B;
+  --color-light-grey: #F2F6D3;
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -12,6 +26,7 @@ body {
   background-color: #fff;
   color: #000;
 }
+
 
 img,
 picture,
@@ -30,6 +45,23 @@ select {
   font: inherit;
 }
 
+h2 {
+  color: var(--text-black);
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 110%;
+  margin-bottom: 24px;
+
+}
+
+h3 {
+  color: var(--text-black);
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 130%;
+}
+
+
 a {
   text-decoration: none;
   color: inherit;
@@ -40,4 +72,52 @@ ol {
   list-style: none;
   padding: 0;
   margin: 0;
+}
+
+.section {
+  margin-bottom: 56px;
+}
+
+
+
+
+@media(min-width: 480px) {
+  h2 {
+    font-size: 48px;
+  }
+}
+
+@media(min-width: 768px) {
+  h2 {
+    font-size: 56px;
+    margin-bottom: 32px;
+  }
+
+  h3 {
+    font-size: 20px;
+  }
+
+  .section {
+    margin-bottom: 60px;
+  }
+}
+
+
+
+@media(min-width: 1000px) {
+  h2 {
+    font-size: 64px;
+  }
+}
+
+
+
+@media(min-width: 1440px) {
+  h2 {
+    margin-bottom: 40px;
+  }
+
+  .section {
+    margin-bottom: 80px;
+  }
 }
