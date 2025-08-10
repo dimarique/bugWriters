@@ -15,6 +15,7 @@ function App() {
         <Routes>
           <Route path="/main" element={<Main />} />
         </Routes>
+        <Footer />
       </div>
     </>
   );

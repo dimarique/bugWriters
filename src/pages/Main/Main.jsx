@@ -7,7 +7,6 @@ const Main = () => {
     <div className={styles.main}>
       <Hero />
       <Category />
-      <Footer />
     </div>
   );
 };
