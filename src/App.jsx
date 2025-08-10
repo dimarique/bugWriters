@@ -1,6 +1,7 @@
 import "./App.css";
 import Header from "./components/Header/Header.jsx";
 import Main from "./pages/Main/Main.jsx";
+import Footer from "../../components/footer/footer.jsx";
 import { useState } from "react";
 import MenuList from "./components/MenuList/MenuList.jsx";
 import { Route, Routes } from "react-router-dom";
@@ -15,6 +16,7 @@ function App() {
         <Routes>
           <Route path="/main" element={<Main />} />
         </Routes>
+        <Footer />
       </div>
     </>
   );
