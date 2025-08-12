@@ -5,6 +5,7 @@ import NavMenu from "../NavMenu/NavMenu.jsx";
 import CartIcon from "../CartIcon/CartIcon.jsx";
 import FavoritesIcon from "../FavoritesIcon/FavoritesIcon.jsx";
 import ThemeToggler from "../ThemeToggler/ThemeToggler.jsx";
+
 const Header = ({ setMenuIsOpen, menuIsOpen }) => {
   return (
     <div className={styles.header}>
