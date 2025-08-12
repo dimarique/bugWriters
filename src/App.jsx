@@ -5,18 +5,22 @@ import { useState } from "react";
 import MenuList from "./components/MenuList/MenuList.jsx";
 import { Route, Routes } from "react-router-dom";
 import Footer from "./components/footer/Footer.jsx";
+import { Provider } from "react-redux";
+import store from "./redux/store.js";
 function App() {
   const [menuIsOpen, setMenuIsOpen] = useState(false);
   return (
     <>
-      <div className="content_wrapper">
-        <Header menuIsOpen={menuIsOpen} setMenuIsOpen={setMenuIsOpen} />
-        <MenuList menuIsOpen={menuIsOpen} setMenuIsOpen={setMenuIsOpen} />
-        <Routes>
-          <Route path="/main" element={<Main />} />
-        </Routes>
-        <Footer />
-      </div>
+      <Provider store={store}>
+        <div className="content_wrapper">
+          <Header menuIsOpen={menuIsOpen} setMenuIsOpen={setMenuIsOpen} />
+          <MenuList menuIsOpen={menuIsOpen} setMenuIsOpen={setMenuIsOpen} />
+          <Routes>
+            <Route path="/main" element={<Main />} />
+          </Routes>
+          <Footer />
+        </div>
+      </Provider>
     </>
   );
 }
