@@ -1,12 +1,13 @@
+import { useState } from "react";
+import { Route, Routes } from "react-router-dom";
 import "./App.css";
 import Header from "./components/Header/Header.jsx";
-import Main from "./pages/Main/Main.jsx";
-import { useState } from "react";
 import MenuList from "./components/MenuList/MenuList.jsx";
-import { Route, Routes } from "react-router-dom";
-import Footer from "./components/footer/Footer.jsx";
 import { Provider } from "react-redux";
 import store from "./redux/store.js";
+import Footer from "./components/Footer/Footer.jsx";
+import Main from "./pages/Main/Main.jsx";
+
 function App() {
   const [menuIsOpen, setMenuIsOpen] = useState(false);
   return (
