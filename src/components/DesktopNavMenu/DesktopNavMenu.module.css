@@ -1,0 +1,20 @@
+.desktopNavMenu {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  nav ul {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .discount_link {
+    padding: 6px 16px;
+    margin-bottom: 10px;
+    font-size: 18px;
+    font-weight: 500;
+    background-color: hsla(68, 51%, 42%, 1);
+    border-radius: 6px;
+    align-self: center;
+  }
+}
