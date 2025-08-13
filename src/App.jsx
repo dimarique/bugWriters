@@ -5,6 +5,7 @@ import { useState } from "react";
 import MenuList from "./components/MenuList/MenuList.jsx";
 import { Route, Routes } from "react-router-dom";
 import Footer from "./components/footer/Footer.jsx";
+import CategoriesPage from "./pages/Categories/CategoriesPage.jsx";
 function App() {
   const [menuIsOpen, setMenuIsOpen] = useState(false);
   return (
@@ -14,6 +15,7 @@ function App() {
         <MenuList menuIsOpen={menuIsOpen} setMenuIsOpen={setMenuIsOpen} />
         <Routes>
           <Route path="/main" element={<Main />} />
+          <Route path="/categories" element={<CategoriesPage />} />
         </Routes>
         <Footer />
       </div>

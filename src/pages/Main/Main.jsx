@@ -1,11 +1,12 @@
 import styles from "./Main.module.css";
 import Hero from "../../components/HeroBlock/Hero.jsx";
-import Category from "../../components/Category/Category.jsx";
+import CategoryList from "../../components/Categories/CategoryList.jsx";
+
 const Main = () => {
   return (
     <div className={styles.main}>
       <Hero />
-      <Category />
+      <CategoryList categories={categories.slice(0, 4)} />
     </div>
   );
 };
