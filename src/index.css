@@ -74,7 +74,7 @@ ol {
   margin: 0;
 }
 
-.section {
+.bottom_margin {
   margin-bottom: 56px;
 }
 
@@ -97,11 +97,14 @@ ol {
     font-size: 20px;
   }
 
-  .section {
+  .bottom_margin {
     margin-bottom: 60px;
   }
 }
 
+.side_padding {
+  padding: 0 20px;
+}
 
 
 @media(min-width: 1000px) {
@@ -117,7 +120,12 @@ ol {
     margin-bottom: 40px;
   }
 
-  .section {
+  .bottom_margin {
     margin-bottom: 80px;
   }
+
+  .side_padding {
+    padding: 0 40px;
+  }
+
 }

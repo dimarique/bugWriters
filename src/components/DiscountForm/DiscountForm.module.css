@@ -1,0 +1,65 @@
+.discount_container {
+    padding: 24px 20px 0 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+
+
+    border-radius: 12px;
+    /* gap: 24px; */
+    background: linear-gradient(80.46deg, #87933D -0.68%, #55610B 66.66%);
+
+    h2 {
+        text-align: center;
+        color: var(--text-white);
+    }
+
+}
+
+.discount_content {}
+
+.discount_form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.discount_inputs {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+input {
+    background-color: transparent;
+    border-radius: 6px;
+    padding: 12px 20px;
+    /* gap: 10px; */
+    border: 1px solid var(--color-white)
+}
+
+.discount_inputs input::placeholder {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 130%;
+    /* vertical-align: middle; */
+    color: var(--text-white);
+}
+
+
+.discount_button {
+    color: var(--text-black);
+    background-color: var(--color-white);
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 130%;
+    padding: 12px 20px;
+    /* text-align: center; */
+    /* vertical-align: middle; */
+    border: none;
+    border-radius: 6px;
+    gap: 10px;
+
+
+
+
+}
