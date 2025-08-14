@@ -38,3 +38,17 @@
   font-size: 36px;
   font-weight: 600;
 }
+
+.productCard_discont_price {
+  margin-left: 12px;
+  font-size: 18px;
+  font-weight: 500;
+  text-decoration: line-through;
+  color: hsla(0, 0%, 55%, 1);
+}
+
+.productCard_favorite {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+}
