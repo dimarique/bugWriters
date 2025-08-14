@@ -8,7 +8,7 @@
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "dev:front": "npm run dev --prefix .",
+    "dev:front": "npm run dev --prefix . -- --host 0.0.0.0",
     "dev:back": "npm run dev --prefix backend",
     "dev:full": "concurrently \"npm run dev:back\" \"wait-on tcp:3333 && npm run dev:front\""
   },
