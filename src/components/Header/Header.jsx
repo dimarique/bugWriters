@@ -5,8 +5,10 @@ import NavMenu from "../NavMenu/NavMenu.jsx";
 import CartIcon from "../CartIcon/CartIcon.jsx";
 import FavoritesIcon from "../FavoritesIcon/FavoritesIcon.jsx";
 import ThemeToggler from "../ThemeToggler/ThemeToggler.jsx";
-
+import { useWindowWidth } from "../../hooks/useWindowWidth.js";
+import DesktopNavMenu from "../DesktopNavMenu/DesktopNavMenu.jsx";
 const Header = ({ setMenuIsOpen, menuIsOpen }) => {
+  let windowWidth = useWindowWidth();
   return (
     <div className={styles.header}>
       <div className={styles.icons_wrapper}>
@@ -15,6 +17,7 @@ const Header = ({ setMenuIsOpen, menuIsOpen }) => {
         </Link>
         <ThemeToggler />
       </div>
+      {windowWidth === "desktop" && <DesktopNavMenu />}
       <div className={styles.icons_wrapper}>
         <FavoritesIcon />
         <CartIcon />
