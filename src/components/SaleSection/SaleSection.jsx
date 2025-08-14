@@ -17,16 +17,14 @@ const SaleSection = () => {
     if (products.length > 0) {
       const selectedProducts = [];
 
-      for (let i = 0; i <= 3; i++) {
-        selectedProducts.push(
-          products[Math.floor(Math.random() * products.length)],
-        );
+      while (selectedProducts.length < 4) {
+        let idx = Math.floor(Math.random() * products.length);
+        products[idx].discont_price && selectedProducts.push(products[idx]);
       }
 
       setRandomItems(selectedProducts);
     }
   }, [products]);
-
   return (
     <div className={styles.saleSection}>
       {randomItems.map((product) => {
@@ -37,6 +35,7 @@ const SaleSection = () => {
             title={product.title}
             price={product.price}
             image={product.image}
+            discont_price={product.discont_price}
           />
         );
       })}

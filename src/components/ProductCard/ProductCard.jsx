@@ -1,14 +1,26 @@
 import styles from "./ProductCard.module.css";
-const ProductCard = ({ title, price, image }) => {
+const ProductCard = ({ title, price, discont_price, image }) => {
   const baseUrl = "http://localhost:3333";
+  const discont_amount = Math.floor(((price - discont_price) / price) * 100);
   return (
     <div className={styles.productCard}>
       <div className={styles.productCard_top}>
+        <span className={styles.productCard_discont_amount}>
+          -{discont_amount}%
+        </span>
+
         <img src={`${baseUrl}${image}`} alt="" />
       </div>
       <div className={styles.productCard_bottom}>
         <p className={styles.productCard_title}>{title}</p>
-        <span className={styles.productCard_price}>{`$${price}`}</span>
+        <div className={styles.prices_wrapper}>
+          <span className={styles.productCard_price}>{`$${price}`}</span>
+          {discont_price && (
+            <span className={styles.productCard_discont_price}>
+              {`$${discont_price}`}
+            </span>
+          )}
+        </div>
       </div>
     </div>
   );
