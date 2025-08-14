@@ -46,11 +46,18 @@ const CategoriesList = () => {
 
   return (
     <div className={styles.categories}>
-        {categories.map((category) => (
-        <CategoryCard key={category.id} category={category} />
-      ))}
-    </div>
-  );
+        {categories.map((category) => {
+          return (
+          <CategoryCard 
+          key={category.id} 
+          // image={category.image}
+          // title={category.title}
+          category={category}
+        />
+      );
+    })}
+  </div>
+);
 };
 
 
