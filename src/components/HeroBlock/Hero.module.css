@@ -1,7 +1,7 @@
 .hero_container {
+  width: 100%;
   background-image: url("../../assets/imageHero/imgMobile.jpg");
   background-size: cover;
-  padding: 8px;
   display: flex;
   flex-direction: column;
   padding: 50px 20px 251px;
@@ -24,13 +24,10 @@
   padding: 12px 52px;
   text-decoration: none;
   cursor: pointer;
-  width: 199px;
-  height: 47px;
 }
 @media (min-width: 480px) {
   .hero_container {
     background-image: url("../../assets/imageHero/img480.jpg");
-    width: 480px;
     padding: 50px 33px 215px 20px;
   }
   .hero_title {
@@ -41,7 +38,6 @@
   .hero_container {
     background-image: url("../../assets/imageHero/img768.jpg");
     padding: 60px 20px 326px;
-    width: 768px;
     gap: 40px;
   }
   .hero_title {
@@ -55,30 +51,20 @@
 @media (min-width: 1000px) {
   .hero_container {
     background-image: url("../../assets/imageHero/img1000.jpg");
-    width: 1000px;
     padding: 60px 20px 120px;
     gap: 40px;
   }
   .hero_title {
     font-size: 90px;
   }
-  .hero_link {
-    width: 218px;
-    font-size: 20px;
-  }
 }
 @media (min-width: 1440px) {
   .hero_container {
     background-image: url("../../assets/imageHero/imgLaptop.jpg");
-    width: 1440px;
     padding: 80px 40px 210px;
     gap: 40px;
   }
   .hero_title {
     font-size: 96px;
-  }
-  .hero_link {
-    width: 218px;
-    font-size: 20px;
   }
 }

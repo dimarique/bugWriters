@@ -4,7 +4,7 @@ import "./App.css";
 import Header from "./components/Header/Header.jsx";
 import MenuList from "./components/MenuList/MenuList.jsx";
 
-import CategoriesPage from "./pages/Categories/CategoriesPage.jsx";
+import AllCategories from "./pages/Categories/AllCategories.jsx";
 
 import { Provider } from "react-redux";
 import store from "./redux/store.js";
@@ -23,7 +23,7 @@ function App() {
           <MenuList menuIsOpen={menuIsOpen} setMenuIsOpen={setMenuIsOpen} />
           <Routes>
             <Route path="/main" element={<Main />} />
-             <Route path="/categories" element={<CategoriesPage />} />
+             <Route path="/categories" element={<AllCategories />} />
           </Routes>
           <Footer />
         </div>

@@ -1,12 +1,12 @@
-import styles from "./CategoriesPage.module.css";
-import Categories from "../../components/Categories/Categories.jsx";
+import styles from "./AllCategories.module.css";
+import Categories from "../../components/Categories/CategoriesList.jsx";
 
 
 const AllCategories = ({ categories }) => {
   return (
     <div className={styles.Allcategories}>
-      
-          <Categories categories={categories} />
+
+      <Categories categories={categories} />
     </div>
   );
 };
