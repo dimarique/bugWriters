@@ -7,6 +7,10 @@ import store from "./redux/store.js";
 import Footer from "./components/Footer/Footer.jsx";
 import Main from "./pages/Main/Main.jsx";
 
+import { useWindowWidth } from "./hooks/useWindowWidth.js";
+import Product from "./pages/Product/Product.jsx";
+
+
 function App() {
   const [menuIsOpen, setMenuIsOpen] = useState(false);
   return (
@@ -16,6 +20,7 @@ function App() {
           <Header menuIsOpen={menuIsOpen} setMenuIsOpen={setMenuIsOpen} />
           <Routes>
             <Route path="/main" element={<Main />} />
+            <Route path="/product" element={<Product />} />
           </Routes>
           <Footer />
         </div>
