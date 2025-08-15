@@ -12,7 +12,7 @@ input[type="checkbox"] {
   width: 52px;
   height: 28px;
   border-radius: 999px;
-  background-color: hsla(0, 0%, 55%, 1);
+  background-color: #8c8c8c;
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
@@ -26,13 +26,13 @@ input[type="checkbox"] {
   height: 24px;
   border-radius: 50%;
   background-color: white;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 1px 3px #000000;
   transition: transform 0.3s ease;
 }
 
 input[type="checkbox"]:checked + .theme_toggler::after {
   transform: translateX(22px);
-  background-color: hsla(0, 0%, 55%, 1);
+  background-color: #8c8c8c;
 }
 
 .theme_toggler .icon {
@@ -70,5 +70,5 @@ input[type="checkbox"]:checked + .theme_toggler .moon {
 }
 
 input[type="checkbox"]:checked + .theme_toggler {
-  background-color: hsl(0, 0%, 100%);
+  background-color: #ffffff;
 }
