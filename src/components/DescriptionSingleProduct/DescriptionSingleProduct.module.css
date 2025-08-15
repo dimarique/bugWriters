@@ -1,0 +1,36 @@
+.description {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+}
+
+.text {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 130%;
+    color: var(--text-black);
+}
+
+.clamped {
+    max-height: 182px;
+    overflow: hidden;
+
+}
+
+.description_button {
+    color: var(--text-black);
+    background-color: transparent;
+    border: none;
+
+
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 130%;
+    letter-spacing: 0%;
+    text-decoration: underline;
+    text-decoration-style: solid;
+
+
+
+}

@@ -35,11 +35,11 @@
 }
 
 
-h3 {
+.footer_container h3 {
     color: var(--text-grey);
 }
 
-p {
+.footer_container p {
     color: var(--text-black);
     font-weight: 600;
     font-size: 28px;

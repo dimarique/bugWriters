@@ -10,6 +10,7 @@
     h2 {
         text-align: center;
         color: var(--text-white);
+        font-size: 55px;
     }
 
 }
@@ -102,8 +103,8 @@ input {
 
     .discount_form {
         margin-bottom: 32px;
-        max-width: 334px;
         width: 100%;
+
 
     }
 
@@ -112,6 +113,15 @@ input {
     .discount_container {
         padding: 32px 20px 0 20px;
     }
+
+    input {
+        padding: 16px 20px;
+    }
+
+    .discount_button {
+        padding: 16px 20px;
+    }
+
 
 }
 
@@ -149,6 +159,14 @@ input {
 
     .discount_container {
         padding: 32px 32px 0 32px;
+    }
+
+    input {
+        padding: 16px 32px;
+    }
+
+    .discount_button {
+        padding: 16px 32px;
     }
 
 }
