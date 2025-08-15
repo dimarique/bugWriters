@@ -3,7 +3,7 @@
   flex-direction: row;
   justify-content: space-between;
   width: 100%;
-  background-color: hsla(60, 100%, 97%, 1);
+  background-color: #fffff0;
   padding: 20px;
   overflow: hidden;
 }

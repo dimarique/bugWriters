@@ -6,11 +6,12 @@ import { Provider } from "react-redux";
 import store from "./redux/store.js";
 import Footer from "./components/Footer/Footer.jsx";
 import Main from "./pages/Main/Main.jsx";
+
 import { useWindowWidth } from "./hooks/useWindowWidth.js";
 import Product from "./pages/Product/Product.jsx";
 
+
 function App() {
-  let windowWidtn = useWindowWidth();
   const [menuIsOpen, setMenuIsOpen] = useState(false);
   return (
     <>
