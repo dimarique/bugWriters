@@ -1,5 +1,6 @@
 import styles from "./ProductCard.module.css";
 import heart_filled from "../../assets/heart_filled.svg";
+import cart_filled from "../../assets/cart_filled.svg";
 const ProductCard = ({ title, price, discont_price, image }) => {
   const baseUrl = "http://localhost:3333";
   const discont_amount = Math.floor(((price - discont_price) / price) * 100);
@@ -11,6 +12,9 @@ const ProductCard = ({ title, price, discont_price, image }) => {
         </span>
         <span className={styles.productCard_favorite}>
           <img src={heart_filled} alt="" />
+        </span>
+        <span className={styles.productCard_cart}>
+          <img src={cart_filled} alt="" />
         </span>
 
         <img src={`${baseUrl}${image}`} alt="" />

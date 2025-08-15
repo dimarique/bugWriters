@@ -52,3 +52,9 @@
   right: 20px;
   top: 20px;
 }
+
+.productCard_cart {
+  position: absolute;
+  right: 20px;
+  top: 80px;
+}
