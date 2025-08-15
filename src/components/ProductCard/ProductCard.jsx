@@ -22,11 +22,11 @@ const ProductCard = ({ title, price, discont_price, image }) => {
       <div className={styles.productCard_bottom}>
         <p className={styles.productCard_title}>{title}</p>
         <div className={styles.prices_wrapper}>
-          <span className={styles.productCard_price}>{`$${price}`}</span>
+          <span
+            className={styles.productCard_discont_price}
+          >{`$${discont_price}`}</span>
           {discont_price && (
-            <span className={styles.productCard_discont_price}>
-              {`$${discont_price}`}
-            </span>
+            <span className={styles.productCard_price}>{`$${price}`}</span>
           )}
         </div>
       </div>

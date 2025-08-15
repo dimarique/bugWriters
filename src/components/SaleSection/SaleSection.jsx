@@ -15,18 +15,18 @@ const SaleSection = () => {
 
   useEffect(() => {
     if (products.length > 0) {
-      const selectedProducts = [];
+      const selectedProducts = new Set();
 
-      while (selectedProducts.length < 4) {
+      while (selectedProducts.size < 4) {
         let idx = Math.floor(Math.random() * products.length);
-        products[idx].discont_price && selectedProducts.push(products[idx]);
+        products[idx].discont_price && selectedProducts.add(products[idx]);
       }
 
-      setRandomItems(selectedProducts);
+      setRandomItems(Array.from(selectedProducts));
     }
   }, [products]);
   return (
-    <div className={styles.saleSection}>
+    <div className={`${styles.saleSection} side_padding`}>
       {randomItems.map((product) => {
         return (
           <ProductCard
