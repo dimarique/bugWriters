@@ -5,17 +5,20 @@
 
 
     border-radius: 12px;
-    /* gap: 24px; */
     background: linear-gradient(80.46deg, #87933D -0.68%, #55610B 66.66%);
 
     h2 {
         text-align: center;
         color: var(--text-white);
+        font-size: 55px;
     }
 
 }
 
-.discount_content {}
+.discount_content {
+    display: flex;
+    flex-direction: column;
+}
 
 .discount_form {
     display: flex;
@@ -30,10 +33,10 @@
 }
 
 input {
+    width: 100%;
     background-color: transparent;
     border-radius: 6px;
     padding: 12px 20px;
-    /* gap: 10px; */
     border: 1px solid var(--color-white)
 }
 
@@ -57,9 +60,113 @@ input {
     /* vertical-align: middle; */
     border: none;
     border-radius: 6px;
-    gap: 10px;
 
 
 
+}
+
+
+.discount_img {
+    position: relative;
+    right: 20px;
+    max-width: none;
+}
+
+@media(min-width: 480px) {
+    .discount_img {
+        right: 10px;
+    }
+
+
+}
+
+@media(min-width: 768px) {
+    h2 {
+        margin-bottom: 24px;
+    }
+
+    .discount_img {
+        right: 20px;
+    }
+
+
+    .discount_content {
+        flex-direction: row-reverse;
+        justify-content: space-between;
+        align-items: flex-end;
+        gap: 20px;
+    }
+
+    .discount_inputs {
+        gap: 12px;
+    }
+
+    .discount_form {
+        margin-bottom: 32px;
+        width: 100%;
+
+
+    }
+
+
+
+    .discount_container {
+        padding: 32px 20px 0 20px;
+    }
+
+    input {
+        padding: 16px 20px;
+    }
+
+    .discount_button {
+        padding: 16px 20px;
+    }
+
+
+}
+
+@media(min-width: 1000px) {
+    h2 {
+        margin-bottom: 24px;
+    }
+
+
+}
+
+
+
+
+@media(min-width: 1440px) {
+    h2 {
+        margin-bottom: 24px;
+    }
+
+    .discount_img {
+        right: 0;
+    }
+
+    .discount_form {
+        gap: 32px;
+    }
+
+    .discount_inputs {
+        gap: 16px;
+    }
+
+    .discount_content {
+        gap: 32px;
+    }
+
+    .discount_container {
+        padding: 32px 32px 0 32px;
+    }
+
+    input {
+        padding: 16px 32px;
+    }
+
+    .discount_button {
+        padding: 16px 32px;
+    }
 
 }
