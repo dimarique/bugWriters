@@ -24,9 +24,13 @@
 }
 @media (min-width: 1000px) {
   .categories {
-   display: flex;
-   flex-direction: row;
+     display: flex;
+    flex-direction: row;
+    gap: 30px;
   }
 }
 @media (min-width: 1400px) {
+  .categories{
+   gap: 30px;
+  }
 }

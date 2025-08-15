@@ -1,65 +1,38 @@
+
 import styles from "./CategoriesList.module.css";
-import { Link } from "react-router-dom";
 import CategoryCard from "./CategoryCard";
 import { useSelector, useDispatch } from "react-redux";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { fetchCategories } from "../../redux/slices/categoriesSlice";
 
-// const CategoriesList = () => {
-//   const dispatch = useDispatch();
-
-//   useEffect(() => {
-//     dispatch(fetchCategories());
-//   }, []);
-
-//   const categories = useSelector((state) => state.categories.categories);
-//   const category = categories[0];
-//   const baseUrl = "http://localhost:3333/";     
-//   if (category) {
-//     console.log(category.image);
-
-//     return (
-//       <div className={styles.categories}>
-//         {category && (
-//           <img src={`${baseUrl}${category.image}`} alt={category.title} />
-//         )}
-//         {/* {category && (
-//         <CategoryCard key={category.id} category={category} />
-//       )} */}
-//         {categories.map((category) => (
-//         <CategoryCard key={category.id} category={category} />
-//       ))}
-//       </div>
-//     );
-//   }
-// };
-
-
-const CategoriesList = () => {
+const CategoriesList = ({ limit }) => {
+  const [displayedItems, setDisplayedItems] = useState([]);
+  const categories = useSelector((state) => state.categories.categories);
   const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(fetchCategories());
   }, [dispatch]);
 
-  const categories = useSelector((state) => state.categories.categories);
+  useEffect(() => {
+    if (categories.length > 0) {
+      setDisplayedItems(limit ? categories.slice(0, limit) : categories);
+    }
+  }, [categories, limit]);
 
   return (
     <div className={styles.categories}>
-        {categories.map((category) => {
-          return (
-          <CategoryCard 
-          key={category.id} 
-          // image={category.image}
-          // title={category.title}
-          category={category}
+      {displayedItems.map((category) => (
+        <CategoryCard
+          key={category.id}
+          id={category.id}
+          title={category.title}
+          image={category.image}
         />
-      );
-    })}
-  </div>
-);
+      ))}
+    </div>
+  );
 };
 
-
-
 export default CategoriesList;
+

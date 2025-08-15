@@ -5,12 +5,11 @@ import DiscountForm from "../../components/DiscountForm/DiscountForm.jsx";
 
 
 const Main = () => {
+
   return (
     <div className={styles.main}>
       <Hero />
-
-      <CategoriesList  />
-
+      <CategoriesList limit={4} />
       <DiscountForm />
 
     </div>
