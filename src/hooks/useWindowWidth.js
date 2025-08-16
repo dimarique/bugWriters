@@ -1,12 +1,10 @@
 import { useState, useEffect } from "react";
 
 export const useWindowWidth = () => {
-  const [device, setDevice] = useState(
-    window.innerWidth > 768 ? "desktop" : "mobile",
-  );
+  const [device, setDevice] = useState(window.innerWidth);
   useEffect(() => {
     const handleResize = () => {
-      setDevice(window.innerWidth > 768 ? "desktop" : "mobile");
+      setDevice(window.innerWidth);
     };
 
     window.addEventListener("resize", handleResize);

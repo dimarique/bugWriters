@@ -1,0 +1,25 @@
+.sectionHeader {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 56px;
+
+  h2 {
+    font-size: clamp(2.5rem, 7.3vw, 4rem);
+    margin-right: 20px;
+    margin-bottom: 0;
+  }
+
+  a {
+    padding: 8px 16px;
+    border: 1px solid lightgray;
+    border-radius: 4px;
+  }
+}
+
+.sectionHeader_line {
+  flex: 1;
+  height: 1px;
+  background-color: lightgray;
+}

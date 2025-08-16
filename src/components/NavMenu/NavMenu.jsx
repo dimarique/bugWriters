@@ -4,11 +4,11 @@ import MenuList from "../MenuList/MenuList";
 import { useWindowWidth } from "../../hooks/useWindowWidth";
 
 const NavMenu = ({ menuIsOpen, setMenuIsOpen }) => {
-  const windowsWidth = useWindowWidth();
+  let windowsWidth = useWindowWidth();
   return (
     <>
       <div className={styles.navMenu}>
-        {windowsWidth === "mobile" && (
+        {windowsWidth < 768 && (
           <img
             onClick={() => setMenuIsOpen(true)}
             src={burger}
@@ -16,9 +16,7 @@ const NavMenu = ({ menuIsOpen, setMenuIsOpen }) => {
           />
         )}
       </div>
-      {windowsWidth === "mobile" && (
-        <MenuList menuIsOpen={menuIsOpen} setMenuIsOpen={setMenuIsOpen} />
-      )}
+      <MenuList menuIsOpen={menuIsOpen} setMenuIsOpen={setMenuIsOpen} />
     </>
   );
 };

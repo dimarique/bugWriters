@@ -4,6 +4,7 @@ import { useEffect } from "react";
 import { fetchProducts } from "../../redux/slices/productsSlice.js";
 import ProductCard from "../ProductCard/ProductCard.jsx";
 import { useRandomDiscountProducts } from "../../hooks/useRandomDiscountProducts.js";
+import SectionHeader from "../SectionHeader/SectionHeader.jsx";
 
 const SaleSection = () => {
   const products = useSelector((state) => state.products.products);
