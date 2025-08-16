@@ -4,6 +4,7 @@ import CategoriesList from "../../components/Categories/CategoriesList.jsx";
 import DiscountForm from "../../components/DiscountForm/DiscountForm.jsx";
 import SaleSection from "../../components/SaleSection/SaleSection.jsx";
 import SectionHeader from "../../components/SectionHeader/SectionHeader.jsx";
+import SectionHeaderButton from "../../components/SectionHeaderButton/SectionHeaderButton.jsx";
 import { useWindowWidth } from "../../hooks/useWindowWidth.js";
 
 const Main = () => {
@@ -17,6 +18,7 @@ const Main = () => {
         buttonText={"all categories"}
       />
       <CategoriesList limit={4} />
+      {windowWidth < 480 && <SectionHeaderButton text={"all categories"} />}
       <DiscountForm />
       <SectionHeader
         text={"Sale"}
@@ -24,6 +26,7 @@ const Main = () => {
         buttonText={"all sales"}
       />
       <SaleSection />
+      {windowWidth < 480 && <SectionHeaderButton text={"all sales"} />}
     </div>
   );
 };

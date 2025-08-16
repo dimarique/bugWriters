@@ -1,3 +1,4 @@
+import SectionHeaderButton from "../SectionHeaderButton/SectionHeaderButton";
 import styles from "./SectionHeader.module.css";
 
 const SectionHeader = ({ text, hasButton, buttonText }) => {
@@ -7,7 +8,7 @@ const SectionHeader = ({ text, hasButton, buttonText }) => {
       {hasButton && (
         <>
           <div className={styles.sectionHeader_line}></div>
-          <a href="#">{buttonText}</a>
+          <SectionHeaderButton text={buttonText} />
         </>
       )}
     </div>
