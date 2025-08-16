@@ -40,12 +40,20 @@ input {
     border: 1px solid var(--color-white)
 }
 
+input:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px var(--color-sale);
+
+
+
+}
+
 .discount_inputs input::placeholder {
+    color: var(--text-white);
     font-weight: 500;
     font-size: 18px;
     line-height: 130%;
-    /* vertical-align: middle; */
-    color: var(--text-white);
+
 }
 
 
@@ -56,13 +64,13 @@ input {
     font-size: 18px;
     line-height: 130%;
     padding: 12px 20px;
-    /* text-align: center; */
-    /* vertical-align: middle; */
     border: none;
     border-radius: 6px;
+}
 
 
-
+.discount_button:active {
+    background-color: var(--color-sale);
 }
 
 
