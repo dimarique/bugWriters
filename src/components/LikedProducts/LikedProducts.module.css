@@ -1,0 +1,39 @@
+.likedProducts_container {
+    margin-top: 32px;
+}
+
+.likedProducts_items {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    margin-top: 24px;
+}
+
+
+@media(min-width: 480px) {
+    .likedProducts_items {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media(min-width: 768px) {
+    .likedProducts_items {
+        margin-top: 32px;
+    }
+}
+
+@media(min-width: 1000px) {
+    .likedProducts_items {
+        grid-template-columns: repeat(4, 1fr);
+
+    }
+
+
+}
+
+@media(min-width: 1440px) {
+    .likedProducts_items {
+        margin-top: 40px;
+        gap: 32px;
+    }
+}
