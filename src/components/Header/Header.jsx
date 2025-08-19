@@ -19,7 +19,9 @@ const Header = ({ setMenuIsOpen, menuIsOpen }) => {
       </div>
       {windowWidth > 768 && <DesktopNavMenu />}
       <div className={styles.icons_wrapper}>
-        <FavoritesIcon />
+        <Link to='/favorites'>
+          <FavoritesIcon />
+        </Link>
         <CartIcon />
         <NavMenu menuIsOpen={menuIsOpen} setMenuIsOpen={setMenuIsOpen} />
       </div>

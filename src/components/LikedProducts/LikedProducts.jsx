@@ -1,52 +1,61 @@
 import React from 'react'
 import styles from './LikedProducts.module.css'
-import ProductCard from '../ProductCard/ProductCard'
-import { useEffect } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
-import { fetchProducts } from '../../redux/slices/productsSlice'
+// import ProductCard from '../ProductCard/ProductCard'
+// import { useEffect } from 'react'
+// import { useDispatch, useSelector } from 'react-redux'
+// import { fetchProducts } from '../../redux/slices/productsSlice'
+import ProductsContainer from '../ProductsContainer/ProductsContainer';
 
 const LikedProducts = () => {
 
-    const dispatch = useDispatch();
-
-    // const products = useSelector(state => state.products.products);
-    // const status = useSelector(state => state.products.status)
-    // const error = useSelector(state => state.products.error)
+    // const dispatch = useDispatch();
 
 
-    const { products, status, error } = useSelector(state => state.products)
+    // const { products, status, error } = useSelector(state => state.products)
 
-    useEffect(() => {
-        if (status === "idle" || status === 'failed') dispatch(fetchProducts())
-    }, [status, dispatch])
+    // useEffect(() => {
+    //     if (status === "idle") dispatch(fetchProducts())
+    // }, [status])
 
     return (
-        <div className={`${styles.likedProducts_container} side_padding bottom_margin`}>
-            <h2>Liked products</h2>
+        <>
+            <div className={`${styles.likedProducts_breadcrumbs} side_padding`}>Хлебные крошки</div>
 
-            <div>filter</div>
 
-            {status === 'loading' && <p>Loading...</p>}
-            {status === 'failed' && <p>{error}</p>}
-            {status === 'succeeded' && products.length === 0 && <p>Empty</p>}
+            {/* <div className={`${styles.likedProducts_container} side_padding bottom_margin`}>
+                <h2>Liked products</h2>
 
-            <div className={styles.likedProducts_items}>
+                <div>filter</div>
 
-                {products.map((product) => {
-                    return (
+                {status === 'loading' && <p>Loading...</p>}
+                {status === 'failed' && <p>{error}</p>}
+                {status === 'succeeded' && (
+                      <div className={styles.likedProducts_items}> {
+                        products.length === 0 ? (<p>Empty</p>) : (
+                             products.map((product) => {
+                        return (
 
-                        <ProductCard
-                            key={product.id}
-                            title={product.title}
-                            price={product.price}
-                            image={product.image}
-                            discont_price={product.discont_price} />
-                    )
-                })}
+                            <ProductCard
+                                key={product.id}
+                                title={product.title}
+                                price={product.price}
+                                image={product.image}
+                                discont_price={product.discont_price} />
+                        )
+                    })
+                        )
 
-            </div>
 
-        </div>
+                      }  </div>
+                )}
+                
+                
+        
+
+            </div> */}
+
+            <ProductsContainer title="Liked products" />
+        </>
     )
 }
 

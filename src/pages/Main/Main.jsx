@@ -6,13 +6,12 @@ import SaleSection from "../../components/SaleSection/SaleSection.jsx";
 import SectionHeader from "../../components/SectionHeader/SectionHeader.jsx";
 import SectionHeaderButton from "../../components/SectionHeaderButton/SectionHeaderButton.jsx";
 import { useWindowWidth } from "../../hooks/useWindowWidth.js";
-import LikedProducts from "../../components/LikedProducts/LikedProducts.jsx";
+
 
 const Main = () => {
   let windowWidth = useWindowWidth();
   return (
     <div className={styles.main}>
-      <LikedProducts />
       <Hero />
       <SectionHeader
         text={"Categories"}

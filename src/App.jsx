@@ -8,6 +8,8 @@ import store from "./redux/store.js";
 import Footer from "./components/Footer/Footer.jsx";
 import Main from "./pages/Main/Main.jsx";
 import Product from "./pages/Product/Product.jsx";
+import Favorites from './components/LikedProducts/LikedProducts.jsx'
+
 
 function App() {
   const [menuIsOpen, setMenuIsOpen] = useState(false);
@@ -20,6 +22,7 @@ function App() {
             <Route path="/main" element={<Main />} />
             <Route path="/categories" element={<CategoriesPage />} />
             <Route path="/product" element={<Product />} />
+            <Route path="/favorites" element={<Favorites />} />
           </Routes>
           <Footer />
         </div>
