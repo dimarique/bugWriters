@@ -1,4 +1,5 @@
 import styles from "./MenuList.module.css";
+import { Link } from "react-router-dom";
 import close from "../../assets/x.svg";
 const MenuList = ({ menuIsOpen, setMenuIsOpen }) => {
   return (
@@ -7,7 +8,7 @@ const MenuList = ({ menuIsOpen, setMenuIsOpen }) => {
       <nav>
         <ul>
           <li>
-            <a href="">Main Page</a>
+            <Link to="/main">Main Page</Link>
           </li>
           <li>
             <a href="">Categories</a>
@@ -16,7 +17,7 @@ const MenuList = ({ menuIsOpen, setMenuIsOpen }) => {
             <a href="">All products</a>
           </li>
           <li>
-            <a href="">All sales</a>
+            <Link to="/sales">All sales</Link>
           </li>
         </ul>
       </nav>

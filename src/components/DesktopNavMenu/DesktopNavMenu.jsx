@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import styles from "./DesktopNavMenu.module.css";
 
 const DesktopNavMenu = () => {
@@ -9,7 +10,7 @@ const DesktopNavMenu = () => {
       <nav>
         <ul>
           <li>
-            <a href="">Main Page</a>
+            <Link to="/main">Main Page</Link>
           </li>
           <li>
             <a href="">Categories</a>
@@ -18,7 +19,7 @@ const DesktopNavMenu = () => {
             <a href="">All products</a>
           </li>
           <li>
-            <a href="">All sales</a>
+            <Link to="/sales"> All sales </Link>
           </li>
         </ul>
       </nav>

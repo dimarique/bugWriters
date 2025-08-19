@@ -19,7 +19,7 @@ const SaleSection = () => {
     <div className={`${styles.saleSection} side_padding`}>
       {randomItems.map((product) => (
         <ProductCard
-          key={self.crypto.randomUUID()}
+          key={product.id}
           id={product.id}
           title={product.title}
           price={product.price}
