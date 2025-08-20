@@ -4,7 +4,7 @@ import style from "./CategoryCard.module.css";
 import { Link } from "react-router-dom";
 
 const CategoryCard = ({ id, categoryTitle, image }) => {
-  const baseUrl = "http://localhost:3333/";
+  const baseUrl = import.meta.env.VITE_API_URL;
   return (
     <div className={style.categoryCard}>
       <Link to={`/categories/${id}`} className={style.categoryCard_link}>
