@@ -2,7 +2,9 @@ import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 export const fetchProducts = createAsyncThunk(
   "products/fetchProducts",
   async () => {
-    const response = await fetch("http://localhost:3333/products/all");
+    const response = await fetch(
+      `${import.meta.env.VITE_API_URL}/products/all`,
+    );
     const products = await response.json();
     return products;
   },
