@@ -7,6 +7,7 @@ import SectionHeader from "../../components/SectionHeader/SectionHeader.jsx";
 import SectionHeaderButton from "../../components/SectionHeaderButton/SectionHeaderButton.jsx";
 import { useWindowWidth } from "../../hooks/useWindowWidth.js";
 
+
 const Main = () => {
   let windowWidth = useWindowWidth();
   return (

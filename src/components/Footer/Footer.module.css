@@ -1,4 +1,8 @@
-.footer_container {}
+.footer_container {
+    h2 {
+        margin-bottom: 24px;
+    }
+}
 
 .footer_content {
     display: grid;
@@ -74,4 +78,18 @@
         padding: 32px;
         gap: 16px;
     }
+
+    h2 {
+        margin-bottom: 32px;
+    }
+}
+
+
+
+@media(min-width: 1440px) {
+    h2 {
+        margin-bottom: 40px;
+    }
+
+
 }

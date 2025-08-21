@@ -10,12 +10,12 @@ const ProductCard = ({ title, price, discont_price, image }) => {
     <div className={styles.productCard}>
       <div className={styles.productCard_top}>
         <DiscountAmountBage price={price} discont_price={discont_price} />
-        <span className={styles.productCard_favorite}>
+        <a className={styles.productCard_favorite}>
           <img src={heart_filled} alt="" />
-        </span>
-        <span className={styles.productCard_cart}>
+        </a>
+        <a className={styles.productCard_cart}>
           <img src={cart_filled} alt="" />
-        </span>
+        </a>
         <img src={`${baseUrl}${image}`} alt="" />
       </div>
 
