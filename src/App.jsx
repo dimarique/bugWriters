@@ -28,7 +28,6 @@ function App() {
             <Route path="/categories" element={<CategoriesPage />} />
             <Route path="/product" element={<Product />} />
             <Route path="/sales" element={<Sales />} />
-
             <Route path="/favorites" element={<Favorites />} />
             <Route path="/products" element={<Products />} />
             {/* <Route path="*" element={<NotFound />}/> */}

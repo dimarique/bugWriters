@@ -1,0 +1,4 @@
+.filterByPrice {
+  display: flex;
+  flex-direction: row;
+}
