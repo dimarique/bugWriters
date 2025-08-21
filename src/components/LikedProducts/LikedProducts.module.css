@@ -8,8 +8,8 @@
 }
 
 .likedProducts_items {
-    display: grid;
-    grid-template-columns: 1fr;
+    display: flex;
+    flex-direction: column;
     gap: 20px;
 
 }
@@ -21,7 +21,8 @@
 
 @media(min-width: 480px) {
     .likedProducts_items {
-        grid-template-columns: repeat(2, 1fr);
+        flex-direction: row;
+        flex-wrap: wrap;
     }
 }
 
@@ -36,11 +37,6 @@
 }
 
 @media(min-width: 1000px) {
-    .likedProducts_items {
-        grid-template-columns: repeat(4, 1fr);
-
-    }
-
     .likedProducts_container {
         margin-top: 40px;
     }
@@ -54,7 +50,6 @@
 
 @media(min-width: 1440px) {
     .likedProducts_items {
-
         gap: 32px;
     }
 
