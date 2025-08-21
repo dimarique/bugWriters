@@ -12,12 +12,14 @@ const ProductCard = ({ title, price, discont_price, image }) => {
         {discont_price && (
           <DiscountAmountBage price={price} discont_price={discont_price} />
         )}
-        <span className={styles.productCard_favorite}>
+        {/* <span className={styles.productCard_favorite}> */}
+        {/* <DiscountAmountBage price={price} discont_price={discont_price} /> */}
+        <a className={styles.productCard_favorite}>
           <img src={heart_filled} alt="" />
-        </span>
-        <span className={styles.productCard_cart}>
+        </a>
+        <a className={styles.productCard_cart}>
           <img src={cart_filled} alt="" />
-        </span>
+        </a>
         <img src={`${baseUrl}${image}`} alt="" />
       </div>
 

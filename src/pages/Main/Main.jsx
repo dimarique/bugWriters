@@ -8,6 +8,7 @@ import SectionHeaderButton from "../../components/SectionHeaderButton/SectionHea
 import { useWindowWidth } from "../../hooks/useWindowWidth.js";
 import DiscountedProducts from "../../components/DiscountedProducts/DiscountedProducts.jsx";
 
+
 const Main = () => {
   let windowWidth = useWindowWidth();
   return (

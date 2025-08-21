@@ -10,7 +10,7 @@
     h2 {
         text-align: center;
         color: var(--text-white);
-        font-size: 55px;
+        margin-bottom: 24px;
     }
 
 }
