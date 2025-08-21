@@ -67,12 +67,12 @@
 
 @media screen and (min-width: 480px) {
   .productCard {
-    /* max-width: 46%; */
+    max-width: 46%;
   }
 }
 
 @media screen and (min-width: 1000px) {
   .productCard {
-    /* max-width: 23%; */
+    max-width: 23%;
   }
 }
