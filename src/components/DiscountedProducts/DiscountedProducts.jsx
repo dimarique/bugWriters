@@ -4,6 +4,7 @@ import styles from "./DiscountedProducts.module.css";
 import { fetchProducts } from "../../redux/slices/productsSlice";
 import ProductCard from "../ProductCard/ProductCard";
 import SectionHeader from "../SectionHeader/SectionHeader";
+import Filters from "../Filters/Filters";
 
 const DiscountedProducts = () => {
   const products = useSelector((state) => state.products.products);
@@ -14,6 +15,7 @@ const DiscountedProducts = () => {
   return (
     <>
       <SectionHeader text={"DiscountedProducts"} hasButton={false} />
+      <Filters />
       <div className={styles.discountedProducts}>
         {products.map(
           (product) =>
