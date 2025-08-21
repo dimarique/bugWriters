@@ -3,15 +3,17 @@ import React from 'react'
 const SortProducts = () => {
 
   return (
-   <div>
-      <form>
-        <label htmlFor="sort">Sort by: </label>
+    <div>
+        <form >
+        <label for ="sort">Sorted</label>
         <select id="sort" onChange={}>
-          <option value="priceAsc">Price: Low to High</option>
-          <option value="priceDesc">Price: High to Low</option>
-          <option value="name">Name (A-Z)</option>
+           <option value="nameAsc">Name: А → Z</option>
+        <option value="nameDesc">Name: Z → А</option>
+        <option value="priceAsc">Price: Low → High</option>
+        <option value="priceDesc">Price: High → Low</option>
+        <option value="popularity">Popularity</option>
         </select>
-      </form>
+        </form>
     </div>
   )
 }
