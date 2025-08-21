@@ -1,10 +1,22 @@
 import styles from "./ProductCard.module.css";
 import heart_filled from "../../assets/heart_filled.svg";
+import heart_favorite from '../../assets/heart_favorite.svg'
 import cart_filled from "../../assets/cart_filled.svg";
 import DiscountAmountBage from "../DiscountAmountBage/DiscountAmountBage";
 
-const ProductCard = ({ title, price, discont_price, image }) => {
+import { useDispatch, useSelector } from "react-redux";
+import { switchFavorites } from "../../redux/slices/favoritesSlice";
+
+const ProductCard = ({id, title, price, discont_price, image }) => {
   const baseUrl = import.meta.env.VITE_API_URL;
+
+const dispatch = useDispatch()
+
+const isFav = useSelector(state => state.favorites.favProducts.some(product => product.id === id)) 
+
+const buttonHeandler = ()=>{
+  dispatch(switchFavorites({id, title, price, discont_price, image}))
+}
 
   return (
     <div className={styles.productCard}>
@@ -12,9 +24,16 @@ const ProductCard = ({ title, price, discont_price, image }) => {
         {discont_price && (
           <DiscountAmountBage price={price} discont_price={discont_price} />
         )}
-        <a className={styles.productCard_favorite}>
-          <img src={heart_filled} alt="" />
+
+
+
+        <a className={styles.productCard_favorite} onClick={buttonHeandler}>
+          <img src={isFav ? heart_favorite : heart_filled} alt="favorite" />
         </a>
+
+
+
+
         <a className={styles.productCard_cart}>
           <img src={cart_filled} alt="" />
         </a>
