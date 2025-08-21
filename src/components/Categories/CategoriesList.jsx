@@ -26,7 +26,7 @@ const CategoriesList = ({ limit }) => {
         <CategoryCard
           key={category.id}
           id={category.id}
-          title={category.title}
+          categoryTitle={category.title}
           image={category.image}
         />
       ))}
