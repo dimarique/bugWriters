@@ -6,6 +6,7 @@ import SaleSection from "../../components/SaleSection/SaleSection.jsx";
 import SectionHeader from "../../components/SectionHeader/SectionHeader.jsx";
 import SectionHeaderButton from "../../components/SectionHeaderButton/SectionHeaderButton.jsx";
 import { useWindowWidth } from "../../hooks/useWindowWidth.js";
+import DiscountedProducts from "../../components/DiscountedProducts/DiscountedProducts.jsx";
 
 
 const Main = () => {
@@ -13,6 +14,7 @@ const Main = () => {
   return (
     <div className={styles.main}>
       <Hero />
+      {/* <DiscountedProducts /> */}
       <SectionHeader
         text={"Categories"}
         hasButton={windowWidth < 480 ? false : true}

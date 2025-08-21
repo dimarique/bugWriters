@@ -4,6 +4,7 @@ import { useEffect } from "react";
 import { fetchProducts } from "../../redux/slices/productsSlice.js";
 import ProductCard from "../ProductCard/ProductCard.jsx";
 import { useRandomDiscountProducts } from "../../hooks/useRandomDiscountProducts.js";
+import Filters from "../Filters/Filters.jsx";
 
 const SaleSection = () => {
   const products = useSelector((state) => state.products.products);
@@ -19,7 +20,7 @@ const SaleSection = () => {
     <div className={`${styles.saleSection} side_padding`}>
       {randomItems.map((product) => (
         <ProductCard
-          key={self.crypto.randomUUID()}
+          key={product.id}
           id={product.id}
           title={product.title}
           price={product.price}
