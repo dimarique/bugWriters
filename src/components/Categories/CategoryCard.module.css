@@ -24,7 +24,6 @@ line-height: 130%;
 text-align: center;
 }
 
-
 @media (min-width: 480px) {
    .categoryCard_link img {
   aspect-ratio: 2 /2;
