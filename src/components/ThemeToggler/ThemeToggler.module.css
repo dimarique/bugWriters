@@ -1,10 +1,13 @@
 .themeToggler {
   display: inline-block;
+
+  input[type="checkbox"] {
+    display: none;
+  }
+
+
 }
 
-input[type="checkbox"] {
-  display: none;
-}
 
 .theme_toggler {
   position: relative;
@@ -30,7 +33,7 @@ input[type="checkbox"] {
   transition: transform 0.3s ease;
 }
 
-input[type="checkbox"]:checked + .theme_toggler::after {
+input[type="checkbox"]:checked+.theme_toggler::after {
   transform: translateX(22px);
   background-color: #8c8c8c;
 }
@@ -59,16 +62,16 @@ input[type="checkbox"]:checked + .theme_toggler::after {
   visibility: visible;
 }
 
-input[type="checkbox"]:checked + .theme_toggler .sun {
+input[type="checkbox"]:checked+.theme_toggler .sun {
   opacity: 1;
   visibility: visible;
 }
 
-input[type="checkbox"]:checked + .theme_toggler .moon {
+input[type="checkbox"]:checked+.theme_toggler .moon {
   opacity: 0;
   visibility: hidden;
 }
 
-input[type="checkbox"]:checked + .theme_toggler {
+input[type="checkbox"]:checked+.theme_toggler {
   background-color: #ffffff;
 }

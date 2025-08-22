@@ -16,8 +16,14 @@ export const productsSlice = createSlice({
     products: [],
     status: "idle",
     error: "",
+    showDiscount: false,
   },
-  reducers: {},
+  reducers: {
+    showDiscount(state, action) {
+      // is waiting for true/false
+      state.showDiscount = action.payload
+    }
+  },
   extraReducers: (builder) => {
     builder
       .addCase(fetchProducts.pending, (state, action) => {
@@ -33,4 +39,5 @@ export const productsSlice = createSlice({
       });
   },
 });
+export const { showDiscount } = productsSlice.actions;
 export default productsSlice.reducer;
