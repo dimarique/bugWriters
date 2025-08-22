@@ -4,25 +4,33 @@ import ProductCard from '../ProductCard/ProductCard'
 import { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { fetchProducts } from '../../redux/slices/productsSlice'
+import FilterDiscount from '../FilterDiscount/FilterDiscount'
 const AllProducts = () => {
     const dispatch = useDispatch();
 
-    const { products, status, error } = useSelector(state => state.products)
+    const { products, status, error, showDiscount } = useSelector(state => state.products)
     useEffect(() => {
         if (status === "idle") dispatch(fetchProducts())
     }, [status])
+
+    const visibleDiscountProducts = showDiscount ? products.filter(product => product.discont_price) : products;
+
+
+
     return (
         <>
             {/* <div className={`${styles.allProducts_breadcrumbs} side_padding`}>Хлебные крошки</div> */}
             <div className={`${styles.allProducts_container} side_padding bottom_margin`}>
                 <h2>All products</h2>
-                <div>filter</div>
+                <div>filter
+                    <FilterDiscount />
+                </div>
                 {status === 'loading' && <p>Loading...</p>}
                 {status === 'failed' && <p>{error}</p>}
                 {status === 'succeeded' && (
                     <div className={styles.allProducts_items}> {
-                        products.length === 0 ? (<p>Empty</p>) : (
-                            products.map((product) => {
+                        visibleDiscountProducts.length === 0 ? (<p>Empty</p>) : (
+                            visibleDiscountProducts.map((product) => {
                                 return (
                                     <ProductCard
                                         key={product.id}
