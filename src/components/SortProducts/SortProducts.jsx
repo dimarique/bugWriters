@@ -1,21 +1,30 @@
-import React from 'react'
+import { useDispatch } from "react-redux";
+import { compareProducts } from "../../redux/slices/productsSlice";
+import style from "./SortProducts.module.css";
 
 const SortProducts = () => {
+  const dispatch = useDispatch();
+
+  const handleSortChange = (e) => {
+    dispatch(compareProducts({ sortBy: e.target.value }));//вызывает action для сортировки
+  };
 
   return (
-    <div>
-        <form >
-        <label for ="sort">Sorted</label>
-        <select id="sort" onChange={}>
-           <option value="nameAsc">Name: А → Z</option>
-        <option value="nameDesc">Name: Z → А</option>
-        <option value="priceAsc">Price: Low → High</option>
-        <option value="priceDesc">Price: High → Low</option>
-        <option value="popularity">Popularity</option>
+    <div className={style.sortProducts}>
+      <form>
+        <label htmlFor="sort">Sorted</label>
+        <select id="sort" onChange={handleSortChange}>
+          <option value="">Select sorting</option>
+          <option value="nameAsc">Name: A to Z</option>
+          <option value="nameDesc">Name: Z to A</option>
+          <option value="priceAsc">Price: Low to high</option>
+          <option value="priceDesc">Price: High to low</option>
+        
         </select>
-        </form>
+      </form>
     </div>
-  )
-}
+  );
+};
 
-export default SortProducts
+export default SortProducts;
+;
