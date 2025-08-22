@@ -7,8 +7,8 @@
 }
 
 .allProducts_items {
-    display: grid;
-    grid-template-columns: 1fr;
+    display: flex;
+    flex-direction: column;
     gap: 20px;
 }
 
@@ -18,7 +18,8 @@
 } */
 @media(min-width: 480px) {
     .allProducts_items {
-        grid-template-columns: repeat(2, 1fr);
+        flex-direction: row;
+        flex-wrap: wrap;
     }
 }
 

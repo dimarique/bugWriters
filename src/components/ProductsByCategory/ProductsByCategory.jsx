@@ -38,6 +38,7 @@ function ProductsByCategory() {
         {categoryProducts.map(({ id, title, price, discont_price, image }) => (
           <ProductCard
             key={id}
+            id={id}
             title={title}
             price={price}
             discont_price={discont_price}
