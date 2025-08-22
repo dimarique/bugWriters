@@ -31,6 +31,7 @@ export const productsSlice = createSlice({
     products: [],
     status: "idle",
     error: "",
+    showDiscount: false,
   },
   reducers: {
     /**
@@ -44,6 +45,10 @@ export const productsSlice = createSlice({
     filterByPrice: (state, action) => {
       console.log(current(state.products));
       console.log(action.payload);
+    },
+    showDiscount(state, action) {
+      // is waiting for true/false
+      state.showDiscount = action.payload;
     },
   },
   extraReducers: (builder) => {
@@ -61,5 +66,5 @@ export const productsSlice = createSlice({
       });
   },
 });
-export const { filterByPrice } = productsSlice.actions;
+export const { filterByPrice, showDiscount } = productsSlice.actions;
 export default productsSlice.reducer;
