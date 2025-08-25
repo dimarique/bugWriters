@@ -9,11 +9,10 @@ import Footer from "./components/Footer/Footer.jsx";
 import Main from "./pages/Main/Main.jsx";
 import Product from "./pages/Product/Product.jsx";
 import Sales from "./pages/Sales/Sales.jsx";
-
 import Favorites from "./pages/Favorites/Favorites.jsx";
 import Products from "./pages/Products/Products.jsx";
-
 import ProductsByCategory from "./components/ProductsByCategory/ProductsByCategory.jsx";
+import NotFound from "./components/NotFound/NotFound.jsx";
 
 function App() {
   const [menuIsOpen, setMenuIsOpen] = useState(false);
@@ -28,12 +27,10 @@ function App() {
             <Route path="/categories" element={<CategoriesPage />} />
             <Route path="/product" element={<Product />} />
             <Route path="/sales" element={<Sales />} />
-
             <Route path="/favorites" element={<Favorites />} />
             <Route path="/products" element={<Products />} />
-            {/* <Route path="*" element={<NotFound />}/> */}
-
             <Route path="/categories/:Id" element={<ProductsByCategory />} />
+            <Route path="*" element={<NotFound />} />
           </Routes>
           <Footer />
         </div>
