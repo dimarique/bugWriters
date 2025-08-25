@@ -13,10 +13,10 @@ const DesktopNavMenu = () => {
             <Link to="/main">Main Page</Link>
           </li>
           <li>
-            <a href="">Categories</a>
+            <Link to="/categories">Categories</Link>
           </li>
           <li>
-            <a href="">All products</a>
+            <Link to="/products">All products</Link>
           </li>
           <li>
             <Link to="/sales"> All sales </Link>
