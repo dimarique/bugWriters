@@ -1,0 +1,18 @@
+.filterByPrice {
+  display: flex;
+  flex-direction: row;
+  font-weight: 600;
+}
+
+span {
+  font-size: 20px;
+  align-self: center;
+  padding: 6px;
+}
+
+.input_price {
+  border: 1px solid lightgrey;
+  border-radius: 6px;
+  max-width: 112px;
+  padding: 8px 16px;
+}

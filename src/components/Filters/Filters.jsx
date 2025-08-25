@@ -1,12 +1,14 @@
+import FilterByPrice from "../FilterByPrice/FilterByPrice";
+import FilterDiscount from "../FilterDiscount/FilterDiscount";
+import SortProducts from "../SortProducts/SortProducts";
 import styles from "./Filters.module.css";
 
 const Filters = () => {
   return (
-    <div className={styles.filters}>
-      <form action="">
-        <input type="number" placeholder="from" />
-        <input type="number" placeholder="to" />
-      </form>
+    <div className={`${styles.filters} side_padding`}>
+      <FilterByPrice />
+      <FilterDiscount />
+      <SortProducts />
     </div>
   );
 };
