@@ -1,22 +1,30 @@
 import styles from "./FilterByPrice.module.css";
-import { useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { filterByPrice } from "../../redux/slices/productsSlice";
+import { useDispatch } from "react-redux";
+import { setPriceFrom, setPriceTo } from "../../redux/slices/productsSlice";
 
 const FilterByPrice = () => {
   const dispatch = useDispatch();
-  const [input, setInput] = useState({});
 
-  const handleInputChange = (e) =>
-    setInput((old) => ({ ...old, [e.target.id]: Number(e.target.value) }));
-  // console.log(input);
-  const hz = () => {
-    dispatch(filterByPrice(input));
-  };
+  const handleFromInputChange = (e) => dispatch(setPriceFrom(e.target.value));
+  const handleToInputChange = (e) => dispatch(setPriceTo(e.target.value));
+
   return (
-    <div className={styles.filterByPrice} onChange={handleInputChange}>
-      <input onChange={hz} id="price_from" type="number" placeholder="from" />
-      <input onChange={hz} id="price_to" type="number" placeholder="to" />
+    <div className={styles.filterByPrice}>
+      <span>Price</span>
+      <input
+        className={styles.input_price}
+        onChange={handleFromInputChange}
+        id="price_from"
+        type="number"
+        placeholder="from"
+      />
+      <input
+        className={styles.input_price}
+        onChange={handleToInputChange}
+        id="price_to"
+        type="number"
+        placeholder="to"
+      />
     </div>
   );
 };

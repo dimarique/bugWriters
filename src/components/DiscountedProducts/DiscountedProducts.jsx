@@ -8,28 +8,31 @@ import Filters from "../Filters/Filters";
 
 const DiscountedProducts = () => {
   const products = useSelector((state) => state.products.products);
+  const discountedProducts = useSelector(
+    (state) => state.products.filteredByPriceProducts,
+  );
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(fetchProducts());
   }, [dispatch]);
+
   return (
     <>
       <SectionHeader text={"DiscountedProducts"} hasButton={false} />
       <Filters />
       <div className={styles.discountedProducts}>
-        {products.map(
-          (product) =>
-            product.discont_price && (
-              <ProductCard
-                key={product.id}
-                id={product.id}
-                title={product.title}
-                price={product.price}
-                image={product.image}
-                discont_price={product.discont_price}
-              />
-            ),
-        )}
+        {discountedProducts
+          .filter((product) => product.discont_price)
+          .map((product) => (
+            <ProductCard
+              key={product.id}
+              id={product.id}
+              title={product.title}
+              price={product.price}
+              image={product.image}
+              discont_price={product.discont_price}
+            />
+          ))}
       </div>
     </>
   );

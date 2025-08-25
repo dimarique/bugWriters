@@ -1,12 +1,4 @@
 import { createSlice, createAsyncThunk, current } from "@reduxjs/toolkit";
-/**
- * Thunk for fetching all products from the API.
- *
- * @async
- * @function fetchProducts
- * @returns {Promise<Object[]>} Array of product objects
- * @throws {Error} If the server response is not ok
- */
 export const fetchProducts = createAsyncThunk(
   "products/fetchProducts",
   async () => {
@@ -18,33 +10,37 @@ export const fetchProducts = createAsyncThunk(
     return products;
   },
 );
-/**
- * Slice for managing products state.
- *
- * @property {Object[]} products - List of products
- * @property {"idle"|"loading"|"succeeded"|"failed"} status - Current request status
- * @property {string} error - Error message if the request failed
- */
 export const productsSlice = createSlice({
   name: "products",
   initialState: {
     products: [],
+    filteredByPriceProducts: [],
+    priceFrom: 0,
+    priceTo: 3000000,
     status: "idle",
     error: "",
     showDiscount: false,
   },
   reducers: {
-    /**
-     * Filters products by price range.
-     *
-     * @param {Object} state - Current slice state
-     * @param {Object} action - Action with filter data
-     * @param {number} action.payload.from - Lower price limit
-     * @param {number} action.payload.to - Upper price limit
-     */
-    filterByPrice: (state, action) => {
-      console.log(current(state.products));
-      console.log(action.payload);
+    setPriceFrom: (state, action) => {
+      state.priceFrom = action.payload;
+      state.filteredByPriceProducts = state.products.filter((product) => {
+        return (
+          product.price >= state.priceFrom &&
+          product.price <= (state.priceTo || 3000000)
+        );
+      });
+      console.log(state.filteredByPriceProducts);
+    },
+    setPriceTo: (state, action) => {
+      state.priceTo = action.payload;
+      state.filteredByPriceProducts = state.products.filter((product) => {
+        return (
+          product.price <= state.priceTo &&
+          product.price >= (state.priceFrom || 0)
+        );
+      });
+      console.log(state.filteredByPriceProducts);
     },
     showDiscount(state, action) {
       // is waiting for true/false
@@ -59,6 +55,7 @@ export const productsSlice = createSlice({
       .addCase(fetchProducts.fulfilled, (state, action) => {
         state.status = "succeeded";
         state.products = action.payload;
+        state.filteredByPriceProducts = action.payload;
       })
       .addCase(fetchProducts.rejected, (state, action) => {
         state.status = "failed";
@@ -66,5 +63,6 @@ export const productsSlice = createSlice({
       });
   },
 });
-export const { filterByPrice, showDiscount } = productsSlice.actions;
+export const { setPriceFrom, setPriceTo, filterByPrice, showDiscount } =
+  productsSlice.actions;
 export default productsSlice.reducer;
