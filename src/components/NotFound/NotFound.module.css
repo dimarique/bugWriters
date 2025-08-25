@@ -1,0 +1,37 @@
+.NotFound {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1.5rem;
+  margin: 5rem 0;
+  padding: 0 1.3rem;
+}
+.NotFound_text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1rem;
+}
+.NotFound_text p {
+  font-size: 18px; 
+  color: #8b8b8b;
+  line-height: 130%;
+  text-align: center;
+}
+.NotFound_link {
+  font-size: 18px;
+  text-decoration: none;
+  transition: color 0.3s;
+  background: #92a134;
+  padding: 12px 52px;
+  color: white;
+  border-radius: 6px;
+}
+@media (min-width: 768px) {
+    .NotFound_text p {
+    font-size: 20px;
+  }
+}
