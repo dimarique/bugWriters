@@ -1,7 +1,10 @@
 .filters {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   max-width: 100%;
   align-items: center;
-  justify-content: start;
+  align-self: start;
+  justify-content: space-around;
+  gap: 1rem;
 }

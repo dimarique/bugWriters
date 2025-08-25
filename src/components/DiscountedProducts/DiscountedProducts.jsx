@@ -18,7 +18,7 @@ const DiscountedProducts = () => {
 
   return (
     <>
-      <SectionHeader text={"DiscountedProducts"} hasButton={false} />
+      <SectionHeader text={"Discounted Products"} hasButton={false} />
       <Filters />
       <div className={styles.discountedProducts}>
         {discountedProducts

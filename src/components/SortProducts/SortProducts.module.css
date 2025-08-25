@@ -1,0 +1,8 @@
+.sortProducts {
+  display: flex;
+  align-items: center;
+}
+.sortProducts label {
+  font-size: 18px;
+  margin-right: 12px;
+}
