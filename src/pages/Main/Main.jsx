@@ -8,28 +8,32 @@ import SectionHeaderButton from "../../components/SectionHeaderButton/SectionHea
 import { useWindowWidth } from "../../hooks/useWindowWidth.js";
 import DiscountedProducts from "../../components/DiscountedProducts/DiscountedProducts.jsx";
 
-
 const Main = () => {
   let windowWidth = useWindowWidth();
   return (
     <div className={styles.main}>
       <Hero />
-      {/* <DiscountedProducts /> */}
       <SectionHeader
         text={"Categories"}
         hasButton={windowWidth < 480 ? false : true}
         buttonText={"all categories"}
+        linkTo="categories"
       />
       <CategoriesList limit={4} />
-      {windowWidth < 480 && <SectionHeaderButton text={"all categories"} />}
+      {windowWidth < 480 && (
+        <SectionHeaderButton text={"all categories"} linkTo="categories" />
+      )}
       <DiscountForm />
       <SectionHeader
         text={"Sale"}
         hasButton={windowWidth < 480 ? false : true}
         buttonText={"all sales"}
+        linkTo="sales"
       />
       <SaleSection />
-      {windowWidth < 480 && <SectionHeaderButton text={"all sales"} />}
+      {windowWidth < 480 && (
+        <SectionHeaderButton text={"all sales"} linkTo="sales" />
+      )}
     </div>
   );
 };
