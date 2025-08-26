@@ -9,7 +9,11 @@
 .productSignleCard_header {
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+
 }
+
 
 .productSignleCard_title {
     font-size: 28px;
@@ -108,14 +112,19 @@ height: 220; */
     padding: 4px 8px;
     border-radius: 6px;
     position: absolute;
+
     top: 16px;
     right: 16px;
-    /* width: 100%; */
+
+
 
     width: 58px;
     height: 31px;
 
 }
+
+
+
 
 
 .productSingleCard_sale_label p {

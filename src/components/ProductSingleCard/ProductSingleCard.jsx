@@ -1,29 +1,70 @@
 import React from 'react'
 import styles from './ProductSingleCard.module.css'
-import heardWhite from '../../assets/icons/heard_white_filled.svg'
-import singleProductImg from '../../assets/imageProductSingleCard/singleProduct.jpg'
+import heart_filled from '../../assets/heart_filled.svg'
+import heart_favorite from '../../assets/heart_favorite.svg'
 import DescriptionSingleProduct from "../DescriptionSingleProduct/DescriptionSingleProduct.jsx";
-
-
-
+import { fetchProducts } from '../../redux/slices/productsSlice.js';
+import { useEffect } from 'react';
+import { useParams } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import DiscountAmountBage from '../DiscountAmountBage/DiscountAmountBage.jsx';
+import { switchFavorites } from '../../redux/slices/favoritesSlice.js';
 const ProductSingleCard = () => {
+
+  const baseUrl = import.meta.env.VITE_API_URL;
+
+  const params = useParams();
+  const id = params.id;
+
+  const dispatch = useDispatch();
+
+  const products = useSelector((state) => state.products.products)
+
+
+
+  useEffect(() => {
+    if (!products.length) {
+      dispatch(fetchProducts());
+    }
+  }, [products.length])
+
+  const product = products.find((product) => product.id === +id)
+  const { title, price, discont_price, description, image } = product || {};
+
+
+  const isFav = useSelector((state) => state.favorites.favProducts.some((product) => product.id === +id))
+
+  const clickHeandler = (() => {
+    dispatch(switchFavorites({
+      id: product.id,
+      title: product.title,
+      price: product.price,
+      discont_price: product.discont_price,
+      image: product.image
+    }))
+  })
+
   return (
     <div className={`${styles.productSignleCard_container} side_padding`}>
 
       <div className={styles.productSignleCard_header}>
-        <h2 className={styles.productSignleCard_title}>Secateurs</h2>
-        <img src={heardWhite} alt="heard image" />
+        <h2 className={styles.productSignleCard_title}>{title}</h2>
+
+        <img onClick={clickHeandler} src={isFav ? heart_favorite : heart_filled} alt="heard image" />
       </div>
 
       <div className={styles.productSingleCard_img_price_button}>
 
         <div className={styles.productSingleCard_img_container}>
 
-          <img src={singleProductImg} alt="product image" />
+          <img src={`${baseUrl}${image}`} alt="product image" />
+
 
           <div className={styles.productSingleCard_sale_label}>
-            <p>-17%</p>
+            {discont_price && (<DiscountAmountBage price={price} discont_price={discont_price} />)}
+
           </div>
+
 
         </div>
 
@@ -46,7 +87,7 @@ const ProductSingleCard = () => {
 
       <div className={styles.productSingleCard_description}>
         <h3>Description</h3>
-        <p><DescriptionSingleProduct /></p>
+        <DescriptionSingleProduct text={description} />
 
       </div>
 
