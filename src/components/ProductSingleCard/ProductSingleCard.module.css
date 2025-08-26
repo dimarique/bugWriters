@@ -1,107 +1,87 @@
 .productSignleCard_container {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    margin-top: 32px;
-    margin-bottom: 47px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-top: 32px;
+  margin-bottom: 47px;
 }
 
 .productSignleCard_header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 16px;
-
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
 }
-
 
 .productSignleCard_title {
-    font-size: 28px;
-    letter-spacing: 3%;
-    margin-bottom: 9px;
+  font-size: 28px;
+  letter-spacing: 3%;
+  margin-bottom: 9px;
 }
 
-
 .productSingleCard_img_price_button {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
 .productSingleCard_price_button {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
 }
 
 .productSingleCard_button {
-    color: var(--text-white);
-    font-weight: 600;
-    font-size: 18px;
-    line-height: 130%;
+  color: var(--text-white);
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 130%;
 
-    text-align: center;
-    vertical-align: middle;
+  text-align: center;
+  vertical-align: middle;
 
-    padding: 12px 20px;
-    border-radius: 6px;
-    border: none;
-    background-color: var(--color-green);
+  padding: 12px 20px;
+  border-radius: 6px;
+  border: none;
+  background-color: var(--color-green);
 }
-
-
-
-
 
 .productSingleCard_price {
-    display: flex;
-    justify-content: center;
-    align-items: baseline;
-    gap: 12px;
-
-
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+  gap: 12px;
 }
 
-
 .productSingleCard_price h2 {
-    margin-bottom: 0;
+  margin-bottom: 0;
 }
 
 .productSingleCard_price h3 {
-    color: var(--text-grey);
-    font-size: 28px;
-    text-decoration: line-through;
+  color: var(--text-grey);
+  font-size: 28px;
+  text-decoration: line-through;
 }
 
-
-
-
-
-
-
-
 .productSingleCard_img_container {
-    /* width: 320;
-height: 220; */
 
-    border-radius: 12px;
-    border: 1px solid var(--color-grey-divider);
 
-    background-color: var(--text-white);
-    overflow: hidden;
-    position: relative;
+  border-radius: 12px;
+  border: 1px solid var(--color-grey-divider);
+
+  background-color: var(--text-white);
+  overflow: hidden;
+  position: relative;
+ 
 }
 
 .productSingleCard_img_container img {
-    object-fit: cover;
-    height: 100%;
-    width: 100%;
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
 }
 
-
-
-
-.productSingleCard_sale_label {
+/* .productSingleCard_sale_label {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -121,27 +101,17 @@ height: 220; */
     width: 58px;
     height: 31px;
 
-}
-
-
-
-
+} */
 
 .productSingleCard_sale_label p {
-    font-weight: 600;
-    font-size: 18px;
-    line-height: 130%;
-    letter-spacing: 3%;
-    color: var(--text-white);
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 130%;
+  letter-spacing: 3%;
+  color: var(--text-white);
 }
 
 .productSingleCard_description h3 {
-    font-weight: 600;
-    margin-bottom: 12px;
-}
-
-.productSingleCard_description p {
-    /* font-weight: 400;
-    font-size: 14px;
-    line-height: 130%; */
+  font-weight: 600;
+  margin-bottom: 12px;
 }
