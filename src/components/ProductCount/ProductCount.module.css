@@ -1,0 +1,29 @@
+.productCount {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 200px;
+  border: 1px solid lightgrey;
+  border-radius: 6px;
+
+  button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    height: 58px;
+    width: 58px;
+    font-size: 24px;
+    background-color: transparent;
+    border: 1px solid lightgrey;
+    border-radius: 6px;
+  }
+
+  span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 58px;
+    padding: 0;
+  }
+}
