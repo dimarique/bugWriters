@@ -50,7 +50,7 @@ h2 {
   font-weight: 700;
   font-size: 40px;
   line-height: 110%;
-  /* margin-bottom: 24px; */
+
 
 }
 
@@ -95,7 +95,7 @@ ol {
 @media(min-width: 768px) {
   h2 {
     font-size: 56px;
-    /* margin-bottom: 32px; */
+  
   }
 
   h3 {
@@ -117,9 +117,6 @@ ol {
 
 
 @media(min-width: 1440px) {
-  /* h2 {
-    margin-bottom: 40px;
-  } */
 
   .bottom_margin {
     margin-bottom: 80px;
