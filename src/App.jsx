@@ -13,7 +13,6 @@ import Favorites from "./pages/Favorites/Favorites.jsx";
 import Products from "./pages/Products/Products.jsx";
 import ProductsByCategory from "./components/ProductsByCategory/ProductsByCategory.jsx";
 import NotFound from "./components/NotFound/NotFound.jsx";
-import ProductCount from "./components/ProductCount/ProductCount.jsx";
 
 function App() {
   const [menuIsOpen, setMenuIsOpen] = useState(false);
@@ -22,7 +21,6 @@ function App() {
       <Provider store={store}>
         <div className="content_wrapper">
           <Header menuIsOpen={menuIsOpen} setMenuIsOpen={setMenuIsOpen} />
-          <ProductCount />
           <Routes>
             <Route path="/" element={<Main />} />
             <Route path="/main" element={<Main />} />
