@@ -4,7 +4,7 @@ import ProductCard from '../ProductCard/ProductCard'
 import { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { fetchProducts } from '../../redux/slices/productsSlice'
-import FilterDiscount from '../FilterDiscount/FilterDiscount'
+import Filters from '../Filters/Filters.jsx'
 const AllProducts = () => {
     const dispatch = useDispatch();
 
@@ -22,9 +22,9 @@ const AllProducts = () => {
             {/* <div className={`${styles.allProducts_breadcrumbs} side_padding`}>Хлебные крошки</div> */}
             <div className={`${styles.allProducts_container} side_padding bottom_margin`}>
                 <h2>All products</h2>
-                <div>filter
-                    <FilterDiscount />
-                </div>
+            
+                    <Filters />
+              
                 {status === 'loading' && <p>Loading...</p>}
                 {status === 'failed' && <p>{error}</p>}
                 {status === 'succeeded' && (
