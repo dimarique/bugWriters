@@ -8,11 +8,35 @@ const CartForm = () => {
 
  const { register, handleSubmit, formState: { errors }, reset } = useForm();
 
-    const onSubmit = (data) => {
-        console.log(data);
-        reset();
+const API_BASE = import.meta.env.VITE_API_URL || '';
 
+    const onSubmit = (data) => {
+return fetch(`${API_BASE}/order/send`, {
+    method: 'POST',
+    headers: {'Content-Type': 'application/json'},
+    body: JSON.stringify({
+        name: data.name,
+        phone: data.phone,
+        email: data.email
+    })
+})
+.then((response) => {
+    if (!response.ok) {
+        throw new Error(`HTTP ${response.status}`);
     }
+    return response.json()
+})
+.then((dataResponse)=>{
+console.log(dataResponse);
+
+reset();
+return dataResponse
+
+})        
+.catch((error)=>{console.error('An error occurred while submitting the request.', error);
+})
+
+    };
 
 
   return (
