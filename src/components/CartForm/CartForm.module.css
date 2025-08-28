@@ -1,0 +1,201 @@
+.cartForm_container {
+    padding: 24px 20px;
+    border-radius: 12px;
+    background-color: var(--color-light-grey);
+}
+
+    .cartForm_title {
+        font-size: 28px;
+        font-weight: 700;
+        line-height: 110%;
+        margin-bottom: 12px;
+    }
+
+
+.cartForm_orderSummary{
+
+margin-bottom: 20px;
+
+}
+
+  .cartForm_orderSummary h3{
+font-size: 28px;
+color: var(--text-grey);
+}
+
+.cartForm_price{
+display: flex;
+justify-content: space-between;
+/* gap: 55px; */
+align-items: baseline;
+
+
+}
+
+.cartForm_price h2{
+    margin-bottom: 0;
+}
+
+.cartForm_content {
+    display: flex;
+    flex-direction: column;
+}
+
+.cartForm_form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.cartForm_inputs {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.cartForm_inputs input {
+    width: 100%;
+    background-color: var(--text-white);
+    border-radius: 6px;
+    padding: 12px 20px;
+    border: 1px solid var(--color-grey-divider);
+}
+.cartForm_inputs input:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px var(--color-green);
+
+
+
+}
+
+.cartForm_inputs input::placeholder {
+    color: var(--text-grey);
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 130%;
+
+}
+
+
+.cartForm_button {
+    color: var(--text-white);
+    background-color: var(--color-green);
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 130%;
+    padding: 12px 52px;
+    border: none;
+    border-radius: 6px;
+
+
+}
+
+
+.cartForm_button:active {
+    background-color: var(--color-sale);
+}
+
+
+
+
+
+
+@media(min-width: 768px) {
+    .cartForm_container {
+        padding: 32px 20px;
+
+    }
+
+
+    .cartForm_title {
+        font-size: 32px;
+    }
+
+    .cartForm_orderSummary h3{
+font-size: 32px;
+
+}
+
+
+.cartForm_inputs {
+        gap: 12px;
+    }
+
+
+   .cartForm_button {
+        padding: 16px 56px;
+        align-self: flex-start;
+    }
+
+  .cartForm_inputs input {
+        padding: 16px 20px;
+    }
+
+
+
+
+}
+
+
+
+
+
+
+
+
+@media(min-width: 1000px) {
+  .cartForm_title {
+        font-size: 40px;
+    }
+
+.cartForm_orderSummary h3{
+  
+font-size: 40px;
+
+
+}
+
+
+  .cartForm_button {
+        padding: 16px 32px;
+        align-self: auto;
+    }
+    
+}
+
+
+
+
+
+
+@media(min-width: 1440px) {
+  
+    .cartForm_orderSummary{
+
+margin-bottom: 32px;
+
+}
+
+
+   .cartForm_inputs {
+        gap: 16px;
+    }
+
+
+  .cartForm_inputs input {
+        padding: 16px 32px;
+    }
+
+
+    .cartForm_form {
+        gap: 32px;
+    }
+
+
+     .cartForm_container {
+        padding: 32px;
+    }
+
+
+
+}

@@ -6,20 +6,33 @@ import DiscountAmountBage from "../DiscountAmountBage/DiscountAmountBage";
 
 import { useDispatch, useSelector } from "react-redux";
 import { switchFavorites } from "../../redux/slices/favoritesSlice";
+import { useNavigate } from "react-router-dom";
+import { useEffect } from "react";
+
 
 const ProductCard = ({id, title, price, discont_price, image }) => {
+
+
+
   const baseUrl = import.meta.env.VITE_API_URL;
 
 const dispatch = useDispatch()
 
 const isFav = useSelector(state => state.favorites.favProducts.some(product => product.id === id)) 
 
-const buttonHeandler = ()=>{
+const buttonHeandler = (event)=>{
+  event.stopPropagation();
   dispatch(switchFavorites({id, title, price, discont_price, image}))
 }
 
+const navigate = useNavigate();
+
+const goToDescription = (()=>{
+navigate(`/product/${id}`)
+})
+
   return (
-    <div className={styles.productCard}>
+    <div className={styles.productCard} onClick={goToDescription}>
       <div className={styles.productCard_top}>
         {discont_price && (
           <DiscountAmountBage price={price} discont_price={discont_price} />
@@ -34,7 +47,7 @@ const buttonHeandler = ()=>{
 
 
 
-        <a className={styles.productCard_cart}>
+        <a className={styles.productCard_cart} onClick={(event) => event.stopPropagation()}>
           <img src={cart_filled} alt="" />
         </a>
         <img src={`${baseUrl}${image}`} alt="" />
