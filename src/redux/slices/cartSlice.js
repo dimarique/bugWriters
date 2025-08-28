@@ -5,12 +5,10 @@ const savedCart = JSON.parse(localStorage.getItem("cart")); // Загружае�
 export const cartSlice = createSlice({
   name: "cart",
   initialState: savedCart || {
-    //"Если в localStorage уже есть сохранённая корзина → беру её (savedCart). Если нет → беру пустую корзину"
     cartProducts: {},
     totalPrice: 0,
     totalCount: 0,
   },
-
   reducers: {
     addProduct: (state, action) => {
       if (state.cartProducts[action.payload.id]) {
@@ -19,15 +17,14 @@ export const cartSlice = createSlice({
         state.cartProducts[action.payload.id] = {
           title: action.payload.title,
           price: action.payload.price,
+          image: action.payload.image,
           count: 1,
         };
       }
       state.totalPrice =
         Math.round((state.totalPrice + action.payload.price) * 100) / 100;
       state.totalCount += 1;
-      console.log(JSON.parse(JSON.stringify(state)));
     },
-
     removeProduct: (state, action) => {
       if (state.cartProducts[action.payload]) {
         const removedCount = state.cartProducts[action.payload].count;
@@ -39,7 +36,6 @@ export const cartSlice = createSlice({
         state.totalCount -= removedCount;
       }
     },
-
     incrementProduct: (state, action) => {
       if (state.cartProducts[action.payload]) {
         state.cartProducts[action.payload].count += 1;
@@ -50,7 +46,6 @@ export const cartSlice = createSlice({
         state.totalCount += 1;
       }
     },
-
     decrementProduct: (state, action) => {
       if (state.cartProducts[action.payload]) {
         const price = state.cartProducts[action.payload].price;
