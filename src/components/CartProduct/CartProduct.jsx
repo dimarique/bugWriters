@@ -1,47 +1,42 @@
 import { useSelector } from "react-redux";
-import { useEffect } from "react";
 import { Link } from "react-router-dom";
+import { useEffect } from "react";
 import style from "./CartProduct.module.css";
 import CartItem from "./CartItem.jsx";
-
+import CartForm from "../CartForm/CartForm.jsx";
 
 export default function CartProduct() {
-  const cartState = useSelector((state) => state.cart); //состояние корзины товаров хранится в cartState
+  const cartState = useSelector((state) => state.cart);
 
-
-
-console.log("🛒 cartState:", cartState)
-
-
+  // сохраняем корзину в localStorage при каждом изменении
   useEffect(() => {
-    localStorage.setItem("cart", JSON.stringify(cartState)); // Каждый раз, когда меняется состояние корзины товаров → сохраняем в LocalStorage
-  }, [cartState]); //следим за изменением состояния корзины товаров
+    localStorage.setItem("cart", JSON.stringify(cartState));
+  }, [cartState]);
 
-  console.log("🛒 cartState:", cartState);
-  
- return (
-  <div className={style.cart}>
-       {Object.entries(cartState.cartProducts).length === 0 && ( //Если корзина пустая
-      <div className={style.emptyCart}>
-        <p>Looks like you have no items in your basket currently.</p>
-        <Link to="/main">Continue Shopping</Link>
-      </div>
-    )}
+  const cartEntries = Object.entries(cartState.cartProducts);
 
-{Object.entries(cartState.cartProducts).map(([id, product]) => (
-  <CartItem
-    key={id}
-    id={id}
-    title={product.title}
-    price={product.price}
-    count={product.count}
-    image={product.image}
-  />
-))}
-  
-  </div>
-)
+  return (
+    <div className={style.cartWrapper}>
+      {cartEntries.length === 0 ? (
+        <div className={style.emptyCart}>
+          <p>Looks like you have no items in your basket currently.</p>
+          <Link to="/main">Continue Shopping</Link>
+        </div>
+      ) : (
+        <>
+          {cartEntries.map(([id, product]) => (
+            <CartItem
+              key={id}
+              id={id}
+              title={product.title}
+              price={product.price}
+              count={product.count}
+              image={product.image}
+            />
+          ))}
+          <CartForm />
+        </>
+      )}
+    </div>
+  );
 }
-
-
-

@@ -1,5 +1,6 @@
 import { useDispatch } from "react-redux";
-import { removeProduct, incrementProduct, decrementProduct} from "../../redux/slices/cartSlice";
+import { removeProduct } from "../../redux/slices/cartSlice";
+import ProductCount from "../ProductCount/ProductCount.jsx";
 import style from "./CartItem.module.css";
 
 export default function CartItem({ id, title, price, image, count }) {
@@ -7,18 +8,31 @@ export default function CartItem({ id, title, price, image, count }) {
 
   return (
     <div className={style.cartItem}>
-      {image && <img src={image} alt={title} className={style.cartItem_image} />}
-      <div className={style.cartItem_header}>
-        <p className={style.cartItem_title}>{title}</p>
-        <button onClick={() => dispatch(removeProduct(id))}>X</button>
-      </div>
-      <p>Price: {price}$</p>
-      <p>Quantity: {count}</p>
-      <div>
-        <button onClick={() => dispatch(decrementProduct(id))}>-</button>
-        <button onClick={() => dispatch(incrementProduct(id))}>+</button>
+       <div className= {style.cartItem_image}> 
+          <img src={image} alt={title}  />
+          </div>
+       
+    
+      <div className={style.cartItem_info}>
+
+
+        <div className={style.cartItem_info_up}>
+          <p >{title}</p>
+          <button className={style.cartItem_remove} onClick={() => dispatch(removeProduct(id))}>
+            X
+          </button>
+        </div>
+        <div className={style.cartItem_info_down}>
+               <ProductCount count={count} id={id} />
+        <p className={style.cartItem_price}>Price: {price* count}$</p>
+        
+
+        </div>
+     
+      
       </div>
     </div>
   );
 }
+
 

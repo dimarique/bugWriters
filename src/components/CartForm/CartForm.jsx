@@ -1,5 +1,6 @@
 import styles from './CartForm.module.css'
 import { useForm } from 'react-hook-form'
+import { useSelector } from "react-redux";
 
 
 import React from 'react'
@@ -9,6 +10,19 @@ const CartForm = () => {
  const { register, handleSubmit, formState: { errors }, reset } = useForm();
 
 const API_BASE = import.meta.env.VITE_API_URL || '';
+
+
+
+
+ const cart = useSelector((state) => state.cart);
+  const cartEntries = Object.entries(cart.cartProducts);
+
+  // 👉 считаем количество и сумму
+  const totalCount = cartEntries.reduce((acc, [, product]) => acc + product.count, 0);
+  const totalPrice = cartEntries.reduce((acc, [, product]) => acc + product.count * product.price, 0);
+
+
+
 
     const onSubmit = (data) => {
 return fetch(`${API_BASE}/order/send`, {
@@ -45,14 +59,15 @@ return dataResponse
                         <div className={styles.cartForm_content}>
                     <h2 className={styles.cartForm_title}>Order details</h2>
                     <div className={styles.cartForm_orderSummary}>
-                        <h3>3 items</h3>
+                         <h3>{totalCount} items</h3>
                         <div className={styles.cartForm_price}>
                             <h3>Total</h3>
-                            <h2>$541,00</h2>
+                              <h2>${totalPrice}</h2>
                         </div>
                     </div>
 
 
+     
                     <div>
         
                             <form className={styles.cartForm_form} onSubmit={handleSubmit(onSubmit)}>

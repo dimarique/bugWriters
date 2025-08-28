@@ -10,6 +10,7 @@ import { useDispatch, useSelector } from "react-redux";
 import DiscountAmountBage from "../DiscountAmountBage/DiscountAmountBage.jsx";
 import { switchFavorites } from "../../redux/slices/favoritesSlice.js";
 import { addProduct } from "../../redux/slices/cartSlice.js";
+import ProductCount from "../ProductCount/ProductCount.jsx";
 
 const ProductSingleCard = () => {
   const baseUrl = import.meta.env.VITE_API_URL;
@@ -47,7 +48,7 @@ const ProductSingleCard = () => {
     );
   };
   const handleAddToCart = () => {
-      dispatch(
+    dispatch(
       addProduct({
         id: product.id,
         title: product.title,
@@ -91,12 +92,11 @@ const ProductSingleCard = () => {
           <div className={styles.productSingleCard_quantity}>
             {/* тут надо все вписать!!!! */}
           </div>
-
+          <ProductCount />
           <button
             className={styles.productSingleCard_button}
             onClick={handleAddToCart}
           >
-            {" "}
             Add to Cart
           </button>
         </div>

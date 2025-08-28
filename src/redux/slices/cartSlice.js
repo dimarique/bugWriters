@@ -2,6 +2,9 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const savedCart = JSON.parse(localStorage.getItem("cart")); // Загружаем корзину из localStorage
 
+const saveCartToLocalStorage = (cart)=>{
+   localStorage.setItem("cart", JSON.stringify(cart))
+}
 export const cartSlice = createSlice({
   name: "cart",
   initialState: savedCart || {
@@ -24,6 +27,7 @@ export const cartSlice = createSlice({
       state.totalPrice =
         Math.round((state.totalPrice + action.payload.price) * 100) / 100;
       state.totalCount += 1;
+      saveCartToLocalStorage(state)
     },
     removeProduct: (state, action) => {
       if (state.cartProducts[action.payload]) {
@@ -35,6 +39,7 @@ export const cartSlice = createSlice({
           Math.round((state.totalPrice - removedPrice) * 100) / 100;
         state.totalCount -= removedCount;
       }
+       saveCartToLocalStorage(state)
     },
     incrementProduct: (state, action) => {
       if (state.cartProducts[action.payload]) {
@@ -45,6 +50,7 @@ export const cartSlice = createSlice({
           ) / 100;
         state.totalCount += 1;
       }
+       saveCartToLocalStorage(state)
     },
     decrementProduct: (state, action) => {
       if (state.cartProducts[action.payload]) {
@@ -57,6 +63,7 @@ export const cartSlice = createSlice({
           delete state.cartProducts[action.payload];
         }
       }
+       saveCartToLocalStorage(state)
     },
   },
 });
