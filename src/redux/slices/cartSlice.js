@@ -17,39 +17,55 @@ export const cartSlice = createSlice({
         state.cartProducts[action.payload.id].count += 1;
       } else {
         state.cartProducts[action.payload.id] = {
-          name: action.payload.title,
+          title: action.payload.title,
           price: action.payload.price,
-          count: 1
+          count: 1,
         };
       }
-      state.totalPrice = Math.round((state.totalPrice + action.payload.price) * 100) / 100;
+      state.totalPrice =
+        Math.round((state.totalPrice + action.payload.price) * 100) / 100;
       state.totalCount += 1;
-      console.log(JSON.parse(JSON.stringify(state)))
+      console.log(JSON.parse(JSON.stringify(state)));
     },
-    /**
-     * Экшн для удаления товара. В payload ожидает идентификатор товара (чилос)
-     */
-    dropProduct: (state, action) => {
+
+    removeProduct: (state, action) => {
       if (state.cartProducts[action.payload]) {
-        const price = state.cartProducts[action.payload].price;
-        if (state.cartProducts[action.payload].count === 1) {
-          delete state.cartProducts[action.payload];
-        } else {
-          state.cartProducts[action.payload].count -= 1;
-        }
-        state.totalPrice = Math.round((state.totalPrice - price) * 100) / 100;
-        state.totalCount -= 1;
-        console.log(JSON.parse(JSON.stringify(state)))
+        const removedCount = state.cartProducts[action.payload].count;
+        const removedPrice =
+          state.cartProducts[action.payload].price * removedCount;
+        delete state.cartProducts[action.payload];
+        state.totalPrice =
+          Math.round((state.totalPrice - removedPrice) * 100) / 100;
+        state.totalCount -= removedCount;
       }
     },
 
-    clearCart: (state) => {
-      state.cartProducts = {};
-      state.totalPrice = 0;
-      state.totalCount = 0;
+    incrementProduct: (state, action) => {
+      if (state.cartProducts[action.payload]) {
+        state.cartProducts[action.payload].count += 1;
+        state.totalPrice =
+          Math.round(
+            (state.totalPrice + state.cartProducts[action.payload].price) * 100
+          ) / 100;
+        state.totalCount += 1;
+      }
+    },
+
+    decrementProduct: (state, action) => {
+      if (state.cartProducts[action.payload]) {
+        const price = state.cartProducts[action.payload].price;
+        state.cartProducts[action.payload].count -= 1;
+        state.totalPrice = Math.round((state.totalPrice - price) * 100) / 100;
+        state.totalCount -= 1;
+
+        if (state.cartProducts[action.payload].count <= 0) {
+          delete state.cartProducts[action.payload];
+        }
+      }
     },
   },
 });
 
-export const { addProduct, dropProduct, clearCart } = cartSlice.actions;
+export const { addProduct, removeProduct, incrementProduct, decrementProduct } =
+  cartSlice.actions;
 export default cartSlice.reducer;
