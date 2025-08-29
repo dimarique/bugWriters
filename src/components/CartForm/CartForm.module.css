@@ -12,6 +12,8 @@
     }
 
 
+
+
 .cartForm_orderSummary{
 
 margin-bottom: 20px;
@@ -28,7 +30,7 @@ display: flex;
 justify-content: space-between;
 /* gap: 55px; */
 align-items: baseline;
-
+gap: 55px;
 
 }
 
@@ -97,6 +99,13 @@ align-items: baseline;
 
 
 
+@media(min-width: 480px) {
+    .cartForm_price{
+
+gap: 144px;
+
+}
+}
 
 
 
@@ -131,7 +140,10 @@ font-size: 32px;
         padding: 16px 20px;
     }
 
+.cartForm_price{
+gap: 390px;
 
+}
 
 
 }
@@ -160,6 +172,11 @@ font-size: 40px;
         padding: 16px 32px;
         align-self: auto;
     }
+
+    .cartForm_price{
+gap: 81px;
+
+}
     
 }
 
@@ -196,6 +213,9 @@ margin-bottom: 32px;
         padding: 32px;
     }
 
+    .cartForm_price{
+gap: 135px;
 
+}
 
 }

@@ -7,10 +7,12 @@ import { fetchProducts } from "../../redux/slices/productsSlice.js";
 import { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import DiscountAmountBage from "../DiscountAmountBage/DiscountAmountBage.jsx";
+// import DiscountAmountBage from "../DiscountAmountBage/DiscountAmountBage.jsx";
 import { switchFavorites } from "../../redux/slices/favoritesSlice.js";
+
 import { addProduct } from "../../redux/slices/cartSlice.js";
 import ProductCount from "../ProductCount/ProductCount.jsx";
+
 
 const ProductSingleCard = () => {
   const baseUrl = import.meta.env.VITE_API_URL;
@@ -74,25 +76,51 @@ const ProductSingleCard = () => {
         <div className={styles.productSingleCard_img_container}>
           <img src={`${baseUrl}${image}`} alt="product image" />
 
-          {/* <div className={styles.productSingleCard_sale_label}>
-
-          </div> */}
 
           {discont_price && (
-            <DiscountAmountBage price={price} discont_price={discont_price} />
+          <div className={styles.productSingleCard_sale_label}>
+<p>- {Math.floor(((price - discont_price) / price) * 100)}%</p>
+
+
+          </div>
           )}
+
+  
+
         </div>
 
         <div className={styles.productSingleCard_price_button}>
+
+
+
           <div className={styles.productSingleCard_price}>
-            <h2>$199</h2>
-            <h3>$240</h3>
+  
+          {discont_price && (
+            <span
+              className={styles.productCard_discont_price}
+            >{`$${discont_price}`}</span>
+          )}
+          <span
+            className={
+              discont_price
+                ? styles.productCard_price
+                : styles.productCard_discont_price
+            }
+          >{`$${price}`}</span>
+  
           </div>
 
+
+
+
           <div className={styles.productSingleCard_quantity}>
-            {/* тут надо все вписать!!!! */}
+            <ProductCount />
           </div>
-          <ProductCount />
+      
+
+
+
+          
           <button
             className={styles.productSingleCard_button}
             onClick={handleAddToCart}
