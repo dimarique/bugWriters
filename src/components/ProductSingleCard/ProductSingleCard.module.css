@@ -29,6 +29,7 @@
   display: flex;
   flex-direction: column;
   gap: 12px;
+
 }
 
 .productSingleCard_button {
@@ -44,6 +45,7 @@
   border-radius: 6px;
   border: none;
   background-color: var(--color-green);
+  
 }
 
 .productSingleCard_price {
@@ -81,7 +83,7 @@
   width: 100%;
 }
 
-/* .productSingleCard_sale_label {
+.productSingleCard_sale_label {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -101,7 +103,7 @@
     width: 58px;
     height: 31px;
 
-} */
+}
 
 .productSingleCard_sale_label p {
   font-weight: 600;
@@ -114,4 +116,25 @@
 .productSingleCard_description h3 {
   font-weight: 600;
   margin-bottom: 12px;
+}
+
+
+.productSingleCard_quantity{
+align-self: center;
+}
+
+
+/* ------------- */
+
+.productCard_discont_price {
+  font-size: 36px;
+  font-weight: 600;
+}
+
+.productCard_price {
+  margin-left: 12px;
+  font-size: 18px;
+  font-weight: 500;
+  text-decoration: line-through;
+  color: #8c8c8c;
 }
