@@ -24,7 +24,7 @@ export default function CartItem({ id, title, price, image, count }) {
         </div>
         <div className={style.cartItem_info_down}>
                <ProductCount count={count} id={id} />
-        <p className={style.cartItem_price}>Price: {price* count}$</p>
+        <p className={style.cartItem_price}> {price* count}$</p>
         
 
         </div>
