@@ -94,9 +94,7 @@ const ProductSingleCard = () => {
 
 
           <div className={styles.productSingleCard_price}>
-            <h2>$199</h2>
-            <h3>$240</h3>
-
+  
           {discont_price && (
             <span
               className={styles.productCard_discont_price}
@@ -116,9 +114,13 @@ const ProductSingleCard = () => {
 
 
           <div className={styles.productSingleCard_quantity}>
-           <ProductCount />
+            <ProductCount />
           </div>
-          <ProductCount />
+      
+
+
+
+          
           <button
             className={styles.productSingleCard_button}
             onClick={handleAddToCart}
