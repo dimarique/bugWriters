@@ -12,6 +12,7 @@ import Sales from "./pages/Sales/Sales.jsx";
 import Favorites from "./pages/Favorites/Favorites.jsx";
 import Products from "./pages/Products/Products.jsx";
 import ProductsByCategory from "./components/ProductsByCategory/ProductsByCategory.jsx";
+import Cart from "./pages/Cart/Cart.jsx";
 import NotFound from "./components/NotFound/NotFound.jsx";
 
 function App() {
@@ -30,6 +31,7 @@ function App() {
             <Route path="/favorites" element={<Favorites />} />
             <Route path="/products" element={<Products />} />
             <Route path="/categories/:Id" element={<ProductsByCategory />} />
+            <Route path="/cart" element={<Cart />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
           <Footer />

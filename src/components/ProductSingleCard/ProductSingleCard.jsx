@@ -7,9 +7,13 @@ import { fetchProducts } from "../../redux/slices/productsSlice.js";
 import { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import DiscountAmountBage from "../DiscountAmountBage/DiscountAmountBage.jsx";
+// import DiscountAmountBage from "../DiscountAmountBage/DiscountAmountBage.jsx";
 import { switchFavorites } from "../../redux/slices/favoritesSlice.js";
+
+import { addProduct } from "../../redux/slices/cartSlice.js";
 import ProductCount from "../ProductCount/ProductCount.jsx";
+
+
 const ProductSingleCard = () => {
   const baseUrl = import.meta.env.VITE_API_URL;
 
@@ -21,7 +25,7 @@ const ProductSingleCard = () => {
   const products = useSelector((state) => state.products.products);
 
   useEffect(() => {
-    window.scrollTo(0, 0)
+    window.scrollTo(0, 0);
     if (!products.length) {
       dispatch(fetchProducts());
     }
@@ -42,6 +46,16 @@ const ProductSingleCard = () => {
         price: product.price,
         discont_price: product.discont_price,
         image: product.image,
+      })
+    );
+  };
+  const handleAddToCart = () => {
+    dispatch(
+      addProduct({
+        id: product.id,
+        title: product.title,
+        price: Number(product.price),
+        image: `${baseUrl}${product.image}`,
       })
     );
   };
@@ -104,9 +118,12 @@ const ProductSingleCard = () => {
           <div className={styles.productSingleCard_quantity}>
            <ProductCount />
           </div>
-
-          <button className={styles.productSingleCard_button}>
-            Add to cart
+          <ProductCount />
+          <button
+            className={styles.productSingleCard_button}
+            onClick={handleAddToCart}
+          >
+            Add to Cart
           </button>
         </div>
       </div>
