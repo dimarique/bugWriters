@@ -5,8 +5,6 @@
  width: 200px;
   border: 1px solid lightgrey;
   border-radius: 6px;
-  background-color: var(--text-white);
-
 
   button {
     display: flex;
