@@ -19,7 +19,8 @@ const AllProducts = () => {
 
     return (
         <>
-            {/* <div className={`${styles.allProducts_breadcrumbs} side_padding`}>Хлебные крошки</div> */}
+            <div className={`${styles.allProducts_breadcrumbs} side_padding`}>Хлебные крошки</div>
+            
             <div className={`${styles.allProducts_container} side_padding bottom_margin`}>
                 <h2>All products</h2>
             

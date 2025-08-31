@@ -2,8 +2,8 @@ import React from 'react'
 import styles from './LikedProducts.module.css'
 import ProductCard from '../ProductCard/ProductCard'
 import { useSelector } from 'react-redux'
-import Filters from '../Filters/Filters'
-
+import FilterByPrice from '../FilterByPrice/FilterByPrice'
+import SortProducts from '../SortProducts/SortProducts'
 
 const LikedProducts = () => {
 
@@ -20,7 +20,8 @@ const LikedProducts = () => {
             <div className={`${styles.likedProducts_container} side_padding bottom_margin`}>
                 <h2>Liked products</h2>
 
-                <Filters />
+             <FilterByPrice />
+             <SortProducts />
 
 
                 {favProducts.length === 0 ? (<p>Empty</p>) :
