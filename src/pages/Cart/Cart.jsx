@@ -1,8 +1,8 @@
 import styles from "./Cart.module.css";
 import CartProduct from "../../components/CartProduct/CartProduct.jsx";
 import SectionHeader from "../../components/SectionHeader/SectionHeader.jsx";
-import SectionHeaderButton from "../../components/SectionHeaderButton/SectionHeaderButton.jsx";
 import { useWindowWidth } from "../../hooks/useWindowWidth.js";
+import SectionHeaderButton from "../../components/SectionHeaderButton/SectionHeaderButton.jsx";
 
 const Cart = () => {
     let windowWidth = useWindowWidth();
@@ -16,6 +16,9 @@ const Cart = () => {
         linkTo="main"
       />
     <CartProduct />
+     {windowWidth < 480 && (
+        <SectionHeaderButton text={"Back to the store"} linkTo="main" />
+      )}
      </div>
   )
   

@@ -6,19 +6,19 @@
   flex-direction: column;
   padding: 50px 20px 251px;
   align-items: flex-start;
-  gap: 24px;
+  gap: 1.5rem;
 }
 .hero_title {
   font-weight: 700;
   font-size: 52px;
   text-align: left;
-  color: #fff;
+  color: var(--text-white)
 }
 .hero_link {
   display: inline-block;
-  background-color: #92a134;
+  background-color: var(--color-green);
   border-radius: 6px;
-  color: #fff;
+  color: var(--text-white);
   font-size: 18px;
   font-weight: 600;
   padding: 12px 52px;
@@ -44,7 +44,7 @@
     font-size: 68px;
   }
   .hero_link {
-    width: 218px;
+    width: 13.6rem;
     font-size: 20px;
   }
 }
@@ -52,7 +52,7 @@
   .hero_container {
     background-image: url("../../assets/imageHero/img1000.jpg");
     padding: 60px 20px 120px;
-    gap: 40px;
+    gap: 2.5rem;
   }
   .hero_title {
     font-size: 90px;
@@ -62,8 +62,7 @@
   .hero_container {
     background-image: url("../../assets/imageHero/imgLaptop.jpg");
     padding: 80px 40px 210px;
-    gap: 40px;
-  }
+     }
   .hero_title {
     font-size: 96px;
   }
