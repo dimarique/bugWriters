@@ -6,7 +6,7 @@ import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { fetchProducts } from "../../redux/slices/productsSlice.js";//загрузка списка товаров
 import { fetchCategories } from "../../redux/slices/categoriesSlice.js"; //загрузка списка категорий
-import SortProducts from "../SortProducts/SortProducts.jsx";
+import Filters from "../Filters/Filters.jsx";
 
 function ProductsByCategory() {
   const { Id } = useParams(); //получаем id категории из URL
@@ -33,7 +33,7 @@ function ProductsByCategory() {
       <h2 className={style.productsByCategoryTitle}>
         {currentCategory?.title}
       </h2>
-      <SortProducts />
+      <Filters />
       <div className={style.productsByCategory}>
         {categoryProducts.map(({ id, title, price, discont_price, image }) => (
           <ProductCard

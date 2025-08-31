@@ -16,22 +16,21 @@
   gap: 1rem;
 }
 .NotFound_text p {
-  font-size: 18px; 
-  color: #8b8b8b;
+  font-size: 18px;
+  color: var(--color-grey);
   line-height: 130%;
   text-align: center;
 }
 .NotFound_link {
   font-size: 18px;
   text-decoration: none;
-  transition: color 0.3s;
-  background: #92a134;
+  background: var(--color-green);
   padding: 12px 52px;
-  color: white;
+  color: var(--text-white);
   border-radius: 6px;
 }
 @media (min-width: 768px) {
-    .NotFound_text p {
+  .NotFound_text p {
     font-size: 20px;
   }
 }
