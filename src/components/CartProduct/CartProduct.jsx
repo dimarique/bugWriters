@@ -5,6 +5,7 @@ import style from "./CartProduct.module.css";
 import CartItem from "./CartItem.jsx";
 import CartForm from "../CartForm/CartForm.jsx";
 
+
 export default function CartProduct() {
   const cartState = useSelector((state) => state.cart);
 
@@ -15,7 +16,9 @@ export default function CartProduct() {
   const cartEntries = Object.entries(cartState.cartProducts);
 
   return (
+   
     <div className={style.cartWrapper}>
+     
   {cartEntries.length === 0 ? (
     <div className={style.emptyCart}>
       <p>Looks like you have no items in your basket currently.</p>
@@ -39,6 +42,7 @@ export default function CartProduct() {
     </>
   )}
 </div>
+
   );
 }
 
