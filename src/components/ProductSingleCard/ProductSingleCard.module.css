@@ -120,18 +120,40 @@
 }
 
 
-.productSingleCard_quantity{
-  /* margin: 0 auto; */
-/* align-self: center;
-display: flex; */
-/* align-self: center; */
 
-   align-self: center;
-
- /* align-self: stretch;  */
-
+.productSingleCard_quantity {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+ width: 200px;
+  border: 1px solid lightgrey;
+  border-radius: 6px;
+  background-color: var(--text-white);
+  margin: 0 auto;
 
 }
+
+.productSingleCard_quantity button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    height: 58px;
+    width: 58px;
+    font-size: 24px;
+    background-color: var(--text-white);
+    border: 1px solid lightgrey;
+    border-radius: 6px;
+  }
+
+  .productSingleCard_quantity span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 58px;
+    padding: 0;
+    
+  }
 
 
 /* ------------- */
