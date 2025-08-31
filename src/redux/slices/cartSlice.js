@@ -14,19 +14,20 @@ export const cartSlice = createSlice({
   },
   reducers: {
     addProduct: (state, action) => {
-      if (state.cartProducts[action.payload.id]) {
-        state.cartProducts[action.payload.id].count += 1;
+      const { id, title, price, image, count = 1 } = action.payload
+      if (state.cartProducts[id]) {
+        state.cartProducts[id].count += count;
       } else {
-        state.cartProducts[action.payload.id] = {
-          title: action.payload.title,
-          price: action.payload.price,
-          image: action.payload.image,
-          count: 1,
+        state.cartProducts[id] = {
+          title,
+          price,
+          image,
+          count
         };
       }
       state.totalPrice =
-        Math.round((state.totalPrice + action.payload.price) * 100) / 100;
-      state.totalCount += 1;
+        Math.round((state.totalPrice + price * count) * 100) / 100;
+      state.totalCount += count;
       saveCartToLocalStorage(state)
     },
     removeProduct: (state, action) => {
@@ -65,9 +66,16 @@ export const cartSlice = createSlice({
       }
        saveCartToLocalStorage(state)
     },
+
+    clearCart: (state, action)=>{
+state.cartProducts ={};
+state.totalPrice = 0;
+state.totalCount = 0;
+saveCartToLocalStorage(state)
+    },
   },
 });
 
-export const { addProduct, removeProduct, incrementProduct, decrementProduct } =
+export const { addProduct, removeProduct, incrementProduct, decrementProduct, clearCart } =
   cartSlice.actions;
 export default cartSlice.reducer;

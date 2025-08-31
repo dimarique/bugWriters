@@ -2,10 +2,11 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  max-width: 200px;
+ width: 200px;
   border: 1px solid lightgrey;
   border-radius: 6px;
-  
+  background-color: var(--text-white);
+
 
   button {
     display: flex;
@@ -15,7 +16,7 @@
     height: 58px;
     width: 58px;
     font-size: 24px;
-    background-color: transparent;
+    background-color: var(--text-white);
     border: 1px solid lightgrey;
     border-radius: 6px;
   }
@@ -26,5 +27,6 @@
     justify-content: center;
     width: 58px;
     padding: 0;
+    
   }
 }

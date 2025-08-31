@@ -1,6 +1,7 @@
 import styles from "./CartForm.module.css";
 import { useForm } from "react-hook-form";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import { clearCart } from "../../redux/slices/cartSlice";
 
 import React from "react";
 
@@ -11,6 +12,8 @@ const CartForm = () => {
     formState: { errors },
     reset,
   } = useForm();
+
+  const dispatch = useDispatch();
 
   const API_BASE = import.meta.env.VITE_API_URL || "";
 
@@ -23,14 +26,29 @@ const CartForm = () => {
     (acc, [, product]) => acc + product.count * product.price,0);
 
   const onSubmit = (data) => {
-    return fetch(`${API_BASE}/order/send`, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
+
+    const items = cartEntries.map(([id, product])=>({
+id, 
+title: product.title,
+price: product.price,
+count: product.count,
+    }));
+
+    const payload = {
         name: data.name,
         phone: data.phone,
         email: data.email,
-      }),
+        items,
+        totalCount,
+        totalPrice,
+      }
+
+      console.log("➡️ Sending order:", payload);
+
+    return fetch(`${API_BASE}/order/send`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(payload),
     })
       .then((response) => {
         if (!response.ok) {
@@ -42,6 +60,7 @@ const CartForm = () => {
         console.log(dataResponse);
 
         reset();
+        dispatch(clearCart())
         return dataResponse;
       })
       .catch((error) => {
