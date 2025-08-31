@@ -4,7 +4,7 @@ import heart_filled from "../../assets/heart_filled.svg";
 import heart_favorite from "../../assets/heart_favorite.svg";
 import DescriptionSingleProduct from "../DescriptionSingleProduct/DescriptionSingleProduct.jsx";
 import { fetchProducts } from "../../redux/slices/productsSlice.js";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 // import DiscountAmountBage from "../DiscountAmountBage/DiscountAmountBage.jsx";
@@ -12,6 +12,7 @@ import { switchFavorites } from "../../redux/slices/favoritesSlice.js";
 
 import { addProduct } from "../../redux/slices/cartSlice.js";
 import ProductCount from "../ProductCount/ProductCount.jsx";
+
 
 
 const ProductSingleCard = () => {
@@ -34,6 +35,9 @@ const ProductSingleCard = () => {
   const product = products.find((product) => product.id === +id);
   const { title, price, discont_price, description, image } = product || {};
 
+const [quantity, setQuantity] = useState(1);
+const sellPrice = +(discont_price ?? price);
+
   const isFav = useSelector((state) =>
     state.favorites.favProducts.some((product) => product.id === +id)
   );
@@ -54,8 +58,9 @@ const ProductSingleCard = () => {
       addProduct({
         id: product.id,
         title: product.title,
-        price: Number(product.price),
+        price: sellPrice,
         image: `${baseUrl}${product.image}`,
+        count: quantity,
       })
     );
   };
@@ -114,7 +119,12 @@ const ProductSingleCard = () => {
 
 
           <div className={styles.productSingleCard_quantity}>
-            <ProductCount />
+
+<button onClick={() => setQuantity(qua => Math.max(1, qua -1))}>-</button>
+<span>{quantity}</span>
+<button onClick={() => setQuantity(qua=> qua + 1)}>+</button>
+
+
           </div>
       
 
