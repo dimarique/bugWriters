@@ -20,6 +20,10 @@
     border-radius: 6px;
   }
 
+  button:active{
+         background-color: var(--color-grey-divider);
+  }
+
   span {
     display: flex;
     align-items: center;

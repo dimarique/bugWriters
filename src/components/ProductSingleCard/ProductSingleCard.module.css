@@ -47,6 +47,12 @@
   border: none;
   background-color: var(--color-green);
   
+
+}
+
+.productSingleCard_button:active{
+background-color: #5C6322;
+transform: translateY(2px);
 }
 
 .productSingleCard_price {
@@ -146,6 +152,11 @@
     border-radius: 6px;
   }
 
+  .productSingleCard_quantity button:active{
+      background-color: var(--color-grey-divider);
+
+  }
+
   .productSingleCard_quantity span {
     display: flex;
     align-items: center;
@@ -154,6 +165,8 @@
     padding: 0;
     
   }
+
+  
 
 
 /* ------------- */
@@ -179,6 +192,27 @@ text-decoration: line-through;
 
 }
 
+
+/* ------------ */
+
+
+.productSingleCard_modal{
+position: fixed;
+background-color: #28282866;
+inset: 0;
+
+
+z-index: 99;
+
+}
+
+.productSingleCard_modal img{
+width: 320px;
+position: absolute;
+top: 108px;
+left: 50%;
+transform: translateX(-50%);
+}
 
 
 /* ----------------- */
@@ -226,7 +260,10 @@ height: 179px; */
   font-size: 48px;
 }
 
-
+.productSingleCard_modal img{
+ width: 440px;
+  top: 180px;
+}
 
 }
 
@@ -234,13 +271,22 @@ height: 179px; */
 /* ------ */
 
 @media(min-width: 768px) {
-
+.productSingleCard_modal img{
+ width: 728px;
+  
+}
 }
 
 @media(min-width: 1000px) {
-
+.productSingleCard_modal img{
+width: 900px;
+  
+}
 }
 
 @media(min-width: 1440px) {
+.productSingleCard_modal img{
+ 
 
+}
 }

@@ -24,6 +24,11 @@
   border-radius: 6px;
 }
 
+.emptyCart a:active{
+  background-color: #5C6322;
+transform: translateY(2px);
+}
+
 .cartItemsColumn {
   display: flex;
   flex-direction: column; 

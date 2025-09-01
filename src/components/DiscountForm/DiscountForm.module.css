@@ -70,7 +70,8 @@
 
 
 .discount_button:active {
-    background-color: var(--color-sale);
+background-color: var(--color-sale);
+transform: translateY(2px);
 }
 
 

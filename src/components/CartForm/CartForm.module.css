@@ -94,7 +94,8 @@ gap: 55px;
 
 
 .cartForm_button:active {
-    background-color: var(--color-sale);
+background-color: #5C6322;
+transform: translateY(2px);
 }
 
 
