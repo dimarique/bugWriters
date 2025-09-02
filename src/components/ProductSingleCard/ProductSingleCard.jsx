@@ -7,7 +7,6 @@ import { fetchProducts } from "../../redux/slices/productsSlice.js";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-// import DiscountAmountBage from "../DiscountAmountBage/DiscountAmountBage.jsx";
 import { switchFavorites } from "../../redux/slices/favoritesSlice.js";
 
 import { addProduct } from "../../redux/slices/cartSlice.js";
@@ -65,6 +64,8 @@ const sellPrice = +(discont_price ?? price);
     );
   };
 
+  const [ModalOpen, setModalOpen] = useState(false)
+
   return (
     <div className={`${styles.productSignleCard_container} side_padding`}>
       <div className={styles.productSignleCard_header}>
@@ -79,7 +80,7 @@ const sellPrice = +(discont_price ?? price);
 
       <div className={styles.productSingleCard_img_price_button}>
         <div className={styles.productSingleCard_img_container}>
-          <img src={`${baseUrl}${image}`} alt="product image" />
+          <img src={`${baseUrl}${image}`} alt="product image" onClick={()=> setModalOpen(true)}/>
 
 
           {discont_price && (
@@ -144,6 +145,12 @@ const sellPrice = +(discont_price ?? price);
         <h3>Description</h3>
         <DescriptionSingleProduct text={description} />
       </div>
+
+{ModalOpen && <div className={styles.productSingleCard_modal} onClick={()=> setModalOpen(false)}>
+  <img src={`${baseUrl}${image}`} alt="product image big" onClick={(event)=> event.stopPropagation()} />
+  </div>}
+
+
     </div>
   );
 };
