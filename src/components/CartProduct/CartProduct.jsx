@@ -6,6 +6,7 @@ import CartItem from "./CartItem.jsx";
 import CartForm from "../CartForm/CartForm.jsx";
 
 
+
 export default function CartProduct() {
   const cartState = useSelector((state) => state.cart);
 
@@ -39,7 +40,8 @@ export default function CartProduct() {
         ))}
       </div>
       <CartForm />
-    </>
+          </>
+    
   )}
 </div>
 
