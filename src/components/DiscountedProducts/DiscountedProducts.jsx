@@ -4,6 +4,7 @@ import styles from "./DiscountedProducts.module.css";
 import { fetchProducts } from "../../redux/slices/productsSlice";
 import ProductCard from "../ProductCard/ProductCard";
 import SectionHeader from "../SectionHeader/SectionHeader";
+import SkeletonCard from "../SkeletonCard/SkeletonCard";
 import Filters from "../Filters/Filters";
 
 const DiscountedProducts = () => {

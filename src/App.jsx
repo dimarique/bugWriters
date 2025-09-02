@@ -15,6 +15,7 @@ import ProductsByCategory from "./components/ProductsByCategory/ProductsByCatego
 import Cart from "./pages/Cart/Cart.jsx";
 import NotFound from "./components/NotFound/NotFound.jsx";
 
+
 function App() {
   const [menuIsOpen, setMenuIsOpen] = useState(false);
   return (

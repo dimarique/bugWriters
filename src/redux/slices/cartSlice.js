@@ -2,9 +2,9 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const savedCart = JSON.parse(localStorage.getItem("cart")); // Загружаем корзину из localStorage
 
-const saveCartToLocalStorage = (cart)=>{
-   localStorage.setItem("cart", JSON.stringify(cart))
-}
+const saveCartToLocalStorage = (cart) => {
+  localStorage.setItem("cart", JSON.stringify(cart));
+};
 export const cartSlice = createSlice({
   name: "cart",
   initialState: savedCart || {
@@ -14,7 +14,7 @@ export const cartSlice = createSlice({
   },
   reducers: {
     addProduct: (state, action) => {
-      const { id, title, price, image, count = 1 } = action.payload
+      const { id, title, price, image, count = 1 } = action.payload;
       if (state.cartProducts[id]) {
         state.cartProducts[id].count += count;
       } else {
@@ -22,25 +22,24 @@ export const cartSlice = createSlice({
           title,
           price,
           image,
-          count
+          count,
         };
       }
       state.totalPrice =
         Math.round((state.totalPrice + price * count) * 100) / 100;
       state.totalCount += count;
-      saveCartToLocalStorage(state)
+      saveCartToLocalStorage(state);
     },
     removeProduct: (state, action) => {
       if (state.cartProducts[action.payload]) {
         const removedCount = state.cartProducts[action.payload].count;
-        const removedPrice =
-          state.cartProducts[action.payload].price * removedCount;
+        const removedPrice = state.cartProducts[action.payload].price * removedCount;
         delete state.cartProducts[action.payload];
         state.totalPrice =
           Math.round((state.totalPrice - removedPrice) * 100) / 100;
         state.totalCount -= removedCount;
       }
-       saveCartToLocalStorage(state)
+      saveCartToLocalStorage(state);
     },
     incrementProduct: (state, action) => {
       if (state.cartProducts[action.payload]) {
@@ -51,7 +50,7 @@ export const cartSlice = createSlice({
           ) / 100;
         state.totalCount += 1;
       }
-       saveCartToLocalStorage(state)
+      saveCartToLocalStorage(state);
     },
     decrementProduct: (state, action) => {
       if (state.cartProducts[action.payload]) {
@@ -64,18 +63,44 @@ export const cartSlice = createSlice({
           delete state.cartProducts[action.payload];
         }
       }
-       saveCartToLocalStorage(state)
+      saveCartToLocalStorage(state);
     },
 
-    clearCart: (state, action)=>{
-state.cartProducts ={};
-state.totalPrice = 0;
-state.totalCount = 0;
-saveCartToLocalStorage(state)
+    clearCart: (state) => {
+      state.cartProducts = {};
+      state.totalPrice = 0;
+      state.totalCount = 0;
+      saveCartToLocalStorage(state);
+    },
+
+    switchCart: (state, action) => {
+      const { id, title, price, image, count = 1 } = action.payload;
+
+      if (state.cartProducts[id]) {
+        const removedCount = state.cartProducts[id].count;
+        const removedPrice = state.cartProducts[id].price * removedCount;
+        delete state.cartProducts[id];
+        state.totalPrice =
+          Math.round((state.totalPrice - removedPrice) * 100) / 100;
+        state.totalCount -= removedCount;
+      } else {
+        state.cartProducts[id] = { title, price, image, count };
+        state.totalPrice =
+          Math.round((state.totalPrice + price * count) * 100) / 100;
+        state.totalCount += count;
+      }
+
+      saveCartToLocalStorage(state);
     },
   },
 });
 
-export const { addProduct, removeProduct, incrementProduct, decrementProduct, clearCart } =
-  cartSlice.actions;
+export const {
+  addProduct,
+  removeProduct,
+  incrementProduct,
+  decrementProduct,
+  clearCart,
+  switchCart,
+} = cartSlice.actions;
 export default cartSlice.reducer;

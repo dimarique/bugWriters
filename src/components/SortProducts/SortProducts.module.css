@@ -1,8 +1,18 @@
 .sortProducts {
   display: flex;
-  align-items: center;
+  flex-direction: row;
+  font-weight: 600;
 }
 .sortProducts label {
-  font-size: 18px;
-  margin-right: 12px;
+  font-size: 20px;
+  align-self: center;
+  padding: 6px;
+}
+.sortProducts select {
+  background-color: var(--text-white);
+  border: 1px solid var(--color-grey-divider);
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-size: 16px;
+  color: var(--text-black);
 }
