@@ -29,6 +29,13 @@
   color: var(--text-white);
   border-radius: 6px;
 }
+
+
+.NotFound_link:active{
+background-color: #5C6322;
+transform: translateY(2px);
+}
+
 @media (min-width: 768px) {
   .NotFound_text p {
     font-size: 20px;

@@ -22,6 +22,12 @@
   border-radius: 6px;
 }
 
+.menuList .discount_link:active{
+background-color: #5C6322;
+transform: translateY(2px);
+}
+
+
 .open {
   transform: translateX(0%);
   overflow: unset;

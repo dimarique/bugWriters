@@ -7,6 +7,7 @@ import { fetchProducts } from "../../redux/slices/productsSlice";
 import Filters from "../Filters/Filters.jsx";
 import SkeletonCard from "../SkeletonCard/SkeletonCard.jsx";
 
+
 const AllProducts = () => {
   const dispatch = useDispatch();
 
@@ -61,3 +62,4 @@ const AllProducts = () => {
   );
 };
 export default AllProducts;
+

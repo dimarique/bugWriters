@@ -17,4 +17,9 @@
     border-radius: 6px;
     align-self: center;
   }
+
+  .discount_link:active{
+    background-color: #5C6322;
+transform: translateY(2px);
+  }
 }

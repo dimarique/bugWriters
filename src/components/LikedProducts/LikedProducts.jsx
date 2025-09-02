@@ -14,7 +14,7 @@ const LikedProducts = () => {
 
     return (
         <>
-            <div className={`${styles.likedProducts_breadcrumbs} side_padding`}>Хлебные крошки</div>
+            <div className={styles.likedProducts_breadcrumbs}>Хлебные крошки</div>
 
 
             <div className={`${styles.likedProducts_container} side_padding bottom_margin`}>
