@@ -5,11 +5,13 @@ import style from "./CartItem.module.css";
 
 export default function CartItem({ id, title, price, image, count }) {
   const dispatch = useDispatch();
+  const baseUrl = import.meta.env.VITE_API_URL;
 
   return (
     <div className={style.cartItem}>
        <div className= {style.cartItem_image}> 
-          <img src={image} alt={title}  />
+          <img src={`${baseUrl}${image}`} alt={title} />
+
           </div>
        
     

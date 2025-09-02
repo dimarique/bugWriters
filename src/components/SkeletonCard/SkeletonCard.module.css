@@ -1,0 +1,10 @@
+
+.skeletonCard {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 16px;
+  width: 100%;
+  background-color: #F2F6D3;  
+  border-radius: 0.75rem;
+}
+
