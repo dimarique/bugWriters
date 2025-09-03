@@ -96,11 +96,39 @@ const sellPrice = +(discont_price ?? price);
         </div>
 
         <div className={styles.productSingleCard_price_button}>
+      <div className={styles.productSignleCard_header2}>
+        <h2 className={styles.productSignleCard_title}>{title}</h2>
 
+        <img
+          onClick={clickHeandler}
+          src={isFav ? heart_favorite : heart_filled}
+          alt="heard image"
+        />
+
+
+          {discont_price && (
+          <div className={`${styles.productSingleCard_sale_label} ${styles.productSignleCard_sale_label2}`}>
+<p>- {Math.floor(((price - discont_price) / price) * 100)}%</p>
+
+
+          </div>
+          )}
+
+      </div>
 
 
           <div className={styles.productSingleCard_price}>
   
+          {/* {discont_price && (
+          <div className={`${styles.productSingleCard_sale_label} ${styles.productSignleCard_sale_label2}`}>
+<p>- {Math.floor(((price - discont_price) / price) * 100)}%</p>
+
+
+          </div>
+          )} */}
+
+
+
           {discont_price && (
             <span
               className={styles.productCard_discont_price}
@@ -139,6 +167,20 @@ const sellPrice = +(discont_price ?? price);
             Add to Cart
           </button>
         </div>
+
+
+
+{/* 
+          {discont_price && (
+          <div className={styles.productSingleCard_sale_label}>
+<p>- {Math.floor(((price - discont_price) / price) * 100)}%</p>
+
+
+          </div>
+          )} */}
+
+
+
       </div>
 
       <div className={styles.productSingleCard_description}>
