@@ -10,12 +10,13 @@
   align-items: stretch; 
   gap: 16px;
   padding: 16px;
+  margin: 1.5rem 0 3.5rem;
   
 }
 .productsByCategoryTitle{
   font-size: 40px;
   line-height: 110%;
-  margin-left: 10px;
+  margin: 2rem 0.8rem 1.5rem;
 }
 @media(min-width: 480px) {
   .productsByCategory {

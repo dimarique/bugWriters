@@ -3,10 +3,10 @@
   flex-direction: row;
   justify-content: space-between;
   width: 100%;
-  background-color: #fffff0;
+  background-color: var(--color-white);
   padding: 20px;
   overflow: hidden;
-  border-bottom: 1px solid lightgrey;
+  border-bottom: 1px solid var(--color-light-grey);
 }
 
 .icons_wrapper {

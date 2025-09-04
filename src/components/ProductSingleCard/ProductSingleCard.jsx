@@ -50,7 +50,7 @@ const sellPrice = +(discont_price ?? price);
         id: product.id,
         title: product.title,
         price: sellPrice,
-        image: `${baseUrl}${product.image}`,
+        image: product.image,
         count: quantity,
       })
     );

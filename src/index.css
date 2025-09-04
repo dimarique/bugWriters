@@ -1,15 +1,15 @@
 :root {
   --text-black: #424436;
-  --text-white: #FFFFFF;
-  --text-grey: #8B8B8B;
+  --text-white: #ffffff;
+  --text-grey: #8b8b8b;
 
-  --color-green: #92A134;
-  --color-sale: #F26D22;
-  --color-white: #FFFFF1;
+  --color-green: #92a134;
+  --color-sale: #f26d22;
+  --color-white: #fffff1;
   --color-black: #424436;
-  --color-grey-divider: #DDDDDD;
-  --color-grey: #8B8B8B;
-  --color-light-grey: #F2F6D3;
+  --color-grey-divider: #dddddd;
+  --color-grey: #8b8b8b;
+  --color-light-grey: #f2f6d3;
 }
 
 * {
@@ -23,10 +23,9 @@ body {
   height: 100%;
   width: 100%;
   font-family: sans-serif;
-  background-color: #fff;
-  color: #000;
+  background-color: var(--color-white);
+  color: var(--color-black);
 }
-
 
 img,
 picture,
@@ -50,8 +49,6 @@ h2 {
   font-weight: 700;
   font-size: 40px;
   line-height: 110%;
-
-
 }
 
 h3 {
@@ -60,7 +57,6 @@ h3 {
   font-size: 18px;
   line-height: 130%;
 }
-
 
 a {
   text-decoration: none;
@@ -78,24 +74,19 @@ ol {
   padding: 0 20px;
 }
 
-
 .bottom_margin {
   margin-bottom: 56px;
 }
 
-
-
-
-@media(min-width: 480px) {
+@media (min-width: 480px) {
   h2 {
     font-size: 48px;
   }
 }
 
-@media(min-width: 768px) {
+@media (min-width: 768px) {
   h2 {
     font-size: 56px;
-  
   }
 
   h3 {
@@ -107,17 +98,13 @@ ol {
   }
 }
 
-
-@media(min-width: 1000px) {
+@media (min-width: 1000px) {
   h2 {
     font-size: 64px;
   }
 }
 
-
-
-@media(min-width: 1440px) {
-
+@media (min-width: 1440px) {
   .bottom_margin {
     margin-bottom: 80px;
   }
@@ -125,5 +112,4 @@ ol {
   .side_padding {
     padding: 0 40px;
   }
-
 }

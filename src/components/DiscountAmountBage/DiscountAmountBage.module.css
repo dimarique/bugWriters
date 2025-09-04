@@ -3,9 +3,9 @@
   left: 20px;
   top: 20px;
   padding: 4px 8px;
-  background-color: #f26e21;
+  background-color: var(--color-sale);
   border-radius: 6px;
   font-size: 18px;
-  color: white;
+  color: var(--text-white);
   font-weight: 600;
 }

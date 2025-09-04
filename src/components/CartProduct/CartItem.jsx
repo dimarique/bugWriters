@@ -21,7 +21,7 @@ export default function CartItem({ id, title, price, image, count }) {
         <div className={style.cartItem_info_up}>
           <p >{title}</p>
           <button className={style.cartItem_remove} onClick={() => dispatch(removeProduct(id))}>
-            X
+            ✕
           </button>
         </div>
         <div className={style.cartItem_info_down}>
