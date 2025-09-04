@@ -18,12 +18,13 @@
   padding: 6px 16px;
   font-size: 18px;
   font-weight: 500;
-  background-color: var(--color-sale);
+  background-color: var(--color-green);
   border-radius: 6px;
+  color: var(--text-white);
 }
 
 .menuList .discount_link:active {
-  background-color: var(--color-green);
+  background-color: #5C6322;
   transform: translateY(2px);
 }
 
