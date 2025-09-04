@@ -2,6 +2,8 @@ import styles from "./CartForm.module.css";
 import { useForm } from "react-hook-form";
 import { useSelector, useDispatch } from "react-redux";
 import { clearCart } from "../../redux/slices/cartSlice";
+import CartPopup from "../CartProduct/CartPopup.jsx";
+import { useState } from "react";
 
 import React from "react";
 
@@ -14,6 +16,7 @@ const CartForm = () => {
   } = useForm();
 
   const dispatch = useDispatch();
+  const [popupOpen, setPopupOpen] = useState(false); // 👈 состояние поп-апа
 
   const API_BASE = import.meta.env.VITE_API_URL || "";
 
@@ -21,29 +24,32 @@ const CartForm = () => {
   const cartEntries = Object.entries(cart.cartProducts);
 
   const totalCount = cartEntries.reduce(
-    (acc, [, product]) => acc + product.count,0 );
+    (acc, [, product]) => acc + product.count,
+    0
+  );
   const totalPrice = cartEntries.reduce(
-    (acc, [, product]) => acc + product.count * product.price,0);
+    (acc, [, product]) => acc + product.count * product.price,
+    0
+  );
 
   const onSubmit = (data) => {
-
-    const items = cartEntries.map(([id, product])=>({
-id, 
-title: product.title,
-price: product.price,
-count: product.count,
+    const items = cartEntries.map(([id, product]) => ({
+      id,
+      title: product.title,
+      price: product.price,
+      count: product.count,
     }));
 
     const payload = {
-        name: data.name,
-        phone: data.phone,
-        email: data.email,
-        items,
-        totalCount,
-        totalPrice,
-      }
+      name: data.name,
+      phone: data.phone,
+      email: data.email,
+      items,
+      totalCount,
+      totalPrice,
+    };
 
-      console.log("➡️ Sending order:", payload);
+    console.log("➡️ Sending order:", payload);
 
     return fetch(`${API_BASE}/order/send`, {
       method: "POST",
@@ -60,7 +66,8 @@ count: product.count,
         console.log(dataResponse);
 
         reset();
-        dispatch(clearCart())
+        dispatch(clearCart());
+        setPopupOpen(true);
         return dataResponse;
       })
       .catch((error) => {
@@ -133,12 +140,22 @@ count: product.count,
               {errors.email && <span>{errors.email.message}</span>}
             </div>
 
-            <button className={styles.cartForm_button} type="submit">
-              Order
+            <button
+              className={styles.cartForm_button}
+              type="submit"
+              onClick={() => setPopupOpen(true)}
+            >
+               Order
             </button>
+
+            <div className={styles.cartForm_popup}></div>
           </form>
         </div>
       </div>
+      <CartPopup
+         open={popupOpen}
+        onClose={() => setPopupOpen(false)}
+      />
     </div>
   );
 };
