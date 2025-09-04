@@ -1,12 +1,14 @@
 import styles from "./FilterByPrice.module.css";
 import { useDispatch } from "react-redux";
-import { setPriceFrom, setPriceTo } from "../../redux/slices/productsSlice";
+import { setPriceFrom, setPriceTo } from "../../redux/slices/filtersSlice";
 
 const FilterByPrice = () => {
   const dispatch = useDispatch();
 
-  const handleFromInputChange = (e) => dispatch(setPriceFrom(e.target.value));
-  const handleToInputChange = (e) => dispatch(setPriceTo(e.target.value));
+  const handleFromInputChange = (e) =>
+    dispatch(setPriceFrom(Number(e.target.value)));
+  const handleToInputChange = (e) =>
+    dispatch(setPriceTo(Number(e.target.value)));
 
   return (
     <div className={styles.filterByPrice}>

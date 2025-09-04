@@ -8,7 +8,7 @@ const Filters = () => {
     <div className={`${styles.filters} side_padding`}>
       <FilterByPrice />
       <FilterDiscount />
-      <SortProducts />
+      {/* <SortProducts /> */}
     </div>
   );
 };

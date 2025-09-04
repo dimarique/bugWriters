@@ -1,13 +1,16 @@
 .saleSection {
   margin: 0 auto;
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 0.5fr));
+  gap: 1rem;
+  /* display: flex;
   flex-direction: column;
   gap: 20px;
   align-items: stretch;
-  justify-content: center;
+  justify-content: center; */
 }
 
-@media screen and (min-width: 480px) {
+/* @media screen and (min-width: 480px) {
   .saleSection {
     flex-direction: row;
     flex-wrap: wrap;
@@ -18,4 +21,4 @@
   .saleSection {
     flex-direction: row;
   }
-}
+} */

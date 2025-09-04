@@ -6,6 +6,7 @@ import ProductCard from "../ProductCard/ProductCard";
 import SectionHeader from "../SectionHeader/SectionHeader";
 import SkeletonCard from "../SkeletonCard/SkeletonCard";
 import Filters from "../Filters/Filters";
+import ProductsList from "../ProductsList/ProductsList";
 
 const DiscountedProducts = () => {
   const products = useSelector((state) => state.products.products);
@@ -21,7 +22,8 @@ const DiscountedProducts = () => {
     <>
       <SectionHeader text={"Discounted Products"} hasButton={false} />
       <Filters />
-      <div className={styles.discountedProducts}>
+      <ProductsList />
+      {/* <div className={styles.discountedProducts}>
         {discountedProducts
           .filter((product) => product.discont_price)
           .map((product) => (
@@ -34,7 +36,7 @@ const DiscountedProducts = () => {
               discont_price={product.discont_price}
             />
           ))}
-      </div>
+      </div> */}
     </>
   );
 };

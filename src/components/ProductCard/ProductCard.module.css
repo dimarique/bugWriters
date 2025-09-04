@@ -52,7 +52,7 @@
   top: 80px;
 }
 
-@media screen and (min-width: 480px) {
+/* @media screen and (min-width: 480px) {
   .productCard {
     max-width: 46%;
   }
@@ -62,4 +62,4 @@
   .productCard {
     max-width: 23%;
   }
-}
+} */
