@@ -1,0 +1,5 @@
+.skeletonItem {
+  height: 335px;
+  background-color: var(--color-light-grey);
+  border-radius: 0.75rem;
+}
