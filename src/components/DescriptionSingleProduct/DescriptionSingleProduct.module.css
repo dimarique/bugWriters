@@ -15,12 +15,6 @@
 .clamped {
     max-height: 180px;
     overflow: hidden;
-
-      /* display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 10; 
-  overflow: hidden; */
-
 }
 
 .description_button {
@@ -47,16 +41,28 @@
 
 }
 
-/* @media(min-width: 768px) {
+@media(min-width: 768px) {
+.text {
+    font-size: 16px;
+}
 
-} */
+.description_button {
+
+    font-size: 16px;
+   
+
+}
+
+}
 
 @media(min-width: 1000px) {
 .clamped{
        max-height: 227px;
 }
+
+
+.description {
+    gap: 16px;
 }
 
-/* @media(min-width: 1440px) {
-
-} */
+}
