@@ -4,7 +4,7 @@
   border-radius: 4px;
   max-width: fit-content;
   margin: 20px auto;
-}
+  }
 
 .sectionHeaderButton:active{
   background-color: var(--color-light-grey);

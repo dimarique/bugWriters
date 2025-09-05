@@ -5,12 +5,10 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchProducts } from "../../redux/slices/productsSlice";
 import Filters from "../Filters/Filters.jsx";
-import SkeletonCard from "../SkeletonCard/SkeletonCard.jsx";
-
+import SkeletonGrid from "../Skeleton/SkeletonGrid.jsx";
 
 const AllProducts = () => {
   const dispatch = useDispatch();
-
   const { products, status, error, showDiscount } = useSelector(
     (state) => state.products
   );
@@ -35,7 +33,7 @@ const AllProducts = () => {
 
         <Filters />
 
-        {status === "loading" && <SkeletonCard count={12} />}
+        {status === "loading" && <SkeletonGrid count={12} />}
         {status === "failed" && <p>{error}</p>}
         {status === "succeeded" && (
           <div className={styles.allProducts_items}>
@@ -62,4 +60,3 @@ const AllProducts = () => {
   );
 };
 export default AllProducts;
-
