@@ -3,12 +3,12 @@ import FilterDiscount from "../FilterDiscount/FilterDiscount";
 import SortProducts from "../SortProducts/SortProducts";
 import styles from "./Filters.module.css";
 
-const Filters = () => {
+const Filters = ({ price, discount, sort }) => {
   return (
     <div className={`${styles.filters} side_padding`}>
-      <FilterByPrice />
-      <FilterDiscount />
-      {/* <SortProducts /> */}
+      {price && <FilterByPrice />}
+      {discount && <FilterDiscount />}
+      {sort && <SortProducts />}
     </div>
   );
 };

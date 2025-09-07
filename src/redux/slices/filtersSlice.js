@@ -9,10 +9,17 @@ export const filtersSlice = createSlice({
   },
   reducers: {
     setPriceFrom: (state, action) => {
-      state.priceFrom = action.payload;
+      const value = action.payload;
+      if (value < 0) state.priceFrom = 0;
+      else if (state.priceTo !== null && value > state.priceTo)
+        state.priceFrom = state.priceTo; // не больше priceTo
+      else state.priceFrom = value;
     },
     setPriceTo: (state, action) => {
-      state.priceTo = action.payload;
+      const value = action.payload;
+      if (value !== null && value < state.priceFrom)
+        state.priceTo = state.priceFrom; // не меньше priceFrom
+      else state.priceTo = value;
     },
     setIsDiscounted: (state, action) => {
       state.isDiscounted = action.payload;

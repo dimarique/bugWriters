@@ -8,6 +8,7 @@ const ProductsList = () => {
     (state) => state.filters,
   );
   const filteredProducts = products.filter((item) => {
+    if (priceFrom > priceTo) return false;
     return (
       item.price >= priceFrom &&
       item.price <= priceTo &&
