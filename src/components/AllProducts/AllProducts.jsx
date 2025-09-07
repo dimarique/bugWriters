@@ -10,7 +10,7 @@ import SkeletonGrid from "../Skeleton/SkeletonGrid.jsx";
 const AllProducts = () => {
   const dispatch = useDispatch();
   const { products, status, error, showDiscount } = useSelector(
-    (state) => state.products
+    (state) => state.products,
   );
   useEffect(() => {
     if (status === "idle") dispatch(fetchProducts());
@@ -22,12 +22,12 @@ const AllProducts = () => {
 
   return (
     <>
-      <div className={`${styles.allProducts_breadcrumbs} side_padding`}>
+      <div className={`${styles.allProducts_breadcrumbs} side_padding `}>
         Хлебные крошки
       </div>
 
       <div
-        className={`${styles.allProducts_container} side_padding bottom_margin`}
+        className={`${styles.allProducts_container} side_padding bottom_margin `}
       >
         <h2>All products</h2>
 
@@ -36,7 +36,7 @@ const AllProducts = () => {
         {status === "loading" && <SkeletonGrid count={12} />}
         {status === "failed" && <p>{error}</p>}
         {status === "succeeded" && (
-          <div className={styles.allProducts_items}>
+          <div className={`${styles.allProducts_items} responsive_cards`}>
             {visibleDiscountProducts.length === 0 ? (
               <p>Empty</p>
             ) : (

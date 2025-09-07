@@ -21,10 +21,11 @@ const DiscountedProducts = () => {
     <>
       <SectionHeader text={"Discounted Products"} hasButton={false} />
       <Filters />
-       {status === "loading" && <SkeletonGrid count={12} />}
-        {status === "failed" && <div>Error: {error}</div>}
-      <div className={styles.discountedProducts}>
-       
+      {status === "loading" && <SkeletonGrid count={12} />}
+      {status === "failed" && <div>Error: {error}</div>}
+      <div
+        className={`${styles.discountedProducts} side_padding responsive_cards`}
+      >
         {discountedProducts
           .filter((product) => product.discont_price)
           .map((product) => (
