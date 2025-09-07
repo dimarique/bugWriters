@@ -14,7 +14,7 @@ export const cartSlice = createSlice({
   },
   reducers: {
     addProduct: (state, action) => {
-      const { id, title, price, image, count = 1 } = action.payload;
+      const { id, title, price, discont_price, image, count = 1 } = action.payload;
       if (state.cartProducts[id]) {
         state.cartProducts[id].count += count;
       } else {
@@ -23,6 +23,7 @@ export const cartSlice = createSlice({
           price,
           image,
           count,
+          discont_price,
         };
       }
       state.totalPrice =
@@ -65,16 +66,14 @@ export const cartSlice = createSlice({
       }
       saveCartToLocalStorage(state);
     },
-
     clearCart: (state) => {
       state.cartProducts = {};
       state.totalPrice = 0;
       state.totalCount = 0;
       saveCartToLocalStorage(state);
     },
-
     switchCart: (state, action) => {
-      const { id, title, price, image, count = 1 } = action.payload;
+      const { id, title, price, discont_price, image, count = 1 } = action.payload;
 
       if (state.cartProducts[id]) {
         const removedCount = state.cartProducts[id].count;
@@ -84,12 +83,11 @@ export const cartSlice = createSlice({
           Math.round((state.totalPrice - removedPrice) * 100) / 100;
         state.totalCount -= removedCount;
       } else {
-        state.cartProducts[id] = { title, price, image, count };
+        state.cartProducts[id] = { title, price, discont_price, image, count };
         state.totalPrice =
           Math.round((state.totalPrice + price * count) * 100) / 100;
         state.totalCount += count;
       }
-
       saveCartToLocalStorage(state);
     },
   },

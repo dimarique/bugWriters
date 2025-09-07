@@ -34,6 +34,7 @@ export default function CartProduct() {
             id={id}
             title={product.title}
             price={product.price}
+            discont_price={product.discont_price}
             count={product.count}
             image={product.image}
           />
