@@ -66,7 +66,7 @@ export const productsSlice = createSlice({
      * @param {ProductsState} state
      * @param {{payload: number}} action - Minimum price value
      */
-    setPriceFrom: (state, action) => {
+    /* setPriceFrom: (state, action) => {
       state.priceFrom = action.payload;
       state.filteredByPriceProducts = state.products.filter((product) => {
         return (
@@ -74,14 +74,14 @@ export const productsSlice = createSlice({
           product.price <= (state.priceTo || Infinity)
         );
       });
-    },
+    }, */
 
     /**
      * Sets the maximum price and updates filtered products.
      * @param {ProductsState} state
      * @param {{payload: number}} action - Maximum price value
      */
-    setPriceTo: (state, action) => {
+    /* setPriceTo: (state, action) => {
       state.priceTo = action.payload;
       state.filteredByPriceProducts = state.products.filter((product) => {
         return (
@@ -89,16 +89,16 @@ export const productsSlice = createSlice({
           product.price >= (state.priceFrom || 0)
         );
       });
-    },
+    }, */
 
     /**
      * Toggles discount mode (true = only discounted products).
      * @param {ProductsState} state
      * @param {{payload: boolean}} action - Whether to show discounts
      */
-    showDiscount: (state, action) => {
+    /* showDiscount: (state, action) => {
       state.showDiscount = action.payload;
-    },
+    }, */
 
     /**
      * Sorts products in place by different criteria.

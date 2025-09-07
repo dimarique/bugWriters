@@ -6,6 +6,7 @@ import ProductCard from "../ProductCard/ProductCard";
 import SectionHeader from "../SectionHeader/SectionHeader";
 import SkeletonGrid from "../Skeleton/SkeletonGrid";
 import Filters from "../Filters/Filters";
+import ProductsList from "../ProductsList/ProductsList";
 
 const DiscountedProducts = () => {
   const { products, status, error } = useSelector((state) => state.products);
@@ -26,7 +27,8 @@ const DiscountedProducts = () => {
       <div
         className={`${styles.discountedProducts} side_padding responsive_cards`}
       >
-        {discountedProducts
+        <ProductsList />
+        {/* {discountedProducts
           .filter((product) => product.discont_price)
           .map((product) => (
             <ProductCard
@@ -37,7 +39,7 @@ const DiscountedProducts = () => {
               image={product.image}
               discont_price={product.discont_price}
             />
-          ))}
+          ))} */}
       </div>
     </>
   );

@@ -1,5 +1,5 @@
 import styles from "./FilterByPrice.module.css";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { setPriceFrom, setPriceTo } from "../../redux/slices/filtersSlice";
 import { useState, useEffect } from "react";
 
@@ -7,18 +7,18 @@ const FilterByPrice = () => {
   const [localPriceFrom, setLocalPriceFrom] = useState(0);
   const [localPriceTo, setLocalPriceTo] = useState(Infinity);
 
-  const { priceFrom, priceTo } = useSelector((state) => state.filters);
   const dispatch = useDispatch();
 
-  const handleLocalPriceFromChange = (e) => setLocalPriceFrom(e.target.value);
-  const handleLocalPriceToChange = (e) => setLocalPriceTo(e.target.value);
+  const handleLocalPriceFromChange = (e) =>
+    setLocalPriceFrom(Number(e.target.value));
+  const handleLocalPriceToChange = (e) =>
+    setLocalPriceTo(Number(e.target.value));
 
   useEffect(() => {
     const timer = setTimeout(() => {
       dispatch(setPriceFrom(localPriceFrom));
       return clearTimeout(timer);
     }, 1000);
-    console.log(priceFrom, priceTo);
   });
 
   useEffect(() => {
