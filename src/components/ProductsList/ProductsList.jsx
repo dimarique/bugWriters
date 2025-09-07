@@ -4,12 +4,16 @@ import ProductCard from "../ProductCard/ProductCard";
 
 const ProductsList = () => {
   const products = useSelector((state) => state.products.products);
-  const { priceFrom, priceTo } = useSelector((state) => state.filters);
+  const { priceFrom, priceTo, isDiscounted } = useSelector(
+    (state) => state.filters,
+  );
   const filteredProducts = products.filter((item) => {
-    return item.price >= priceFrom && item.price <= priceTo;
+    return (
+      item.price >= priceFrom &&
+      item.price <= priceTo &&
+      item.discont_price !== null
+    );
   });
-  console.log(priceFrom, priceTo);
-  console.log(products);
   return (
     <div className={`${styles.productsList} responsive_cards`}>
       {filteredProducts.map((product) => {
