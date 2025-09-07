@@ -13,9 +13,11 @@ function ProductsByCategory() {
   const { Id } = useParams(); // получаем id категории из URL
   const dispatch = useDispatch(); // Получаем функцию dispatch, чтобы запускать экшены
 
-  const { products: allProducts, status, error } = useSelector(
-    (state) => state.products
-  ); // список всех товаров + статус
+  const {
+    products: allProducts,
+    status,
+    error,
+  } = useSelector((state) => state.products); // список всех товаров + статус
   const allCategories = useSelector((state) => state.categories.categories); // список всех категорий
 
   useEffect(() => {
@@ -28,12 +30,12 @@ function ProductsByCategory() {
   }, [allProducts, allCategories, dispatch]);
 
   const categoryProducts = allProducts.filter(
-    (product) => product.categoryId === Number(Id)
+    (product) => product.categoryId === Number(Id),
   );
   const currentCategory = allCategories.find((el) => el.id === Number(Id));
 
   return (
-    <div className={style.productsByCategoryContainer}>
+    <div className={`${style.productsByCategoryContainer} side_padding`}>
       <h2 className={style.productsByCategoryTitle}>
         {currentCategory?.title}
       </h2>
@@ -41,20 +43,22 @@ function ProductsByCategory() {
       {status === "loading" && <SkeletonGrid count={12} />}
       {status === "failed" && <p>{error}</p>}
       {status === "succeeded" && (
-        <div className={style.productsByCategory}>
+        <div className={`${style.productsByCategory} responsive_cards`}>
           {categoryProducts.length === 0 ? (
             <p>Empty</p>
           ) : (
-            categoryProducts.map(({ id, title, price, discont_price, image }) => (
-              <ProductCard
-                key={id}
-                id={id}
-                title={title}
-                price={price}
-                discont_price={discont_price}
-                image={image}
-              />
-            ))
+            categoryProducts.map(
+              ({ id, title, price, discont_price, image }) => (
+                <ProductCard
+                  key={id}
+                  id={id}
+                  title={title}
+                  price={price}
+                  discont_price={discont_price}
+                  image={image}
+                />
+              ),
+            )
           )}
         </div>
       )}
@@ -63,4 +67,3 @@ function ProductsByCategory() {
 }
 
 export default ProductsByCategory;
-

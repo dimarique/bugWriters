@@ -17,7 +17,7 @@ const SaleSection = () => {
   const randomItems = useRandomDiscountProducts(products, 4);
 
   return (
-    <div className={`${styles.saleSection} side_padding`}>
+    <div className={`${styles.saleSection} side_padding responsive_cards`}>
       {randomItems.map((product) => (
         <ProductCard
           key={product.id}
