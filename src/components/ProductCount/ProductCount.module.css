@@ -2,7 +2,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
- width: 200px;
+  width: 164px;
   border: 1px solid lightgrey;
   border-radius: 6px;
 
@@ -19,8 +19,8 @@
     border-radius: 6px;
   }
 
-  button:active{
-         background-color: var(--color-grey-divider);
+  button:active {
+    background-color: var(--color-grey-divider);
   }
 
   span {
@@ -29,6 +29,10 @@
     justify-content: center;
     width: 58px;
     padding: 0;
-    
+  }
+}
+@media (min-width: 768px) {
+  .productCount {
+    width: 200px;
   }
 }

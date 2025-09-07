@@ -2,7 +2,7 @@
   width: 100%;
   display: flex;
   flex-direction: column;
-  padding: 20px;
+  padding: 0 20px;
 }
 
 .emptyCart {
@@ -13,19 +13,14 @@
 }
 .emptyCart p {
   font-size: 1.2rem;
-  color: #424436;
+  color: var(--color-grey);
 }
 .emptyCart a {
-  background-color: #92a134;
+  background-color: var(--color-green);
   padding: 16px 56px;
-  color: white;
+  color: var(--color-white);
   text-decoration: none;
   border-radius: 6px;
-}
-
-.emptyCart a:active{
-  background-color: #5C6322;
-transform: translateY(2px);
 }
 
 .cartItemsColumn {
@@ -40,10 +35,5 @@ transform: translateY(2px);
     flex-direction: row; 
     align-items: flex-start;
     gap: 40px;
+    }
   }
-  
-  .cartItemsColumn {
-    flex: 1; 
-  }
-
-}

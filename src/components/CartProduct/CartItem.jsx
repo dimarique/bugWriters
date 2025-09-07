@@ -1,33 +1,40 @@
 import { useDispatch } from "react-redux";
 import { removeProduct } from "../../redux/slices/cartSlice";
 import ProductCount from "../ProductCount/ProductCount.jsx";
-import style from "./CartItem.module.css";
+import styles from "./CartItem.module.css";
 
-export default function CartItem({ id, title, price, image, count }) {
+export default function CartItem({ id, title, price, discont_price, image, count }) {
   const dispatch = useDispatch();
   const baseUrl = import.meta.env.VITE_API_URL;
 
   return (
-    <div className={style.cartItem}>
-       <div className= {style.cartItem_image}> 
+    <div className={styles.cartItem}>
+       <div className= {styles.cartItem_image}> 
           <img src={`${baseUrl}${image}`} alt={title} />
 
           </div>
-       
-    
-      <div className={style.cartItem_info}>
 
 
-        <div className={style.cartItem_info_up}>
+      <div className={styles.cartItem_info}>
+
+
+        <div className={styles.cartItem_info_up}>
           <p >{title}</p>
-          <button className={style.cartItem_remove} onClick={() => dispatch(removeProduct(id))}>
+          <button className={styles.cartItem_remove} onClick={() => dispatch(removeProduct(id))}>
             ✕
           </button>
         </div>
-        <div className={style.cartItem_info_down}>
+        <div className={styles.cartItem_info_down}>
                <ProductCount count={count} id={id} />
-        <p className={style.cartItem_price}> {price* count}$</p>
-        
+     
+          {discont_price ? (
+  <div className={styles.cartItem_prices}>
+    <span className={styles.cartItem_price}>{`$${discont_price * count}`}</span>
+    <span className={styles.cartItem_discontPrice}>{`$${price * count}`}</span>
+  </div>
+) : (
+  <span className={styles.cartItem_price}>{`$${price * count}`}</span>
+)}
 
         </div>
      
@@ -36,5 +43,4 @@ export default function CartItem({ id, title, price, image, count }) {
     </div>
   );
 }
-
 
