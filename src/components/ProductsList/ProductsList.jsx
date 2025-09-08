@@ -7,13 +7,17 @@ const ProductsList = () => {
   const { priceFrom, priceTo, isDiscounted } = useSelector(
     (state) => state.filters,
   );
+  /* const filteredProducts = products.filter((item) => {
+    if (priceFrom > priceTo) return false;
+    return item.price >= priceFrom && item.price <= priceTo;
+  }); */
   const filteredProducts = products.filter((item) => {
     if (priceFrom > priceTo) return false;
-    return (
-      item.price >= priceFrom &&
-      item.price <= priceTo &&
-      item.discont_price !== null
-    );
+
+    const inPriceRange = item.price >= priceFrom && item.price <= priceTo;
+    const discountOk = isDiscounted ? item.discont_price !== null : true;
+
+    return inPriceRange && discountOk;
   });
   return (
     <div className={`${styles.productsList} responsive_cards`}>

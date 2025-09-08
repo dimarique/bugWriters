@@ -3,22 +3,25 @@ import styles from "./AllProducts.module.css";
 import ProductCard from "../ProductCard/ProductCard";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchProducts } from "../../redux/slices/productsSlice";
+// import { fetchProducts } from "../../redux/slices/productsSlice";
+import { setIsDiscounted } from "../../redux/slices/filtersSlice.js";
 import Filters from "../Filters/Filters.jsx";
 import SkeletonGrid from "../Skeleton/SkeletonGrid.jsx";
+import ProductsList from "../ProductsList/ProductsList.jsx";
 
 const AllProducts = () => {
   const dispatch = useDispatch();
-  const { products, status, error, showDiscount } = useSelector(
-    (state) => state.products,
-  );
+  const { products, status, error } = useSelector((state) => state.products);
   useEffect(() => {
+    dispatch(setIsDiscounted(false));
+  }, [dispatch]);
+  /* useEffect(() => {
     if (status === "idle") dispatch(fetchProducts());
-  }, [status]);
+  }, [status]); */
 
-  const visibleDiscountProducts = showDiscount
+  /* const visibleDiscountProducts = showDiscount
     ? products.filter((product) => product.discont_price)
-    : products;
+    : products; */
 
   return (
     <>
@@ -31,30 +34,10 @@ const AllProducts = () => {
       >
         <h2>All products</h2>
 
-        <Filters />
-
+        <Filters price={true} discount={true} sort={true} />
         {status === "loading" && <SkeletonGrid count={12} />}
         {status === "failed" && <p>{error}</p>}
-        {status === "succeeded" && (
-          <div className={`${styles.allProducts_items} responsive_cards`}>
-            {visibleDiscountProducts.length === 0 ? (
-              <p>Empty</p>
-            ) : (
-              visibleDiscountProducts.map((product) => {
-                return (
-                  <ProductCard
-                    key={product.id}
-                    id={product.id}
-                    title={product.title}
-                    price={product.price}
-                    image={product.image}
-                    discont_price={product.discont_price}
-                  />
-                );
-              })
-            )}
-          </div>
-        )}
+        {status === "succeeded" && <ProductsList />}
       </div>
     </>
   );
