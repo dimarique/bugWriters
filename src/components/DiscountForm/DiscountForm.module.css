@@ -38,7 +38,7 @@
     background-color: transparent;
     border-radius: 6px;
     padding: 12px 20px;
-    border: 1px solid var(--color-white);
+    border: 1px solid #fffff1;
 }
 
 .discount_inputs input:focus {
@@ -59,8 +59,8 @@
 
 
 .discount_button {
-    color: var(--text-black);
-    background-color: var(--color-white);
+    color: #424436;
+    background-color: #fffff1;
     font-weight: 600;
     font-size: 18px;
     line-height: 130%;
