@@ -115,7 +115,7 @@ transform: translateY(2px);
  width: 164px;
   border: 1px solid lightgrey;
   border-radius: 6px;
-  background-color: var(--text-white);
+  background-color: var(--color-white);
   margin: 0 auto;
 }
 .productSingleCard_quantity button {
@@ -126,7 +126,7 @@ transform: translateY(2px);
     height: 47px;
     width: 47px;
     font-size: 26px;
-    background-color: var(--text-white);
+    background-color: var(--color-white);
     border: 1px solid lightgrey;
     border-radius: 6px;
     color: var(--text-grey);
