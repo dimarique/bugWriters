@@ -5,8 +5,6 @@ import { clearCart } from "../../redux/slices/cartSlice";
 import CartPopup from "../CartProduct/CartPopup.jsx";
 import { useState } from "react";
 
-import React from "react";
-
 const CartForm = () => {
   const {
     register,
@@ -16,7 +14,7 @@ const CartForm = () => {
   } = useForm();
 
   const dispatch = useDispatch();
-  const [popupOpen, setPopupOpen] = useState(false); // 👈 состояние поп-апа
+  const [popupOpen, setPopupOpen] = useState(false); 
 
   const API_BASE = import.meta.env.VITE_API_URL || "";
 
@@ -28,7 +26,7 @@ const CartForm = () => {
     0
   );
   const totalPrice = cartEntries.reduce(
-    (acc, [, product]) => acc + product.count * product.price,
+    (acc, [, product]) => acc + product.count * (product.discont_price || product.price),
     0
   );
 

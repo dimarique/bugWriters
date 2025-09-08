@@ -4,11 +4,11 @@ import styles from "./DiscountedProducts.module.css";
 import { fetchProducts } from "../../redux/slices/productsSlice";
 import ProductCard from "../ProductCard/ProductCard";
 import SectionHeader from "../SectionHeader/SectionHeader";
-import SkeletonCard from "../SkeletonCard/SkeletonCard";
+import SkeletonGrid from "../Skeleton/SkeletonGrid";
 import Filters from "../Filters/Filters";
 
 const DiscountedProducts = () => {
-  const products = useSelector((state) => state.products.products);
+  const { products, status, error } = useSelector((state) => state.products);
   const discountedProducts = useSelector(
     (state) => state.products.filteredByPriceProducts,
   );
@@ -21,7 +21,11 @@ const DiscountedProducts = () => {
     <>
       <SectionHeader text={"Discounted Products"} hasButton={false} />
       <Filters />
-      <div className={styles.discountedProducts}>
+      {status === "loading" && <SkeletonGrid count={12} />}
+      {status === "failed" && <div>Error: {error}</div>}
+      <div
+        className={`${styles.discountedProducts} side_padding responsive_cards`}
+      >
         {discountedProducts
           .filter((product) => product.discont_price)
           .map((product) => (

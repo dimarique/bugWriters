@@ -1,60 +1,55 @@
-import React from 'react'
-import styles from './LikedProducts.module.css'
-import ProductCard from '../ProductCard/ProductCard'
-import { useSelector } from 'react-redux'
-import FilterByPrice from '../FilterByPrice/FilterByPrice'
-import SortProducts from '../SortProducts/SortProducts'
+import React from "react";
+import styles from "./LikedProducts.module.css";
+import ProductCard from "../ProductCard/ProductCard";
+import { useSelector } from "react-redux";
+import FilterByPrice from "../FilterByPrice/FilterByPrice";
+import SortProducts from "../SortProducts/SortProducts";
+import SkeletonGrid from "../Skeleton/SkeletonGrid.jsx";
+import { useState, useEffect } from "react";
 
 const LikedProducts = () => {
+  const favProducts = useSelector((state) => state.favorites.favProducts);
+  const [loading, setLoading] = useState(true);
 
+  useEffect(() => {
+    // имитация загрузки, чтобы показать скелетон
+    const timer = setTimeout(() => setLoading(false), 500); // 0.5 сек
+    return () => clearTimeout(timer);
+  }, []);
 
+  return (
+    <>
+      <div className={styles.likedProducts_breadcrumbs}>Хлебные крошки</div>
 
-    const favProducts = useSelector(state => state.favorites.favProducts)
+      <div
+        className={`${styles.likedProducts_container} side_padding bottom_margin`}
+      >
+        <h2>Liked products</h2>
 
+        <FilterByPrice />
+        <SortProducts />
 
-    return (
-        <>
-            <div className={styles.likedProducts_breadcrumbs}>Хлебные крошки</div>
+        {loading ? (
+          <SkeletonGrid count={8} />
+        ) : favProducts.length === 0 ? (
+          <p>Empty</p>
+        ) : (
+          <div className={`${styles.likedProducts_items} responsive_cards`}>
+            {favProducts.map((product) => (
+              <ProductCard
+                key={product.id}
+                id={product.id}
+                title={product.title}
+                price={product.price}
+                image={product.image}
+                discont_price={product.discont_price}
+              />
+            ))}
+          </div>
+        )}
+      </div>
+    </>
+  );
+};
 
-
-            <div className={`${styles.likedProducts_container} side_padding bottom_margin`}>
-                <h2>Liked products</h2>
-
-             <FilterByPrice />
-             <SortProducts />
-
-
-                {favProducts.length === 0 ? (<p>Empty</p>) :
-
-                    (<div className={styles.likedProducts_items}> {
-                        favProducts.map((product) => {
-
-
-                            return (
-
-                                <ProductCard
-                                    key={product.id}
-                                    id={product.id}
-                                    title={product.title}
-                                    price={product.price}
-                                    image={product.image}
-                                    discont_price={product.discont_price} />
-                            )
-                        })
-
-
-
-                    }  </div>)}
-
-
-
-
-
-            </div>
-
-
-        </>
-    )
-}
-
-export default LikedProducts
+export default LikedProducts;

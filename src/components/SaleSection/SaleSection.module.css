@@ -1,21 +1,14 @@
 .saleSection {
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  align-items: stretch;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: clamp(5px, 3vw, 20px);
 }
 
-@media screen and (min-width: 480px) {
+@media (max-width: 480px) {
   .saleSection {
-    flex-direction: row;
-    flex-wrap: wrap;
-  }
-}
-
-@media screen and (min-width: 1000px) {
-  .saleSection {
-    flex-direction: row;
+    grid-template-columns: 1fr;
+    grid-template-rows: 4fr;
+    gap: 5px;
   }
 }
