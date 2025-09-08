@@ -12,6 +12,23 @@
   --color-light-grey: #f2f6d3;
 }
 
+html.dark{
+  --text-black: #ffffff;
+  --text-white: #ffffff;
+  --text-grey: #8b8b8b;
+
+
+  --color-green: #92a134;
+  --color-sale: #f26d22;
+  --color-white: #424436;
+  --color-black: #fffff1;
+  --color-grey-divider: #dddddd;
+  --color-grey: #8b8b8b;
+  --color-light-grey: #383A2C;
+;
+}
+
+
 * {
   box-sizing: border-box;
   margin: 0;

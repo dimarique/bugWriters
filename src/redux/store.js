@@ -3,6 +3,7 @@ import productsReducer from "./slices/productsSlice";
 import categoriesReducer from "./slices/categoriesSlice";
 import favoritesReducer from "./slices/favoritesSlice";
 import cartReducer from "./slices/cartSlice"; 
+import themeReducer from "./slices/themeSlice";
 
 export default configureStore({
   reducer: {
@@ -10,5 +11,7 @@ export default configureStore({
     categories: categoriesReducer,
     favorites: favoritesReducer,
     cart: cartReducer,
+    theme: themeReducer,
+
   },
 });

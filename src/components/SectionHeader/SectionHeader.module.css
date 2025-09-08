@@ -15,5 +15,5 @@
 .sectionHeader_line {
   flex: 1;
   height: 1px;
-  background-color: var(--color-light-grey);
+  background-color: var(--color-grey-divider);
 }

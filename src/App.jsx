@@ -1,9 +1,9 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Route, Routes } from "react-router-dom";
 import "./App.css";
 import Header from "./components/Header/Header.jsx";
 import CategoriesPage from "./pages/Categories/CategoriesPage.jsx";
-import { Provider } from "react-redux";
+import { Provider, useSelector } from "react-redux";
 import store from "./redux/store.js";
 import Footer from "./components/Footer/Footer.jsx";
 import Main from "./pages/Main/Main.jsx";
@@ -18,9 +18,19 @@ import NotFound from "./components/NotFound/NotFound.jsx";
 
 function App() {
   const [menuIsOpen, setMenuIsOpen] = useState(false);
+
+
+const theme = useSelector(state => state.theme.selectedTheme)
+
+
+useEffect(()=>{
+  document.documentElement.classList.remove('light', 'dark');
+  document.documentElement.classList.add(theme)
+},[theme])
+
   return (
     <>
-      <Provider store={store}>
+      {/* <Provider store={store}> */}
         <div className="content_wrapper">
           <Header menuIsOpen={menuIsOpen} setMenuIsOpen={setMenuIsOpen} />
           <Routes>
@@ -37,7 +47,7 @@ function App() {
           </Routes>
           <Footer />
         </div>
-      </Provider>
+      {/* </Provider> */}
     </>
   );
 }
