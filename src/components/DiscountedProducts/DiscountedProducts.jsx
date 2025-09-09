@@ -6,6 +6,7 @@ import SectionHeader from "../SectionHeader/SectionHeader";
 import SkeletonGrid from "../Skeleton/SkeletonGrid";
 import Filters from "../Filters/Filters";
 import ProductsList from "../ProductsList/ProductsList";
+import Breadcrumbs from "../Breadcrumbs/Breadcrumbs";
 
 const DiscountedProducts = () => {
   const { status, error } = useSelector((state) => state.products);
@@ -15,6 +16,7 @@ const DiscountedProducts = () => {
   }, [dispatch]);
   return (
     <>
+      <Breadcrumbs />
       <SectionHeader text={"Discounted Products"} hasButton={false} />
       <Filters price={true} discount={false} sort={true} />
 

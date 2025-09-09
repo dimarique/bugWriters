@@ -8,6 +8,7 @@ import { setIsDiscounted } from "../../redux/slices/filtersSlice.js";
 import Filters from "../Filters/Filters.jsx";
 import SkeletonGrid from "../Skeleton/SkeletonGrid.jsx";
 import ProductsList from "../ProductsList/ProductsList.jsx";
+import Breadcrumbs from "../Breadcrumbs/Breadcrumbs.jsx";
 
 const AllProducts = () => {
   const dispatch = useDispatch();
@@ -25,10 +26,7 @@ const AllProducts = () => {
 
   return (
     <>
-      <div className={`${styles.allProducts_breadcrumbs} side_padding `}>
-        Хлебные крошки
-      </div>
-
+      <Breadcrumbs />
       <div
         className={`${styles.allProducts_container} side_padding bottom_margin `}
       >

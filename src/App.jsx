@@ -14,6 +14,7 @@ import Products from "./pages/Products/Products.jsx";
 import ProductsByCategory from "./components/ProductsByCategory/ProductsByCategory.jsx";
 import Cart from "./pages/Cart/Cart.jsx";
 import NotFound from "./components/NotFound/NotFound.jsx";
+import Breadcrumbs from "./components/Breadcrumbs/Breadcrumbs.jsx";
 
 function App() {
   const [menuIsOpen, setMenuIsOpen] = useState(false);
