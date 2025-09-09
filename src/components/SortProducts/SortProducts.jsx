@@ -6,7 +6,7 @@ const SortProducts = () => {
   const dispatch = useDispatch();
 
   const handleSortChange = (e) => {
-    dispatch(compareProducts({ sortBy: e.target.value }));//вызывает action для сортировки
+    dispatch(compareProducts({ sortBy: e.target.value })); //вызывает action для сортировки
   };
 
   return (
@@ -19,7 +19,6 @@ const SortProducts = () => {
           <option value="nameDesc">Name: Z to A</option>
           <option value="priceAsc">Price: Low to high</option>
           <option value="priceDesc">Price: High to low</option>
-        
         </select>
       </form>
     </div>
@@ -27,4 +26,3 @@ const SortProducts = () => {
 };
 
 export default SortProducts;
-;

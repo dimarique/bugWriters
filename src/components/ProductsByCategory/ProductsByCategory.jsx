@@ -39,7 +39,7 @@ function ProductsByCategory() {
       <h2 className={style.productsByCategoryTitle}>
         {currentCategory?.title}
       </h2>
-      <Filters />
+      <Filters price={true} discount={true} sort={true} />
       {status === "loading" && <SkeletonGrid count={12} />}
       {status === "failed" && <p>{error}</p>}
       {status === "succeeded" && (
