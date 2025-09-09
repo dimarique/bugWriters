@@ -12,13 +12,13 @@ export const filtersSlice = createSlice({
       const value = action.payload;
       if (value < 0) state.priceFrom = 0;
       else if (state.priceTo !== null && value > state.priceTo)
-        state.priceFrom = state.priceTo; // не больше priceTo
+        state.priceFrom = state.priceTo;
       else state.priceFrom = value;
     },
     setPriceTo: (state, action) => {
       const value = action.payload;
       if (value !== null && value < state.priceFrom)
-        state.priceTo = state.priceFrom; // не меньше priceFrom
+        state.priceTo = state.priceFrom;
       else state.priceTo = value;
     },
     setIsDiscounted: (state, action) => {
