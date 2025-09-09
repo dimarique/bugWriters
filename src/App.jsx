@@ -25,12 +25,14 @@ function App() {
     dispatch(fetchProducts());
   }, [dispatch]);
 
+
   useEffect(() => {
     document.documentElement.classList.remove("light", "dark");
     document.documentElement.classList.add(theme);
   }, [theme]);
 
   return (
+
     <div className="content_wrapper">
       <Header menuIsOpen={menuIsOpen} setMenuIsOpen={setMenuIsOpen} />
       <Routes>
