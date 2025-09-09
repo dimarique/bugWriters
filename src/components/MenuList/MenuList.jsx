@@ -1,10 +1,19 @@
 import styles from "./MenuList.module.css";
 import { Link } from "react-router-dom";
 import close from "../../assets/x.svg";
+import x_dark from '../../assets/x_dark.svg';
+import { useSelector } from "react-redux";
+
+
 const MenuList = ({ menuIsOpen, setMenuIsOpen }) => {
+
+  const theme = useSelector((state) => state.theme.selectedTheme);
+  const isDark = theme === "dark";
+
+
   return (
     <div className={`${styles.menuList} ${menuIsOpen ? styles.open : ""}`}>
-      <img onClick={() => setMenuIsOpen(false)} src={close} alt="" />
+      <img onClick={() => setMenuIsOpen(false)} src={isDark ? x_dark : close} alt="" />
       <nav>
         <ul>
           <li>
