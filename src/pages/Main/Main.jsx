@@ -16,23 +16,23 @@ const Main = () => {
       <SectionHeader
         text={"Categories"}
         hasButton={windowWidth < 480 ? false : true}
-        buttonText={"all categories"}
+        buttonText={"All categories"}
         linkTo="categories"
       />
       <CategoriesList limit={4} />
       {windowWidth < 480 && (
-        <SectionHeaderButton text={"all categories"} linkTo="categories" />
+        <SectionHeaderButton text={"All categories"} linkTo="categories" />
       )}
       <DiscountForm />
       <SectionHeader
         text={"Sale"}
         hasButton={windowWidth < 480 ? false : true}
-        buttonText={"all sales"}
+        buttonText={"All sales"}
         linkTo="sales"
       />
       <SaleSection />
       {windowWidth < 480 && (
-        <SectionHeaderButton text={"all sales"} linkTo="sales" />
+        <SectionHeaderButton text={"All sales"} linkTo="sales" />
       )}
     </div>
   );

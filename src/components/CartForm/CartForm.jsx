@@ -2,10 +2,8 @@ import styles from "./CartForm.module.css";
 import { useForm } from "react-hook-form";
 import { useSelector, useDispatch } from "react-redux";
 import { clearCart } from "../../redux/slices/cartSlice";
-import CartPopup from "../CartProduct/CartPopup.jsx";
-import { useState } from "react";
 
-const CartForm = () => {
+const CartForm = ({ onOrderSuccess }) => {
   const {
     register,
     handleSubmit,
@@ -14,7 +12,7 @@ const CartForm = () => {
   } = useForm();
 
   const dispatch = useDispatch();
-  const [popupOpen, setPopupOpen] = useState(false); 
+
 
   const API_BASE = import.meta.env.VITE_API_URL || "";
 
@@ -26,7 +24,8 @@ const CartForm = () => {
     0
   );
   const totalPrice = cartEntries.reduce(
-    (acc, [, product]) => acc + product.count * (product.discont_price || product.price),
+    (acc, [, product]) =>
+      acc + product.count * (product.discont_price || product.price),
     0
   );
 
@@ -47,8 +46,7 @@ const CartForm = () => {
       totalPrice,
     };
 
-    console.log("➡️ Sending order:", payload);
-
+  
     return fetch(`${API_BASE}/order/send`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -61,16 +59,15 @@ const CartForm = () => {
         return response.json();
       })
       .then((dataResponse) => {
-        console.log(dataResponse);
-
         reset();
         dispatch(clearCart());
-        setPopupOpen(true);
+        onOrderSuccess();
         return dataResponse;
       })
       .catch((error) => {
         console.error("An error occurred while submitting the request.", error);
       });
+
   };
 
   return (
@@ -78,10 +75,10 @@ const CartForm = () => {
       <div className={styles.cartForm_content}>
         <h2 className={styles.cartForm_title}>Order details</h2>
         <div className={styles.cartForm_orderSummary}>
-          <h3>{totalCount} items</h3>
+          <h3>{totalCount.toFixed(0)} items</h3>
           <div className={styles.cartForm_price}>
             <h3>Total </h3>
-            <h2>${totalPrice}</h2>
+            <h2>${totalPrice.toFixed(2)}</h2>
           </div>
         </div>
 
@@ -138,22 +135,14 @@ const CartForm = () => {
               {errors.email && <span>{errors.email.message}</span>}
             </div>
 
-            <button
-              className={styles.cartForm_button}
-              type="submit"
-              onClick={() => setPopupOpen(true)}
-            >
-               Order
+            <button className={styles.cartForm_button} type="submit">
+              Order
             </button>
-
-            <div className={styles.cartForm_popup}></div>
+             
           </form>
         </div>
       </div>
-      <CartPopup
-         open={popupOpen}
-        onClose={() => setPopupOpen(false)}
-      />
+  
     </div>
   );
 };

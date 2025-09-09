@@ -29,11 +29,11 @@ export default function CartItem({ id, title, price, discont_price, image, count
      
           {discont_price ? (
   <div className={styles.cartItem_prices}>
-    <span className={styles.cartItem_price}>{`$${discont_price * count}`}</span>
-    <span className={styles.cartItem_discontPrice}>{`$${price * count}`}</span>
+    <span className={styles.cartItem_price}>{`$${(discont_price * count).toFixed(2)}`}</span>
+    <span className={styles.cartItem_discontPrice}>{`$${(price * count).toFixed(2)}`}</span>
   </div>
 ) : (
-  <span className={styles.cartItem_price}>{`$${price * count}`}</span>
+  <span className={styles.cartItem_price}>{`$${(price * count).toFixed(2)}`}</span>
 )}
 
         </div>

@@ -4,12 +4,14 @@ import { useEffect } from "react";
 import style from "./CartProduct.module.css";
 import CartItem from "./CartItem.jsx";
 import CartForm from "../CartForm/CartForm.jsx";
+import CartPopup from "../CartProduct/CartPopup.jsx";
+import { useState } from "react";
 
 
 
 export default function CartProduct() {
   const cartState = useSelector((state) => state.cart);
-
+ const [popupOpen, setPopupOpen] = useState(false)
   useEffect(() => {
     localStorage.setItem("cart", JSON.stringify(cartState));
   }, [cartState]);
@@ -40,10 +42,10 @@ export default function CartProduct() {
           />
         ))}
       </div>
-      <CartForm />
+     <CartForm onOrderSuccess={() => setPopupOpen(true)} />
           </>
-    
-  )}
+      )}
+   <CartPopup open={popupOpen} onClose={() => setPopupOpen(false)} />
 </div>
 
   );

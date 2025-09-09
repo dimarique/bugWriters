@@ -17,7 +17,7 @@ const Header = ({ setMenuIsOpen, menuIsOpen }) => {
         </Link>
         <ThemeToggler />
       </div>
-      {windowWidth > 768 && <DesktopNavMenu />}
+      {windowWidth >= 768 && <DesktopNavMenu />}
       <div className={styles.icons_wrapper}>
         <Link to='/favorites'>
           <FavoritesIcon />
