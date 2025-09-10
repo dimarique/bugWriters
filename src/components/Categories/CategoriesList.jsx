@@ -4,7 +4,6 @@ import { useSelector, useDispatch } from "react-redux";
 import { useEffect, useState } from "react";
 import { fetchCategories } from "../../redux/slices/categoriesSlice";
 
-
 const CategoriesList = ({ limit }) => {
   const [displayedItems, setDisplayedItems] = useState([]);
   const categories = useSelector((state) => state.categories.categories);
@@ -21,18 +20,16 @@ const CategoriesList = ({ limit }) => {
   }, [categories, limit]);
 
   return (
-     
-      <div className={styles.categories}>
-        {displayedItems.map((category) => (
-          <CategoryCard
-            key={category.id}
-            id={category.id}
-            categoryTitle={category.title}
-            image={category.image}
-          />
-        ))}
-      </div>
-   
+    <div className={`${styles.categories} side_padding`}>
+      {displayedItems.map((category) => (
+        <CategoryCard
+          key={category.id}
+          id={category.id}
+          categoryTitle={category.title}
+          image={category.image}
+        />
+      ))}
+    </div>
   );
 };
 

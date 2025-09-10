@@ -45,7 +45,7 @@ function ProductsByCategory() {
       {status === "loading" && <SkeletonGrid count={12} />}
       {status === "failed" && <p>{error}</p>}
       {status === "succeeded" && (
-        <div className={`${style.productsByCategory} responsive_cards`}>
+        <div className={`responsive_cards`}>
           {categoryProducts.length === 0 ? (
             <p>Empty</p>
           ) : (

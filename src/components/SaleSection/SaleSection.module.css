@@ -1,14 +1,23 @@
 .saleSection {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
-  gap: clamp(5px, 3vw, 20px);
+  grid-template-columns: 1fr;
+  gap: 20px;
 }
 
-@media (max-width: 480px) {
+@media (min-width: 480px) {
   .saleSection {
-    grid-template-columns: 1fr;
-    grid-template-rows: 4fr;
-    gap: 5px;
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: 1000px) {
+  .saleSection {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (min-width: 1440px) {
+  .saleSection {
+    gap: 32px;
   }
 }

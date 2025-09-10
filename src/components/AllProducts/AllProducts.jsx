@@ -27,9 +27,7 @@ const AllProducts = () => {
   return (
     <>
       <Breadcrumbs />
-      <div
-        className={`${styles.allProducts_container} side_padding bottom_margin `}
-      >
+      <div className={`${styles.allProducts_container} bottom_margin `}>
         <h2>All products</h2>
 
         <Filters price={true} discount={true} sort={true} />

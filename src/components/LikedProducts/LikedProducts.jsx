@@ -34,7 +34,7 @@ const LikedProducts = () => {
         ) : favProducts.length === 0 ? (
           <p>Empty</p>
         ) : (
-          <div className={`${styles.likedProducts_items} responsive_cards`}>
+          <div className={`responsive_cards`}>
             {favProducts.map((product) => (
               <ProductCard
                 key={product.id}
