@@ -1,25 +1,25 @@
 import styles from "./ThemeToggler.module.css";
 import sun from "../../assets/sun.svg";
 import moon from "../../assets/moon.svg";
-import {switchTheme} from "../../redux/slices/themeSlice";
+import { switchTheme } from "../../redux/slices/themeSlice";
 import { useDispatch, useSelector } from "react-redux";
-import { useEffect } from "react";
 
 const ThemeToggler = () => {
+  const dispatch = useDispatch();
+  const theme = useSelector((state) => state.theme.selectedTheme);
 
-const dispatch = useDispatch();
-const theme = useSelector(state => state.theme.selectedTheme)
-
-const themeToggle = ()=>{
-  
-dispatch(switchTheme())
-}
-
-
+  const themeToggle = () => {
+    dispatch(switchTheme());
+  };
 
   return (
     <div className={styles.themeToggler}>
-      <input type="checkbox" id="toggle" onChange={themeToggle} checked={theme === 'dark' ? true : false}/>
+      <input
+        type="checkbox"
+        id="toggle"
+        onChange={themeToggle}
+        checked={theme === "dark" ? true : false}
+      />
       <label htmlFor="toggle" className={styles.theme_toggler}>
         <span className={`${styles.icon} ${styles.sun}`}>
           <img src={sun} alt="sun" />

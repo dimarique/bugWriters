@@ -8,6 +8,7 @@ import SkeletonGrid from "../Skeleton/SkeletonGrid.jsx";
 import { fetchProducts } from "../../redux/slices/productsSlice.js"; //загрузка списка товаров
 import { fetchCategories } from "../../redux/slices/categoriesSlice.js"; //загрузка списка категорий
 import Filters from "../Filters/Filters.jsx";
+import Breadcrumbs from "../Breadcrumbs/Breadcrumbs.jsx";
 
 function ProductsByCategory() {
   const { Id } = useParams(); // получаем id категории из URL
@@ -36,10 +37,11 @@ function ProductsByCategory() {
 
   return (
     <div className={`${style.productsByCategoryContainer} side_padding`}>
+      <Breadcrumbs />
       <h2 className={style.productsByCategoryTitle}>
         {currentCategory?.title}
       </h2>
-      <Filters />
+      <Filters price={true} discount={true} sort={true} />
       {status === "loading" && <SkeletonGrid count={12} />}
       {status === "failed" && <p>{error}</p>}
       {status === "succeeded" && (

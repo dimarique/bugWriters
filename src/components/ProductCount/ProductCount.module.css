@@ -5,6 +5,7 @@
   width: 164px;
   border: 1px solid lightgrey;
   border-radius: 6px;
+  background-color: var(--text-white);
 
   button {
     display: flex;
@@ -29,6 +30,11 @@
     justify-content: center;
     width: 58px;
     padding: 0;
+
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 130%;
+    color: #424436;
   }
 }
 @media (min-width: 768px) {

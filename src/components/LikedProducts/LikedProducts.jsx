@@ -6,6 +6,8 @@ import FilterByPrice from "../FilterByPrice/FilterByPrice";
 import SortProducts from "../SortProducts/SortProducts";
 import SkeletonGrid from "../Skeleton/SkeletonGrid.jsx";
 import { useState, useEffect } from "react";
+import Filters from "../Filters/Filters.jsx";
+import Breadcrumbs from "../Breadcrumbs/Breadcrumbs.jsx";
 
 const LikedProducts = () => {
   const favProducts = useSelector((state) => state.favorites.favProducts);
@@ -19,15 +21,13 @@ const LikedProducts = () => {
 
   return (
     <>
-      <div className={styles.likedProducts_breadcrumbs}>Хлебные крошки</div>
+      <Breadcrumbs />
 
       <div
         className={`${styles.likedProducts_container} side_padding bottom_margin`}
       >
         <h2>Liked products</h2>
-
-        <FilterByPrice />
-        <SortProducts />
+        <Filters price={true} sort={true} discount={false} />
 
         {loading ? (
           <SkeletonGrid count={8} />
