@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./discountForm.module.css";
+import styles from "./DiscountForm.module.css";
 import discount360 from "../../assets/imageDiscountForm/discount360.png";
 import discount480 from "../../assets/imageDiscountForm/discount480.png";
 import discount768 from "../../assets/imageDiscountForm/discount768.png";
