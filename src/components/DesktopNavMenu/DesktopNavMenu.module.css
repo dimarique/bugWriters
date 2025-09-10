@@ -1,0 +1,26 @@
+.desktopNavMenu {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  nav ul {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .discount_link {
+    padding: 6px 16px;
+    margin-bottom: 10px;
+    font-size: 18px;
+    font-weight: 500;
+    background-color: var(--color-green);
+    border-radius: 6px;
+    align-self: center;
+     color: var(--text-white);
+  }
+
+  .discount_link:active {
+    background-color: #5C6322;
+    transform: translateY(2px);
+  }
+}

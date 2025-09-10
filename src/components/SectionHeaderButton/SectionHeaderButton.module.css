@@ -1,0 +1,13 @@
+.sectionHeaderButton {
+  padding: 8px 16px;
+  border: 1px solid lightgray;
+  border-radius: 4px;
+  max-width: fit-content;
+  margin: 20px auto;
+  }
+
+.sectionHeaderButton:active{
+  background-color: var(--color-light-grey);
+transform: translateY(2px);
+}
+

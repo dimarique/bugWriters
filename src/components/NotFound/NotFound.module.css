@@ -1,0 +1,43 @@
+.NotFound {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1.5rem;
+  margin: 5rem 0;
+  padding: 0 1.3rem;
+}
+.NotFound_text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1rem;
+}
+.NotFound_text p {
+  font-size: 18px;
+  color: var(--color-grey);
+  line-height: 130%;
+  text-align: center;
+}
+.NotFound_link {
+  font-size: 18px;
+  text-decoration: none;
+  background: var(--color-green);
+  padding: 12px 52px;
+  color: var(--text-white);
+  border-radius: 6px;
+}
+
+
+.NotFound_link:active{
+background-color: #5C6322;
+transform: translateY(2px);
+}
+
+@media (min-width: 768px) {
+  .NotFound_text p {
+    font-size: 20px;
+  }
+}

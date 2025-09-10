@@ -1,0 +1,11 @@
+.discountAmountBage {
+  position: absolute;
+  left: 20px;
+  top: 20px;
+  padding: 4px 8px;
+  background-color: var(--color-sale);
+  border-radius: 6px;
+  font-size: 18px;
+  color: var(--text-white);
+  font-weight: 600;
+}

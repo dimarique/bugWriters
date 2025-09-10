@@ -1,0 +1,132 @@
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 25%;
+  transform: translate(-50%, -50%);
+  background: var(--color-green);
+  border-radius: 12px;
+  width: clamp(320px, 65%, 548px);
+  padding: 1.25rem;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+}
+.modal_top {
+  display: flex;
+  flex-direction: column;
+}
+.modalTitle {
+  font-size: 1.75rem;
+  color: var(--color-white);
+  line-height: 110%;
+  text-align: start;
+  flex: 0 0 85%;
+  font-weight: 600;
+}
+.modal_bage {
+  position: absolute;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1rem 0 1rem;
+}
+.modal_bage p {
+  background-color: var(--color-sale);
+  border-radius: 6px;
+  font-size: 1.2rem;
+  color: var(--text-white);
+  padding: 0.25rem 0.5rem;
+}
+.productCard_favorite img {
+  width: 44px;
+}
+.modal_content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background: var(--color-white);
+  margin-top: 1rem;
+  border-radius: 12px;
+}
+.modal_content img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+  margin: 0 auto;
+}
+.modal_content_title {
+  margin-top: 1rem;
+  align-self: start;
+  padding-left: 1rem;
+  font-size: 1.1rem;
+  font-weight: 500;
+  line-height: 130%;
+}
+.prices {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+  margin-top: 0.75rem;
+  padding-left: 1rem;
+}
+.price {
+  color: var(--color-black);
+  font-size: 2.2rem;
+  line-height: 110%;
+  font-weight: 600;
+}
+.discountPrice {
+  text-decoration: line-through;
+  color: var(--color-grey);
+  font-size: 1.12rem;
+  line-height: 110%;
+}
+.closeBtn {
+  font-size: 40px;
+  background: none;
+  border: none;
+  color: var(--color-white);
+  align-self: flex-end;
+}
+.addBtn {
+  width: 100%;
+  background: var(--color-white);
+  color: var(--color-black);
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.12rem;
+  line-height: 130%;
+  font-weight: 600;
+  margin-top: 0.75rem;
+}
+
+@media (min-width: 480px) {
+  .modal {
+    top: 50%;
+    left: 35%;
+  }
+  .modal_top {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+  .closeBtn {
+    align-self: auto;
+    order: 2;
+      }
+}
+
+@media (min-width: 768px) {
+  .modal {
+    top: 580px;
+    left: 50%;
+    padding: 2rem;
+  }
+  .modalTitle {
+    font-size: 2.5rem;
+  }
+}

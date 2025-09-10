@@ -1,0 +1,17 @@
+.allProducts_container {
+  margin-top: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.allProducts_breadcrumbs {
+  display: none;
+  margin-top: 32px;
+}
+
+@media (min-width: 1000px) {
+  .allProducts_container {
+    margin-top: 40px;
+  }
+}
