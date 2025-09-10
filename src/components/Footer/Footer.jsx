@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./footer.module.css";
+import styles from "./Footer.module.css";
 import instagram from "../../assets/icons/ic-instagram.svg";
 import whatsapp from "../../assets/icons/ic-whatsapp.svg";
 import instagram_dark from "../../assets/icons/ic-instagram_dark.svg";
