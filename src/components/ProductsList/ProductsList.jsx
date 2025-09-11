@@ -20,7 +20,7 @@ const ProductsList = () => {
     return inPriceRange && discountOk;
   });
   return (
-    <div className={`${styles.productsList} responsive_cards`}>
+    <div className={`side_padding responsive_cards`}>
       {filteredProducts.map((product) => {
         return (
           <ProductCard

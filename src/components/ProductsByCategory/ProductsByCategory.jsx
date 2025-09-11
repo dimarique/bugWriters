@@ -9,10 +9,12 @@ import { fetchProducts } from "../../redux/slices/productsSlice.js"; //загр�
 import { fetchCategories } from "../../redux/slices/categoriesSlice.js"; //загрузка списка категорий
 import Filters from "../Filters/Filters.jsx";
 import Breadcrumbs from "../Breadcrumbs/Breadcrumbs.jsx";
+import { useWindowWidth } from "../../hooks/useWindowWidth.js";
 
 function ProductsByCategory() {
   const { Id } = useParams(); // получаем id категории из URL
   const dispatch = useDispatch(); // Получаем функцию dispatch, чтобы запускать экшены
+  let windowWidth = useWindowWidth();
 
   const {
     products: allProducts,
@@ -37,7 +39,7 @@ function ProductsByCategory() {
 
   return (
     <div className={`${style.productsByCategoryContainer} side_padding`}>
-      <Breadcrumbs />
+      {windowWidth >= 768 && <Breadcrumbs />}
       <h2 className={style.productsByCategoryTitle}>
         {currentCategory?.title}
       </h2>
@@ -45,7 +47,7 @@ function ProductsByCategory() {
       {status === "loading" && <SkeletonGrid count={12} />}
       {status === "failed" && <p>{error}</p>}
       {status === "succeeded" && (
-        <div className={`${style.productsByCategory} responsive_cards`}>
+        <div className={`responsive_cards`}>
           {categoryProducts.length === 0 ? (
             <p>Empty</p>
           ) : (

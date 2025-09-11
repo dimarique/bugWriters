@@ -1,182 +1,160 @@
 .discount_container {
-    padding: 24px 20px 0 20px;
-    margin-left: 20px;
-    margin-right: 20px;
-    margin-top: 56px;
+  padding: 24px 20px 0 20px;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-top: 56px;
 
+  border-radius: 12px;
+  background: linear-gradient(80.46deg, #87933d -0.68%, #55610b 66.66%);
 
-    border-radius: 12px;
-    background: linear-gradient(80.46deg, #87933D -0.68%, #55610B 66.66%);
-
-    h2 {
-        text-align: center;
-        color: var(--text-white);
-        margin-bottom: 24px;
-    }
-
+  h2 {
+    text-align: center;
+    color: var(--text-white);
+    margin-bottom: 24px;
+  }
 }
 
 .discount_content {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 .discount_form {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
 .discount_inputs {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }
 
 .discount_inputs input {
-    width: 100%;
-    background-color: transparent;
-    border-radius: 6px;
-    padding: 12px 20px;
-    border: 1px solid #fffff1;
+  width: 100%;
+  background-color: transparent;
+  border-radius: 6px;
+  padding: 12px 20px;
+  border: 1px solid #fffff1;
 }
 
 .discount_inputs input:focus {
-    outline: none;
-    box-shadow: 0 0 0 2px var(--color-sale);
-
-
-
+  outline: none;
+  box-shadow: 0 0 0 2px var(--color-sale);
 }
 
 .discount_inputs input::placeholder {
-    color: var(--text-white);
-    font-weight: 500;
-    font-size: 18px;
-    line-height: 130%;
-
+  color: var(--text-white);
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 130%;
 }
-
 
 .discount_button {
-    color: #424436;
-    background-color: #fffff1;
-    font-weight: 600;
-    font-size: 18px;
-    line-height: 130%;
-    padding: 12px 20px;
-    border: none;
-    border-radius: 6px;
+  color: #424436;
+  background-color: #fffff1;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 130%;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 6px;
 }
-
 
 .discount_button:active {
-background-color: var(--color-sale);
-transform: translateY(2px);
+  background-color: var(--color-sale);
+  transform: translateY(2px);
 }
-
 
 .discount_img {
-    position: relative;
+  position: relative;
+  right: 20px;
+  max-width: none;
+}
+
+@media (min-width: 480px) {
+  .discount_img {
+    right: 10px;
+  }
+}
+
+@media (min-width: 768px) {
+  .discount_container h2 {
+    margin-bottom: 24px;
+  }
+
+  .discount_img {
     right: 20px;
-    max-width: none;
+  }
+
+  .discount_content {
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 20px;
+  }
+
+  .discount_inputs {
+    gap: 12px;
+  }
+
+  .discount_form {
+    margin-bottom: 32px;
+    width: 100%;
+  }
+
+  .discount_container {
+    padding: 32px 20px 0 20px;
+  }
+
+  .discount_inputs input {
+    padding: 16px 20px;
+  }
+
+  .discount_button {
+    padding: 16px 20px;
+  }
 }
 
-@media(min-width: 480px) {
-    .discount_img {
-        right: 10px;
-    }
-
-
+@media (min-width: 1000px) {
+  .discount_container h2 {
+    margin-bottom: 24px;
+  }
 }
 
-@media(min-width: 768px) {
-   .discount_container h2 {
-        margin-bottom: 24px;
-    }
+@media (min-width: 1440px) {
+  .discount_container h2 {
+    margin-bottom: 24px;
+  }
 
-    .discount_img {
-        right: 20px;
-    }
+  .discount_img {
+    right: 0;
+  }
 
+  .discount_form {
+    gap: 32px;
+  }
 
-    .discount_content {
-        flex-direction: row-reverse;
-        justify-content: space-between;
-        align-items: flex-end;
-        gap: 20px;
-    }
+  .discount_inputs {
+    gap: 16px;
+  }
 
-    .discount_inputs {
-        gap: 12px;
-    }
+  .discount_content {
+    gap: 32px;
+  }
 
-    .discount_form {
-        margin-bottom: 32px;
-        width: 100%;
+  .discount_container {
+    padding: 32px 32px 0 32px;
+    margin-left: 40px;
+    margin-right: 40px;
+  }
 
+  .discount_inputs input {
+    padding: 16px 32px;
+  }
 
-    }
-
-
-
-    .discount_container {
-        padding: 32px 20px 0 20px;
-    }
-
-    .discount_inputs input {
-        padding: 16px 20px;
-    }
-
-    .discount_button {
-        padding: 16px 20px;
-    }
-
-
-}
-
-@media(min-width: 1000px) {
-   .discount_container h2 {
-        margin-bottom: 24px;
-    }
-
-
-}
-
-
-
-
-@media(min-width: 1440px) {
-   .discount_container h2 {
-        margin-bottom: 24px;
-    }
-
-    .discount_img {
-        right: 0;
-    }
-
-    .discount_form {
-        gap: 32px;
-    }
-
-    .discount_inputs {
-        gap: 16px;
-    }
-
-    .discount_content {
-        gap: 32px;
-    }
-
-    .discount_container {
-        padding: 32px 32px 0 32px;
-    }
-
-    .discount_inputs input {
-        padding: 16px 32px;
-    }
-
-    .discount_button {
-        padding: 16px 32px;
-    }
-
+  .discount_button {
+    padding: 16px 32px;
+  }
 }

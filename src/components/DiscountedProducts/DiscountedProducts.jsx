@@ -7,26 +7,24 @@ import SkeletonGrid from "../Skeleton/SkeletonGrid";
 import Filters from "../Filters/Filters";
 import ProductsList from "../ProductsList/ProductsList";
 import Breadcrumbs from "../Breadcrumbs/Breadcrumbs";
+import { useWindowWidth } from "../../hooks/useWindowWidth";
 
 const DiscountedProducts = () => {
   const { status, error } = useSelector((state) => state.products);
   const dispatch = useDispatch();
+  let windowWidth = useWindowWidth();
   useEffect(() => {
     dispatch(setIsDiscounted(true));
   }, [dispatch]);
   return (
     <>
-      <Breadcrumbs />
+      {windowWidth >= 768 && <Breadcrumbs />}
       <SectionHeader text={"Discounted Products"} hasButton={false} />
       <Filters price={true} discount={false} sort={true} />
 
       {status === "loading" && <SkeletonGrid count={12} />}
       {status === "failed" && <div>Error: {error}</div>}
-      <div
-        className={`${styles.discountedProducts} side_padding responsive_cards`}
-      >
-        <ProductsList />
-      </div>
+      <ProductsList />
     </>
   );
 };

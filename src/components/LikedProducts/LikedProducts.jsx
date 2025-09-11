@@ -2,16 +2,16 @@ import React from "react";
 import styles from "./LikedProducts.module.css";
 import ProductCard from "../ProductCard/ProductCard";
 import { useSelector } from "react-redux";
-import FilterByPrice from "../FilterByPrice/FilterByPrice";
-import SortProducts from "../SortProducts/SortProducts";
 import SkeletonGrid from "../Skeleton/SkeletonGrid.jsx";
 import { useState, useEffect } from "react";
 import Filters from "../Filters/Filters.jsx";
 import Breadcrumbs from "../Breadcrumbs/Breadcrumbs.jsx";
+import { useWindowWidth } from "../../hooks/useWindowWidth.js";
 
 const LikedProducts = () => {
   const favProducts = useSelector((state) => state.favorites.favProducts);
   const [loading, setLoading] = useState(true);
+  let windowWidth = useWindowWidth();
 
   useEffect(() => {
     // имитация загрузки, чтобы показать скелетон
@@ -21,7 +21,7 @@ const LikedProducts = () => {
 
   return (
     <>
-      <Breadcrumbs />
+      {windowWidth >= 768 && <Breadcrumbs />}
 
       <div
         className={`${styles.likedProducts_container} side_padding bottom_margin`}
@@ -34,7 +34,7 @@ const LikedProducts = () => {
         ) : favProducts.length === 0 ? (
           <p>Empty</p>
         ) : (
-          <div className={`${styles.likedProducts_items} responsive_cards`}>
+          <div className={`responsive_cards`}>
             {favProducts.map((product) => (
               <ProductCard
                 key={product.id}
