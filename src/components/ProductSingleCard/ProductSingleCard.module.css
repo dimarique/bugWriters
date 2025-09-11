@@ -190,6 +190,8 @@
   }
   .productSingleCard_img_container {
     flex: 1 1 auto;
+    max-width: 210px;
+    max-height: 179px;
   }
   .productSingleCard_price_button {
     flex: 0 0 210px;
@@ -234,6 +236,11 @@
   }
 
   .productSingleCard_img_container img {
+    max-width: 354px;
+    max-height: 286px;
+  }
+
+  .productSingleCard_img_container {
     max-width: 354px;
     max-height: 286px;
   }
@@ -313,6 +320,11 @@
     max-height: 572px;
   }
 
+  .productSingleCard_img_container {
+    max-width: 470px;
+    max-height: 572px;
+  }
+
   .productSingleCard_price_button {
     flex: 0 0 470px;
     max-width: 470px;
@@ -364,6 +376,11 @@
   }
 
   .productSingleCard_img_container img {
+    max-width: 780px;
+    max-height: 572px;
+  }
+
+  .productSingleCard_img_container {
     max-width: 780px;
     max-height: 572px;
   }
