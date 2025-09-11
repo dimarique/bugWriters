@@ -1,4 +1,4 @@
-import styles from "./oneDayDiscountModal.module.css";
+import styles from "./OneDayDiscountModal.module.css";
 import { useDispatch, useSelector } from "react-redux";
 import { switchFavorites } from "../../redux/slices/favoritesSlice";
 import heart_filled from "../../assets/heart_filled.svg";
