@@ -22,11 +22,7 @@ const DiscountedProducts = () => {
 
       {status === "loading" && <SkeletonGrid count={12} />}
       {status === "failed" && <div>Error: {error}</div>}
-      <div
-        className={`${styles.discountedProducts} side_padding responsive_cards`}
-      >
-        <ProductsList />
-      </div>
+      <ProductsList />
     </>
   );
 };
