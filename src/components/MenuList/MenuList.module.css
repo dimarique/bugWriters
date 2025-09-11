@@ -21,6 +21,7 @@
   background-color: var(--color-green);
   border-radius: 6px;
   color: var(--text-white);
+  border: var(--color-green);
 }
 
 .menuList .discount_link:active {

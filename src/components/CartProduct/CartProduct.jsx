@@ -29,8 +29,7 @@ export default function CartProduct() {
     </div>
   ) : (
     <>
-      <div className={style.cartItemsColumn}>
-        {cartEntries.map(([id, product]) => (
+              {cartEntries.map(([id, product]) => (
           <CartItem
             key={id}
             id={id}
@@ -41,7 +40,7 @@ export default function CartProduct() {
             image={product.image}
           />
         ))}
-      </div>
+    
      <CartForm onOrderSuccess={() => setPopupOpen(true)} />
           </>
       )}

@@ -48,11 +48,6 @@ const getRandomProduct = () => {
   };
 
   const randomProduct = getRandomProduct();
-console.log('Random product:', randomProduct);
-
-
-
-
 
   return (
     <div className={`${styles.menuList} ${menuIsOpen ? styles.open : ""}`}>
