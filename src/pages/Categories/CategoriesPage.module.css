@@ -1,17 +1,18 @@
 .categoriesPage {
- width: 100%;
+  width: 100%;
   display: flex;
   flex-direction: column;
-    }
+}
 
 @media (min-width: 1000px) {
   .categoriesPage {
-   display: flex;
+    display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     gap: 20px;
   }
 }
+
 @media (min-width: 1400px) {
   .categoriesPage {
     display: flex;
@@ -19,6 +20,3 @@
     gap: 30px;
   }
 }
-
-
-
