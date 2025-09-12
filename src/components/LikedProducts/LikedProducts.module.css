@@ -1,35 +1,4 @@
 .likedProducts_container {
-  margin-top: 32px;
   display: flex;
   flex-direction: column;
-  gap: 24px;
-}
-
-.likedProducts_breadcrumbs {
-  display: none;
-  margin-top: 32px;
-}
-
-@media (min-width: 768px) {
-  .likedProducts_container {
-    gap: 32px;
-  }
-
-  .likedProducts_breadcrumbs {
-    display: block;
-  }
-}
-
-@media (min-width: 1000px) {
-  .likedProducts_container {
-    margin-top: 40px;
-  }
-
-  .likedProducts_breadcrumbs {
-    margin-top: 40px;
-  }
-}
-
-.likedProducts_container {
-  gap: 40px;
 }

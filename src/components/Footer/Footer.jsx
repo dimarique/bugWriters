@@ -13,8 +13,9 @@ const Footer = () => {
   const isDark = theme === "dark";
 
   return (
-    <div className={`${styles.footer_container} side_padding`}>
+<>
      <SectionHeader text={'Contact'} />
+      <div className={`${styles.footer_container} side_padding`}>
       <div className={styles.footer_content}>
         <div className={styles.footer_card}>
           <h3>Phone</h3>
@@ -47,6 +48,7 @@ const Footer = () => {
         />
       </div>
     </div>
+</>
   );
 };
 export default Footer;

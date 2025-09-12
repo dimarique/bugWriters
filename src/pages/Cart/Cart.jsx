@@ -8,7 +8,7 @@ const Cart = () => {
     let windowWidth = useWindowWidth();
   return (
      
-    <div className={styles.cart}>
+    <div className={`${styles.cart} bottom_margin bottom_top`}>
  <SectionHeader
         text={"Shopping cart"}
         hasButton={windowWidth < 480 ? false : true}

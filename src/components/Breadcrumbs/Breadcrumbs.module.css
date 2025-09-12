@@ -2,7 +2,8 @@
   display: flex;
   align-items: center;
   font-size: 16px;
-  margin: 40px 0;
+  /* margin: 40px 0; */
+margin-top: 32px;
 }
 
 .line {
@@ -16,3 +17,12 @@
   border: 1px solid #ccc;
   border-radius: 6px;
 }
+
+
+@media (min-width: 1000px) {
+.breadcrumbs{
+margin-top: 40px;
+}
+
+}
+

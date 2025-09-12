@@ -55,7 +55,7 @@ const Breadcrumbs = () => {
   }
 
   return (
-    <div className={styles.breadcrumbs}>
+    <div className={`${styles.breadcrumbs} side_padding`}>
       {crumbs.map((crumb, index) => (
         <React.Fragment key={index}>
           {index > 0 && <div className={styles.line}></div>}

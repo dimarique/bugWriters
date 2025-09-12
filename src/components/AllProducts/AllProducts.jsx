@@ -8,6 +8,7 @@ import SkeletonGrid from "../Skeleton/SkeletonGrid.jsx";
 import ProductsList from "../ProductsList/ProductsList.jsx";
 import Breadcrumbs from "../Breadcrumbs/Breadcrumbs.jsx";
 import { useWindowWidth } from "../../hooks/useWindowWidth.js";
+import SectionHeader from "../SectionHeader/SectionHeader.jsx";
 
 const AllProducts = () => {
   const dispatch = useDispatch();
@@ -19,8 +20,10 @@ const AllProducts = () => {
   return (
     <>
       {windowWidth >= 768 && <Breadcrumbs />}
-      <div className={`${styles.allProducts_container} bottom_margin `}>
-        <h2>All products</h2>
+      <div
+        className={`${styles.allProducts_container} bottom_margin bottom_top`}
+      >
+        <SectionHeader text={"All products"} />
 
         <Filters price={true} discount={true} sort={true} />
         {status === "loading" && <SkeletonGrid count={12} />}

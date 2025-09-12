@@ -1,7 +1,5 @@
 import styles from "./CategoriesList.module.css";
 import CategoryCard from "./CategoryCard";
-import SectionHeader from "../../components/SectionHeader/SectionHeader.jsx";
-import SectionHeaderButton from "../../components/SectionHeaderButton/SectionHeaderButton.jsx";
 import { useSelector, useDispatch } from "react-redux";
 import { useEffect, useState } from "react";
 import { fetchCategories } from "../../redux/slices/categoriesSlice";
@@ -24,27 +22,18 @@ const CategoriesList = ({ limit }) => {
   }, [categories, limit]);
 
   return (
-    <>
-      <SectionHeader
-        text={"Categories"}
-        hasButton={windowWidth < 480 ? false : true}
-        buttonText={"All categories"}
-        linkTo="categories"
-      />
-      <div className={`${styles.categories} side_padding bottom_margin`}>
-        {displayedItems.map((category) => (
-          <CategoryCard
-            key={category.id}
-            id={category.id}
-            categoryTitle={category.title}
-            image={category.image}
-          />
-        ))}
-      </div>
-      {windowWidth < 480 && (
-        <SectionHeaderButton text={"All categories"} linkTo="categories" />
-      )}
-    </>
+    <div
+      className={`${styles.categories} side_padding bottom_margin bottom_top`}
+    >
+      {displayedItems.map((category) => (
+        <CategoryCard
+          key={category.id}
+          id={category.id}
+          categoryTitle={category.title}
+          image={category.image}
+        />
+      ))}
+    </div>
   );
 };
 

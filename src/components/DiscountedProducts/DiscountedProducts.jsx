@@ -19,12 +19,14 @@ const DiscountedProducts = () => {
   return (
     <>
       {windowWidth >= 768 && <Breadcrumbs />}
-      <SectionHeader text={"Discounted Products"} hasButton={false} />
-      <Filters price={true} discount={false} sort={true} />
+      <div className={`bottom_margin bottom_top`}>
+        <SectionHeader text={"Discounted Products"} hasButton={false} />
+        <Filters price={true} discount={false} sort={true} />
 
-      {status === "loading" && <SkeletonGrid count={12} />}
-      {status === "failed" && <div>Error: {error}</div>}
-      <ProductsList />
+        {status === "loading" && <SkeletonGrid count={12} />}
+        {status === "failed" && <div>Error: {error}</div>}
+        <ProductsList />
+      </div>
     </>
   );
 };
