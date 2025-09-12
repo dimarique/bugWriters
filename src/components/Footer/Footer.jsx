@@ -6,13 +6,15 @@ import instagram_dark from "../../assets/icons/ic-instagram_dark.svg";
 import whatsapp_dark from "../../assets/icons/ic-whatsapp_dark.svg";
 import { useSelector } from "react-redux";
 
+import SectionHeader from "../SectionHeader/SectionHeader";
+
 const Footer = () => {
   const theme = useSelector((state) => state.theme.selectedTheme);
   const isDark = theme === "dark";
 
   return (
     <div className={`${styles.footer_container} side_padding`}>
-      <h2>Contact</h2>
+     <SectionHeader text={'Contact'} />
       <div className={styles.footer_content}>
         <div className={styles.footer_card}>
           <h3>Phone</h3>
