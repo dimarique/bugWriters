@@ -16,7 +16,8 @@
     background-color: var(--color-green);
     border-radius: 6px;
     align-self: center;
-     color: var(--text-white);
+    color: var(--text-white);
+    border: var(--color-green);
   }
 
   .discount_link:active {
