@@ -45,7 +45,6 @@ const MenuList = ({ menuIsOpen, setMenuIsOpen }) => {
   };
 
   const randomProduct = getRandomProduct();
-  console.log("Random product:", randomProduct);
 
   return (
     <div className={`${styles.menuList} ${menuIsOpen ? styles.open : ""}`}>
