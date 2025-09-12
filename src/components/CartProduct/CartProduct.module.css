@@ -35,6 +35,10 @@
     align-items: flex-start;
     gap: 32px;
   }
+  .cartItemsColumn{
+    display: flex;
+    flex-direction: column;
+  }
 }
 @media (min-width: 1400px) {
   .cartWrapper {
