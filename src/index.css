@@ -94,6 +94,10 @@ ol {
   margin-bottom: 56px;
 }
 
+.bottom_top{
+  margin-top: 32px;
+}
+
 .responsive_cards {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -131,6 +135,9 @@ ol {
   h2 {
     font-size: 64px;
   }
+    .bottom_top{
+  margin-top: 40px;
+}
 }
 
 @media (min-width: 1440px) {
@@ -141,4 +148,6 @@ ol {
   .side_padding {
     padding: 0 40px;
   }
+
+
 }

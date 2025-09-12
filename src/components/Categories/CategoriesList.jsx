@@ -20,7 +20,9 @@ const CategoriesList = ({ limit }) => {
   }, [categories, limit]);
 
   return (
-    <div className={`${styles.categories} side_padding bottom_margin`}>
+    <div
+      className={`${styles.categories} side_padding bottom_margin bottom_top`}
+    >
       {displayedItems.map((category) => (
         <CategoryCard
           key={category.id}

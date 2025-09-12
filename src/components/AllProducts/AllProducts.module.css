@@ -1,5 +1,4 @@
 .allProducts_container {
-  margin-top: 32px;
   display: flex;
   flex-direction: column;
   gap: 24px;
