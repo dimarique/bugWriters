@@ -20,8 +20,10 @@ const AllProducts = () => {
   return (
     <>
       {windowWidth >= 768 && <Breadcrumbs />}
-      <div className={`${styles.allProducts_container} bottom_margin bottom_top`}>
-     <SectionHeader text={'All products'}/>
+      <div
+        className={`${styles.allProducts_container} bottom_margin bottom_top`}
+      >
+        <SectionHeader text={"All products"} />
 
         <Filters price={true} discount={true} sort={true} />
         {status === "loading" && <SkeletonGrid count={12} />}
