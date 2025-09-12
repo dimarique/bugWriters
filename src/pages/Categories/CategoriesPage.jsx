@@ -9,7 +9,7 @@ const CategoriesPage = () => {
   return (
     <div className={styles.categoriesPage}>
       {windowWidth >= 768 && <Breadcrumbs />}
-      <SectionHeader text={"Categories"} hasButton={false} />
+      {/* <SectionHeader text={"Categories"} hasButton={false} /> */}
       <CategoriesList />
     </div>
   );
