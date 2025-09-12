@@ -5,6 +5,8 @@ import { useEffect, useState } from "react";
 import { fetchCategories } from "../../redux/slices/categoriesSlice";
 import { useWindowWidth } from "../../hooks/useWindowWidth.js";
 import { useLocation } from "react-router-dom";
+import SectionHeader from "../SectionHeader/SectionHeader.jsx";
+import SectionHeaderButton from "../SectionHeaderButton/SectionHeaderButton.jsx";
 
 const CategoriesList = ({ limit }) => {
   const [displayedItems, setDisplayedItems] = useState([]);
@@ -39,14 +41,16 @@ const CategoriesList = ({ limit }) => {
           buttonText={"All categories"}
           linkTo="categories"
         />
-        {displayedItems.map((category) => (
-          <CategoryCard
-            key={category.id}
-            id={category.id}
-            categoryTitle={category.title}
-            image={category.image}
-          />
-        ))}
+        <div className={styles.cards_wrapper}>
+          {displayedItems.map((category) => (
+            <CategoryCard
+              key={category.id}
+              id={category.id}
+              categoryTitle={category.title}
+              image={category.image}
+            />
+          ))}
+        </div>
         {windowWidth < 480 && !currentPath.includes("categories") && (
           <SectionHeaderButton text="All categories" linkTo="categories" />
         )}

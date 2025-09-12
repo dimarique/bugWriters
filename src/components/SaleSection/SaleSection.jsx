@@ -21,27 +21,29 @@ const SaleSection = () => {
 
   return (
     <>
-      <SectionHeader
-        text={"Sale"}
-        hasButton={windowWidth < 480 ? false : true}
-        buttonText={"All sales"}
-        linkTo="sales"
-      />
       <div className={`${styles.saleSection} side_padding bottom_margin`}>
-        {randomItems.map((product) => (
-          <ProductCard
-            key={product.id}
-            id={product.id}
-            title={product.title}
-            price={product.price}
-            image={product.image}
-            discont_price={product.discont_price}
-          />
-        ))}
+        <SectionHeader
+          text={"Sale"}
+          hasButton={windowWidth < 480 ? false : true}
+          buttonText={"All sales"}
+          linkTo="sales"
+        />
+        <div className={styles.cards_wrapper}>
+          {randomItems.map((product) => (
+            <ProductCard
+              key={product.id}
+              id={product.id}
+              title={product.title}
+              price={product.price}
+              image={product.image}
+              discont_price={product.discont_price}
+            />
+          ))}
+        </div>
+        {windowWidth < 480 && (
+          <SectionHeaderButton text={"All sales"} linkTo="sales" />
+        )}
       </div>
-      {windowWidth < 480 && (
-        <SectionHeaderButton text={"All sales"} linkTo="sales" />
-      )}
     </>
   );
 };
