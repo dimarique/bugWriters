@@ -19,29 +19,25 @@
 .emptyCart a {
   background-color: var(--color-green);
   padding: 16px 56px;
-  color: var(--color-white);
+  color: #fffff1;
   text-decoration: none;
   border-radius: 6px;
   margin-bottom: 4px;
-  font-family: Montserrat;
-font-weight: 600;
-font-size: 18px;
-line-height: 130%;
-text-align: center;
-
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 130%;
+  text-align: center;
 }
-
 
 @media (min-width: 1000px) {
   .cartWrapper {
-    flex-direction: row; 
+    flex-direction: row;
     align-items: flex-start;
     gap: 32px;
-   
-    }
   }
-  @media (min-width: 1400px) {
+}
+@media (min-width: 1400px) {
   .cartWrapper {
-     padding: 0 40px;
-    }
+    padding: 0 40px;
   }
+}

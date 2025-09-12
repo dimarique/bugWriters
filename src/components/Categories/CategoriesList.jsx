@@ -1,7 +1,5 @@
 import styles from "./CategoriesList.module.css";
 import CategoryCard from "./CategoryCard";
-import SectionHeader from "../../components/SectionHeader/SectionHeader.jsx";
-import SectionHeaderButton from "../../components/SectionHeaderButton/SectionHeaderButton.jsx";
 import { useSelector, useDispatch } from "react-redux";
 import { useEffect, useState } from "react";
 import { fetchCategories } from "../../redux/slices/categoriesSlice";
@@ -28,7 +26,9 @@ const CategoriesList = ({ limit }) => {
 
   return (
     <>
-      <div className={`${styles.categories} side_padding bottom_margin`}>
+      <div
+        className={`${styles.categories} side_padding bottom_margin bottom_top`}
+      >
         <SectionHeader
           text={"Categories"}
           hasButton={

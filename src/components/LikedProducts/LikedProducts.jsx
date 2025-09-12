@@ -7,6 +7,7 @@ import { useState, useEffect } from "react";
 import Filters from "../Filters/Filters.jsx";
 import Breadcrumbs from "../Breadcrumbs/Breadcrumbs.jsx";
 import { useWindowWidth } from "../../hooks/useWindowWidth.js";
+import SectionHeader from "../SectionHeader/SectionHeader.jsx";
 
 const LikedProducts = () => {
   const favProducts = useSelector((state) => state.favorites.favProducts);
@@ -24,9 +25,9 @@ const LikedProducts = () => {
       {windowWidth >= 768 && <Breadcrumbs />}
 
       <div
-        className={`${styles.likedProducts_container} side_padding bottom_margin`}
+        className={`${styles.likedProducts_container} bottom_margin bottom_top `}
       >
-        <h2>Liked products</h2>
+        <SectionHeader text={"Liked products"} />
         <Filters price={true} sort={true} discount={false} />
 
         {loading ? (
@@ -34,7 +35,7 @@ const LikedProducts = () => {
         ) : favProducts.length === 0 ? (
           <p>Empty</p>
         ) : (
-          <div className={`responsive_cards`}>
+          <div className={`responsive_cards side_padding`}>
             {favProducts.map((product) => (
               <ProductCard
                 key={product.id}

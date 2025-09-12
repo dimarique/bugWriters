@@ -10,6 +10,7 @@ import { fetchCategories } from "../../redux/slices/categoriesSlice.js"; //за�
 import Filters from "../Filters/Filters.jsx";
 import Breadcrumbs from "../Breadcrumbs/Breadcrumbs.jsx";
 import { useWindowWidth } from "../../hooks/useWindowWidth.js";
+import SectionHeader from "../SectionHeader/SectionHeader.jsx";
 
 function ProductsByCategory() {
   const { Id } = useParams(); // получаем id категории из URL
@@ -38,16 +39,17 @@ function ProductsByCategory() {
   const currentCategory = allCategories.find((el) => el.id === Number(Id));
 
   return (
-    <div className={`${style.productsByCategoryContainer} side_padding`}>
+    <>
       {windowWidth >= 768 && <Breadcrumbs />}
-      <h2 className={style.productsByCategoryTitle}>
-        {currentCategory?.title}
-      </h2>
+
+      <div className={`${style.productsByCategoryContainer} bottom_margin bottom_top`}>
+ 
+<SectionHeader text={currentCategory?.title}/>
       <Filters price={true} discount={true} sort={true} />
       {status === "loading" && <SkeletonGrid count={12} />}
       {status === "failed" && <p>{error}</p>}
       {status === "succeeded" && (
-        <div className={`responsive_cards`}>
+        <div className={`responsive_cards side_padding`}>
           {categoryProducts.length === 0 ? (
             <p>Empty</p>
           ) : (
@@ -67,6 +69,7 @@ function ProductsByCategory() {
         </div>
       )}
     </div>
+    </>
   );
 }
 
