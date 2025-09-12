@@ -3,11 +3,13 @@ import CategoryCard from "./CategoryCard";
 import { useSelector, useDispatch } from "react-redux";
 import { useEffect, useState } from "react";
 import { fetchCategories } from "../../redux/slices/categoriesSlice";
+import { useWindowWidth } from "../../hooks/useWindowWidth.js";
 
 const CategoriesList = ({ limit }) => {
   const [displayedItems, setDisplayedItems] = useState([]);
   const categories = useSelector((state) => state.categories.categories);
   const dispatch = useDispatch();
+  let windowWidth = useWindowWidth();
 
   useEffect(() => {
     dispatch(fetchCategories());
