@@ -3,13 +3,13 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  margin-top: 56px;
   margin-bottom: 24px;
 
   h2 {
     font-size: clamp(2.5rem, 7.3vw, 4rem);
     margin-right: 20px;
     margin-bottom: 0;
+    font-size: 40px;
   }
 }
 
@@ -19,16 +19,30 @@
   background-color: var(--color-grey-divider);
 }
 
+@media (min-width: 480px) {
+  .sectionHeader h2 {
+    font-size: 48px;
+  }
+}
+
 @media (min-width: 768px) {
   .sectionHeader {
-    margin-top: 60px;
     margin-bottom: 32px;
+  }
+
+  .sectionHeader h2 {
+    font-size: 56px;
+  }
+}
+
+@media (min-width: 1000px) {
+  .sectionHeader h2 {
+    font-size: 64px;
   }
 }
 
 @media (min-width: 1440px) {
   .sectionHeader {
-    margin-top: 80px;
     margin-bottom: 40px;
   }
 }
