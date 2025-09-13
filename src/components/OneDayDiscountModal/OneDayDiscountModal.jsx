@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { switchFavorites } from "../../redux/slices/favoritesSlice";
 import heart_filled from "../../assets/heart_filled.svg";
 import heart_favorite from "../../assets/heart_favorite.svg";
+import ReactDOM from "react-dom";
 
 const OneDayDiscountModal = ({ product, onClose, onAddToCart }) => {
   const BASE_URL = import.meta.env.VITE_API_URL;
@@ -19,9 +20,8 @@ const OneDayDiscountModal = ({ product, onClose, onAddToCart }) => {
   };
 
   const discountedPrice = (product.price / 2)*100/100;
-
-  return (
-    <div className={styles.modal}>
+const modalContent =(
+     <div className={styles.modal} onClick={(e) => e.stopPropagation()}>
       <div className={styles.modal_top}>
         <button className={styles.closeBtn} onClick={onClose}>
           ✖
@@ -57,6 +57,9 @@ const OneDayDiscountModal = ({ product, onClose, onAddToCart }) => {
         Add to cart
       </button>
     </div>
+)
+     return (
+ ReactDOM.createPortal(modalContent, document.body)
   );
 };
 
