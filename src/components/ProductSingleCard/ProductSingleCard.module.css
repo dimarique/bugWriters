@@ -87,7 +87,6 @@
   align-items: center;
   z-index: 2;
   background-color: var(--color-sale);
-  padding: 4px 8px;
   border-radius: 6px;
   position: absolute;
   top: 16px;
@@ -99,7 +98,6 @@
   font-weight: 600;
   font-size: 18px;
   line-height: 130%;
-  letter-spacing: 3%;
   color: var(--text-white);
 }
 .productSingleCard_description h3 {
