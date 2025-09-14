@@ -28,9 +28,6 @@ const CategoriesList = ({ limit }) => {
 
   return (
     <>
-      <div
-        className={`${styles.categories} side_padding bottom_margin bottom_top`}
-      >
         <SectionHeader
           text={"Categories"}
           hasButton={
@@ -41,6 +38,9 @@ const CategoriesList = ({ limit }) => {
           buttonText={"All categories"}
           linkTo="categories"
         />
+      <div
+        className={`${styles.categories} side_padding bottom_margin bottom_top`}
+      >
         <div className={styles.cards_wrapper}>
           {displayedItems.map((category) => (
             <CategoryCard
