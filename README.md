@@ -19,6 +19,15 @@ The goal was to practice teamwork, modern frontend development tools, and delive
 
 ---
 
+## 🚀 Deployment
+
+The project was deployed using:
+
+- **Railway** (backend services)
+- **Netlify** (frontend hosting)
+
+---
+
 ## ✨ Features
 
 - Product catalog with filtering
@@ -31,6 +40,6 @@ The goal was to practice teamwork, modern frontend development tools, and delive
 
 ## 👥 Team
 
-- **[Name 1]** – Developer
-- **[Name 2]** – Developer
-- **[Name 3]** – Developer
+- [Dmytro Kuzmenko](https://github.com/dimarique)
+- [Jana Walt](https://github.com/JanaWalt)
+- [Olena Shapovalova](https://github.com/shapovalovalena)
