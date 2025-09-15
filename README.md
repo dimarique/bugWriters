@@ -40,6 +40,6 @@ The project was deployed using:
 
 ## 👥 Team
 
-- [Dmytro Kuzmenko](https://github.com/dimarique)
-- [Jana Walt](https://github.com/JanaWalt)
-- [Olena Shapovalova](https://github.com/shapovalovalena)
+- [Dmytro Kuzmenko](https://github.com/dimarique) - Team Lead
+- [Jana Walt](https://github.com/JanaWalt) - Developer, detail-oriented
+- [Olena Shapovalova](https://github.com/shapovalovalena) - Developer, meticulous & tidy
