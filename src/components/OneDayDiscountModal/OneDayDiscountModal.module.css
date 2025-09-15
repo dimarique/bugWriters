@@ -17,7 +17,7 @@
 }
 .modalTitle {
   font-size: 1.75rem;
-  color: var(--color-white);
+  color: #fffff1;
   line-height: 110%;
   text-align: start;
   flex: 0 0 85%;
@@ -45,7 +45,7 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  background: var(--color-white);
+  background: #fffff1;
   margin-top: 1rem;
   border-radius: 12px;
 }
@@ -63,6 +63,7 @@
   font-size: 1.1rem;
   font-weight: 500;
   line-height: 130%;
+  color: #424436;
 }
 .prices {
   display: flex;
@@ -72,7 +73,7 @@
   padding-left: 1rem;
 }
 .price {
-  color: var(--color-black);
+  color: #424436;
   font-size: 2.2rem;
   line-height: 110%;
   font-weight: 600;
@@ -87,13 +88,13 @@
   font-size: 40px;
   background: none;
   border: none;
-  color: var(--color-white);
+  color: #fffff1;
   align-self: flex-end;
 }
 .addBtn {
   width: 100%;
-  background: var(--color-white);
-  color: var(--color-black);
+  background: #fffff1;
+  color: #424436;
   padding: 1rem 2rem;
   border: none;
   border-radius: 8px;
@@ -106,7 +107,7 @@
 @media (min-width: 480px) {
   .modal {
     top: 50%;
-     }
+  }
   .modal_top {
     display: flex;
     flex-direction: row;
@@ -116,7 +117,7 @@
   .closeBtn {
     align-self: auto;
     order: 2;
-      }
+  }
 }
 
 @media (min-width: 768px) {

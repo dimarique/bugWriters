@@ -21,13 +21,13 @@ const SaleSection = () => {
 
   return (
     <>
-      <div className={`${styles.saleSection} side_padding bottom_margin`}>
         <SectionHeader
           text={"Sale"}
           hasButton={windowWidth < 480 ? false : true}
           buttonText={"All sales"}
           linkTo="sales"
         />
+      <div className={`${styles.saleSection} side_padding bottom_margin`}>
         <div className={styles.cards_wrapper}>
           {randomItems.map((product) => (
             <ProductCard
