@@ -1,50 +1,45 @@
-
 import { Link } from "react-router-dom";
 import { useState } from "react";
-import { useSelector,useDispatch } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import styles from "./DesktopNavMenu.module.css";
-import OneDayDiscountModal  from "../OneDayDiscountModal/OneDayDiscountModal.jsx";
+import OneDayDiscountModal from "../OneDayDiscountModal/OneDayDiscountModal.jsx";
 import { addProduct } from "../../redux/slices/cartSlice.js";
-
-
 
 const DesktopNavMenu = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
- const products = useSelector((state) => state.products.products);
+  const products = useSelector((state) => state.products.products);
   const dispatch = useDispatch();
 
+  const getRandomProduct = () => {
+    if (!products || products.length === 0) return null;
 
-const getRandomProduct = () => {
-  if (!products || products.length === 0) return null;
+    const randomIndex = Math.floor(Math.random() * products.length);
 
-  const randomIndex = Math.floor(Math.random() * products.length);
-
-
-  return {
-  id: products[randomIndex].id,
-  title: products[randomIndex].title,
-  price: products[randomIndex].price,
-  discont_price: products[randomIndex].discont_price || (products[randomIndex].price / 2).toFixed(2), // 50% скидка
-  image: products[randomIndex].image,
-};
-}
+    return {
+      id: products[randomIndex].id,
+      title: products[randomIndex].title,
+      price: products[randomIndex].price,
+      discont_price:
+        products[randomIndex].discont_price ||
+        (products[randomIndex].price / 2).toFixed(2), // 50% скидка
+      image: products[randomIndex].image,
+    };
+  };
 
   const handleAddToCart = (product) => {
-     dispatch(
-          addProduct({
-            id: product.id,
-            title: product.title,
-            price: product.price,
-            discont_price: product.discont_price,
-            image: product.image,
-        
-          })
-        );
-      setIsModalOpen(false);
+    dispatch(
+      addProduct({
+        id: product.id,
+        title: product.title,
+        price: product.price,
+        discont_price: product.discont_price,
+        image: product.image,
+      }),
+    );
+    setIsModalOpen(false);
   };
 
   const randomProduct = getRandomProduct();
-console.log('Random product:', randomProduct);
   return (
     <div className={styles.desktopNavMenu}>
       <button
@@ -83,4 +78,3 @@ console.log('Random product:', randomProduct);
 };
 
 export default DesktopNavMenu;
-

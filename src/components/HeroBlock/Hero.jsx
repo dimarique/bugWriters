@@ -1,5 +1,6 @@
 import React from "react";
 import styles from "./Hero.module.css";
+import { Link } from "react-router-dom";
 
 const Hero = () => {
   return (
@@ -7,9 +8,9 @@ const Hero = () => {
       <h1 className={styles.hero_title}>
         Amazing Discounts on Garden Products!
       </h1>
-      <a className={styles.hero_link} href="#">
+      <Link to="/sales" className={styles.hero_link}>
         Check out
-      </a>
+      </Link>
     </div>
   );
 };
