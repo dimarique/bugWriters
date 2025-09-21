@@ -8,8 +8,12 @@ const CategoriesPage = () => {
   return (
     <div className={styles.categoriesPage}>
       {windowWidth >= 768 && <Breadcrumbs />}
+       <div className={styles.categoriesAllPage}>
         <CategoriesList />
     </div>
+   
+
+     </div>
   );
 };
 
