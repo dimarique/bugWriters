@@ -27,8 +27,22 @@ const CategoriesList = ({ limit }) => {
   }, [categories, limit]);
 
   return (
-    <>
-        {/* <SectionHeader
+<> 
+<SectionHeader
+          text={"Categories"}
+          hasButton={
+            windowWidth < 480 || currentPath.includes("categories")
+              ? false
+              : true
+          }
+          buttonText={"All categories"}
+          linkTo="categories"
+        />
+
+      <div
+        className={`${styles.categories} side_padding bottom_margin bottom_top`}
+        >
+      {/* <SectionHeader
           text={"Categories"}
           hasButton={
             windowWidth < 480 || currentPath.includes("categories")
@@ -38,10 +52,6 @@ const CategoriesList = ({ limit }) => {
           buttonText={"All categories"}
           linkTo="categories"
         /> */}
-      <div
-        className={`${styles.categories} side_padding bottom_margin bottom_top`}
-        >
-        <h2 className={styles.cards_title}>Categories</h2>
         <div className={styles.cards_wrapper}>
           {displayedItems.map((category) => (
             <CategoryCard
@@ -56,7 +66,9 @@ const CategoriesList = ({ limit }) => {
           <SectionHeaderButton text="All categories" linkTo="categories" />
         )}
       </div>
-    </>
+</>
+ 
+  
   );
 };
 
